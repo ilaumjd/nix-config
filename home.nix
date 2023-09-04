@@ -44,6 +44,15 @@
           cd = "z";
         };
       };
+      git = {
+        enable = true;
+	userName = "aulmajid";
+	userEmail = "aulmajid@gmail.com";
+      };
+      starship = {
+        enable = true;
+	enableFishIntegration = true;
+      };
   };
   
 }
