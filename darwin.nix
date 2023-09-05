@@ -41,6 +41,10 @@
   system.defaults.loginwindow.GuestEnabled = false;
   system.defaults.trackpad.Clicking = true;
 
+  # Fonts
+  fonts.fontDir.enable = true;
+  fonts.fonts = [ (pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; }) ];
+  
   # Homebrew
   homebrew = {
     enable = true;
