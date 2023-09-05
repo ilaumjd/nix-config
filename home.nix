@@ -21,6 +21,10 @@
           pager = "less -FR";
           theme = "Monokai Extended Origin";
         };
+        extraPackages = with pkgs.bat-extras; [ 
+          batdiff 
+          batman 
+        ];
       };
       exa = {
         enable = true;
@@ -63,6 +67,7 @@
           cat = "bat";
           rm = "trash";
           cd = "z";
+          man = "batman";
         };
       };
       git = {
