@@ -29,6 +29,29 @@
       };
       neovim = {
         enable = true;
+        viAlias = true;
+        vimAlias = true;
+        plugins = with pkgs.vimPlugins; [
+          sonokai
+          nvim-cmp
+          vim-airline
+        ];
+        extraConfig = ''
+          syntax enable
+      
+          set number
+          set relativenumber
+          set cursorline
+          set scrolloff=5
+          set tabstop=2
+          set shiftwidth=2
+          set expandtab
+          set autoindent
+          set ignorecase
+          set smartcase
+
+          colorscheme sonokai
+        '';
       };
       zoxide = {
         enable = true;
@@ -37,8 +60,6 @@
       fish = {
         enable = true;
         shellAbbrs = {
-          vi = "nvim";
-          vim = "nvim";
           cat = "bat";
           rm = "trash";
           cd = "z";
@@ -46,12 +67,12 @@
       };
       git = {
         enable = true;
-	userName = "aulmajid";
-	userEmail = "aulmajid@gmail.com";
+        userName = "aulmajid";
+        userEmail = "aulmajid@gmail.com";
       };
       starship = {
         enable = true;
-	enableFishIntegration = true;
+      	enableFishIntegration = true;
       };
   };
   
