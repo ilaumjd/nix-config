@@ -33,8 +33,6 @@
       };
       neovim = {
         enable = true;
-        viAlias = true;
-        vimAlias = true;
         plugins = with pkgs.vimPlugins; [
           sonokai
           nvim-cmp
@@ -87,6 +85,24 @@
       };
       ripgrep = {
         enable = true;
+      };
+      fzf = {
+        enable = true;
+        enableFishIntegration = true;
+        colors = {
+          "bg" = "#1c1e26";
+          "bg+" = "#232530";
+          "fg" = "#9da0a2";
+          "fg+" = "#dcdfe4";
+          "hl" = "#df5273";
+          "hl+" = "#df5273";
+          "spinner" = "#24a8b4";
+          "pointer" = "#24a8b4";
+          "marker" = "#24a8b4";
+          "header" = "#df5273";
+          "info" = "#efb993";
+          "prompt" = "#efb993";
+        };
       };
   };
   

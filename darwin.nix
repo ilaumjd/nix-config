@@ -35,7 +35,7 @@
 
   # Fonts
   fonts.fontDir.enable = true;
-  fonts.fonts = [ (pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; }) ];
+  fonts.fonts = [ (pkgs.nerdfonts.override { fonts = [ "Meslo" ]; }) ];
   
   # Homebrew
   homebrew = {
