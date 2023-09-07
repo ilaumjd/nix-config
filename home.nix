@@ -66,6 +66,7 @@
           rm = "trash";
           cd = "z";
           man = "batman";
+          nvimfzf = "nvim $(fzf)";
         };
       };
       git = {
@@ -89,9 +90,13 @@
       fzf = {
         enable = true;
         enableFishIntegration = true;
+        defaultOptions = [
+          "--height ~10"
+          "--border double"
+        ];
         colors = {
-          "bg" = "#1c1e26";
-          "bg+" = "#232530";
+          "bg" = "#2e2a2e";
+          "bg+" = "#2e2a2e";
           "fg" = "#9da0a2";
           "fg+" = "#dcdfe4";
           "hl" = "#df5273";
