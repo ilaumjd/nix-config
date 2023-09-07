@@ -15,21 +15,13 @@
   environment.pathsToLink = [ "/Applications" ];
   
   # Shell
-  environment.shells = [ pkgs.zsh ];
-  environment.loginShell = pkgs.zsh;
-  environment.shellAliases = {
-    vi = "nvim";
-    vim = "nvim";
-    cat = "bat";
-    rm = "trash";
-    cd = "z";
-  };
-  programs = {
-    zsh = { 
-      enable = true;
-      enableSyntaxHighlighting = true;
-    };
-  };
+  programs.zsh.enable = true;
+  programs.fish.enable = true;
+  environment.shells = with pkgs; [ 
+    zsh
+    fish
+  ];
+  environment.loginShell = pkgs.fish;
 
   # System Settings
   system.defaults.finder._FXShowPosixPathInTitle = true;
