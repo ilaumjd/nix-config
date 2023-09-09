@@ -10,6 +10,9 @@
     neofetch
     bottom
     trash-cli
+    vscodium
+    slack
+    zoom-us
   ];
  
   # Home Manager Programs 
@@ -95,8 +98,8 @@
           "--border double"
         ];
         colors = {
-          "bg" = "#2e2a2e";
-          "bg+" = "#2e2a2e";
+          "bg" = "#2c2e34";
+          "bg+" = "#2c2e34";
           "fg" = "#9da0a2";
           "fg+" = "#dcdfe4";
           "hl" = "#df5273";
@@ -108,6 +111,27 @@
           "info" = "#efb993";
           "prompt" = "#efb993";
         };
+      };
+      tealdeer = {
+        enable = true;
+      };
+      wezterm = {
+        enable = true;
+        extraConfig = ''
+          local wezterm = require 'wezterm'
+          local config = {}
+          if wezterm.config_builder then
+            config = wezterm.config_builder()
+          end
+          
+          config.default_prog = { '/etc/profiles/per-user/iam/bin/fish', '-l' }
+          config.color_scheme = 'Sonokai (Gogh)'
+          config.font = wezterm.font('SauceCodePro Nerd Font')
+          config.font_size = 15.0
+          config.hide_tab_bar_if_only_one_tab = true
+          
+          return config
+        '';
       };
   };
   
