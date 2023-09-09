@@ -12,8 +12,8 @@
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }: {
     darwinConfigurations.macos = nix-darwin.lib.darwinSystem {
       modules = [ 
-	./darwin.nix
-	home-manager.darwinModules.home-manager {
+        ./darwin.nix
+        home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.iam.imports = [ ./home.nix ];

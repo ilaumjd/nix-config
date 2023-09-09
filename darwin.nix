@@ -8,6 +8,7 @@
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.config.allowUnfree = true;
 
   # Paths
   users.users.iam.home = "/Users/iam";
@@ -35,13 +36,20 @@
 
   # Fonts
   fonts.fontDir.enable = true;
-  fonts.fonts = [ (pkgs.nerdfonts.override { fonts = [ "Meslo" ]; }) ];
-  
+  fonts.fonts = [ (pkgs.nerdfonts.override { fonts = [
+    "CascadiaCode"
+    "FiraCode"
+    "Hack"
+    "Meslo"
+    "Mononoki"
+    "SourceCodePro"
+  ]; }) ];
+
   # Homebrew
   homebrew = {
     enable = true;
     global.brewfile = true;
-    onActivation.cleanup = "zap";
+    onActivation.cleanup = "uninstall";
     caskArgs.no_quarantine = true;
     casks = [
       "brave-browser"
@@ -49,11 +57,7 @@
       "iterm2"
       "mac-mouse-fix"
       "utm"
-      "vscodium"
-
-      # works
-      "slack"
-      "zoom"
+      "raycast"
     ];
   };
 
