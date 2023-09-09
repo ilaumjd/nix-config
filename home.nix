@@ -54,7 +54,10 @@
           set autoindent
           set ignorecase
           set smartcase
-
+          
+          if has('termguicolors')
+            set termguicolors
+          endif
           colorscheme sonokai
         '';
       };
@@ -64,12 +67,16 @@
       };
       fish = {
         enable = true;
+        shellAliases = {
+          vi = "nvim";
+          vim = "nvim";
+        };
         shellAbbrs = {
           cat = "bat";
           rm = "trash";
           cd = "z";
           man = "batman";
-          nvimfzf = "nvim $(fzf)";
+          vf = "vim $(fzf)";
         };
       };
       git = {
