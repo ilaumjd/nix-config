@@ -37,6 +37,7 @@
     neovim = {
       enable = true;
       plugins = with pkgs.vimPlugins; [
+        nvim-surround
         nvim-cmp
         vim-airline
         sonokai
@@ -46,7 +47,9 @@
           type = "lua";
           config = ''
             require("lazy-lsp").setup {
-              excluded_servers = { "sqls", },
+              excluded_servers = { 
+                "sqls", 
+              },
             }
           '';
         }
@@ -133,18 +136,23 @@
     wezterm = {
       enable = true;
       extraConfig = ''
-        local wezterm = require 'wezterm'
-
         local config = {}
         if wezterm.config_builder then config = wezterm.config_builder() end
           
         config.default_prog = { '/etc/profiles/per-user/iam/bin/fish', '-l' }
-        config.color_scheme = 'Sonokai (Gogh)'
         config.font = wezterm.font('SauceCodePro Nerd Font')
         config.font_size = 15.0
         config.hide_tab_bar_if_only_one_tab = true
-        config.window_background_opacity = 0.99
-        config.default_cursor_style = 'SteadyBar'
+        config.window_background_opacity = 1.0
+        config.default_cursor_style = 'BlinkingUnderline'
+
+        local scheme = wezterm.get_builtin_color_schemes()['Sonokai (Gogh)']
+        scheme.cursor_bg = '#ffb473'
+        scheme.cursor_fg = '#ffffff'
+        config.color_schemes = {
+          ['scheme'] = scheme
+        }
+        config.color_scheme = 'scheme'
 
         return config
       '';
