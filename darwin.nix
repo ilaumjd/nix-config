@@ -1,7 +1,7 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
-  
+
   # DO NOT CHANGE!!!
   system.stateVersion = 4;
 
@@ -13,11 +13,11 @@
   users.users.iam.home = "/Users/iam";
   environment.systemPath = [ "/opt/homebrew/bin" ];
   environment.pathsToLink = [ "/Applications" ];
-  
+
   # Shell
   programs.zsh.enable = true;
   programs.fish.enable = true;
-  environment.shells = with pkgs; [ 
+  environment.shells = with pkgs; [
     zsh
     fish
   ];
@@ -35,14 +35,18 @@
 
   # Fonts
   fonts.fontDir.enable = true;
-  fonts.fonts = [ (pkgs.nerdfonts.override { fonts = [
-    "CascadiaCode"
-    "FiraCode"
-    "Hack"
-    "Meslo"
-    "Mononoki"
-    "SourceCodePro"
-  ]; }) ];
+  fonts.fonts = [
+    (pkgs.nerdfonts.override {
+      fonts = [
+        "CascadiaCode"
+        "FiraCode"
+        "Hack"
+        "Meslo"
+        "Mononoki"
+        "SourceCodePro"
+      ];
+    })
+  ];
 
   # Homebrew
   homebrew = import ./brew.nix;

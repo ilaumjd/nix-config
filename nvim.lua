@@ -14,7 +14,7 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 
--- search 
+-- search
 opt.ignorecase = true
 opt.smartcase = true
 
@@ -26,9 +26,8 @@ opt.scrolloff = 5
 
 -- colors
 opt.termguicolors = true
-cmd[[colorscheme sonokai]]
+cmd [[colorscheme sonokai]]
 --opt.signcolumn = "yes"
 
 -- clipboard
 opt.clipboard:append("unnamedplus")
-
