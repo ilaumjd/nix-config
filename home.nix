@@ -74,23 +74,7 @@
           '';
         }
       ];
-      extraConfig = ''
-        set number
-        set relativenumber
-        set cursorline
-        set scrolloff=5
-        set tabstop=2
-        set shiftwidth=2
-        set expandtab
-        set autoindent
-        set ignorecase
-        set smartcase
-          
-        if has('termguicolors')
-          set termguicolors
-        endif
-        colorscheme sonokai
-      '';
+      extraLuaConfig = builtins.readFile ./nvim.lua;
     };
     zoxide = {
       enable = true;
