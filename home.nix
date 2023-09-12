@@ -7,15 +7,34 @@
 
   # Packages
   home.packages = with pkgs; [
+
+    # cli
     neofetch
     bottom
     trash-cli
+
+    # gui
     vscodium
     slack
     zoom-us
+
+    # insecure
+    nodejs_16
   ];
 
-  # Home Manager Programs 
+  # nixpkgs Configs
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "nodejs-16.20.2"
+  ];
+
+  # Variables
+  home.sessionVariables = {
+    NODE_OPTIONS = "--openssl-legacy-provider";
+    NIXPKGS_ALLOW_INSECURE = 1;
+  };
+
+  # Home Manager Programs
   programs = {
     home-manager.enable = true;
     bat = {
@@ -36,6 +55,7 @@
     };
     neovim = {
       enable = true;
+      defaultEditor = true;
       plugins = with pkgs.vimPlugins; [
         nvim-surround
         nvim-cmp
