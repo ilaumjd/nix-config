@@ -1,5 +1,5 @@
 {
-  description = "Darwin and Home Manager";
+  description = "iam's Darwin and Home Manager configs";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -9,7 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }: {
+  outputs = { self, nixpkgs, nix-darwin, home-manager }: {
     darwinConfigurations.macos = nix-darwin.lib.darwinSystem {
       system = "aarch64_darwin";
       modules = [
