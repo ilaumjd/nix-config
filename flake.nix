@@ -18,7 +18,7 @@
         {
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
-          home-manager.users.iam.imports = [ ./home.nix ];
+          home-manager.users.iam.imports = [ ./home ];
         }
       ];
     };
