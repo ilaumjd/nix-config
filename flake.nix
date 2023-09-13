@@ -13,7 +13,7 @@
     darwinConfigurations.macos = nix-darwin.lib.darwinSystem {
       system = "aarch64_darwin";
       modules = [
-        ./darwin.nix
+        ./darwin
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = false;
