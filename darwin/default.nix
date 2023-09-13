@@ -34,19 +34,7 @@
   system.defaults.trackpad.Clicking = true;
 
   # Fonts
-  fonts.fontDir.enable = true;
-  fonts.fonts = [
-    (pkgs.nerdfonts.override {
-      fonts = [
-        "CascadiaCode"
-        "FiraCode"
-        "Hack"
-        "Meslo"
-        "Mononoki"
-        "SourceCodePro"
-      ];
-    })
-  ];
+  fonts = import ./fonts.nix pkgs;
 
   # Homebrew
   homebrew = import ./brew.nix;
