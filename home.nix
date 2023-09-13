@@ -41,104 +41,15 @@
 
   # Home Manager Programs
   programs = {
-    bat = {
-      enable = true;
-      config = {
-        pager = "less -FR";
-        theme = "base16";
-      };
-      extraPackages = with pkgs.bat-extras; [
-        batdiff
-        batman
-      ];
-    };
-    exa = {
-      enable = true;
-      enableAliases = true;
-      git = true;
-    };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      plugins = with pkgs.vimPlugins; [
-        nvim-surround
-        nvim-cmp
-        vim-airline
-        sonokai
-
-        {
-          plugin = lazy-lsp-nvim;
-          type = "lua";
-          config = ''
-            require("lazy-lsp").setup {
-              excluded_servers = { 
-                "sqls", 
-              },
-            }
-          '';
-        }
-      ];
-      extraLuaConfig = builtins.readFile ./nvim.lua;
-    };
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    fish = {
-      enable = true;
-      shellAliases = {
-        vi = "nvim";
-        vim = "nvim";
-      };
-      shellAbbrs = {
-        cat = "bat";
-        rm = "trash";
-        cd = "z";
-        man = "batman";
-        vf = "vim $(fzf)";
-      };
-    };
-    git = {
-      enable = true;
-      userName = "aulmajid";
-      userEmail = "aulmajid@gmail.com";
-    };
-    starship = {
-      enable = true;
-      enableFishIntegration = true;
-      settings = {
-        character = {
-          success_symbol = "[➤](bold green)";
-          error_symbol = "[➤](bold red)";
-        };
-      };
-    };
-    fzf = {
-      enable = true;
-      enableFishIntegration = true;
-      defaultOptions = [
-        "--height ~10"
-        "--border double"
-      ];
-      colors = {
-        "bg" = "#2c2e34";
-        "bg+" = "#2c2e34";
-        "fg" = "#9da0a2";
-        "fg+" = "#dcdfe4";
-        "hl" = "#df5273";
-        "hl+" = "#df5273";
-        "spinner" = "#24a8b4";
-        "pointer" = "#24a8b4";
-        "marker" = "#24a8b4";
-        "header" = "#df5273";
-        "info" = "#efb993";
-        "prompt" = "#efb993";
-      };
-    };
-    wezterm = {
-      enable = true;
-      extraConfig = builtins.readFile ./wezterm.lua;
-    };
+    bat = import ./bat.nix pkgs;
+    exa = import ./exa.nix;
+    fzf = import ./fzf.nix;
+    zoxide = import ./zoxide.nix;
+    neovim = import ./neovim.nix pkgs;
+    fish = import ./fish.nix;
+    git = import ./git.nix;
+    starship = import ./starship.nix;
+    wezterm = import ./wezterm.nix;
   };
 
 }
