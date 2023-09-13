@@ -5,22 +5,8 @@
   # DO NOT CHANGE!!! 
   home.stateVersion = "23.05";
 
-  # Packages
-  home.packages = with pkgs; [
-
-    # cli
-    neofetch
-    bottom
-    trash-cli
-
-    # gui
-    vscodium
-    slack
-    zoom-us
-
-    # insecure
-    nodejs_16
-  ];
+  # Enable Home Manager
+  programs.home-manager.enable = true;
 
   # nixpkgs Configs
   nixpkgs.config.allowUnfree = true;
@@ -34,9 +20,27 @@
     NIXPKGS_ALLOW_INSECURE = 1;
   };
 
+  # Packages
+  home.packages = with pkgs; [
+
+    # cli
+    neofetch
+    bottom
+    trash-cli
+    ripgrep
+    tealdeer
+
+    # gui
+    vscodium
+    slack
+    zoom-us
+
+    # insecure
+    nodejs_16
+  ];
+
   # Home Manager Programs
   programs = {
-    home-manager.enable = true;
     bat = {
       enable = true;
       config = {
@@ -109,9 +113,6 @@
         };
       };
     };
-    ripgrep = {
-      enable = true;
-    };
     fzf = {
       enable = true;
       enableFishIntegration = true;
@@ -133,9 +134,6 @@
         "info" = "#efb993";
         "prompt" = "#efb993";
       };
-    };
-    tealdeer = {
-      enable = true;
     };
     wezterm = {
       enable = true;
