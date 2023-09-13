@@ -5,6 +5,7 @@
   # DO NOT CHANGE!!!
   system.stateVersion = 4;
 
+  # Darwin configs
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -15,28 +16,25 @@
   environment.pathsToLink = [ "/Applications" ];
 
   # Shell
-  programs.zsh.enable = true;
-  programs.fish.enable = true;
+  programs = {
+    bash.enable = true;
+    zsh.enable = true;
+    fish.enable = true;
+  };
   environment.shells = with pkgs; [
+    bash
     zsh
     fish
   ];
   environment.loginShell = pkgs.fish;
 
-  # System Settings
-  system.defaults.finder._FXShowPosixPathInTitle = true;
-  system.defaults.NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false;
-  system.defaults.dock.autohide = true;
-  system.defaults.dock.mru-spaces = false;
-  system.defaults.finder.QuitMenuItem = true;
-  system.defaults.finder.ShowPathbar = true;
-  system.defaults.loginwindow.GuestEnabled = false;
-  system.defaults.trackpad.Clicking = true;
-
-  # Fonts
-  fonts = import ./fonts.nix pkgs;
+  # System settings
+  system.defaults = import ./system.nix;
 
   # Homebrew
   homebrew = import ./brew.nix;
+
+  # Fonts
+  fonts = import ./fonts.nix pkgs;
 
 }
