@@ -50,6 +50,7 @@
     git = import ./git.nix;
     starship = import ./starship.nix;
     wezterm = import ./wezterm.nix;
+    zsh = import ./zsh.nix;
   };
 
 }
