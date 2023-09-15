@@ -14,7 +14,7 @@
   # nixpkgs Configs
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkgs: true);
-  nixpkgs.config.permittedInsecurePackages = (import ./packages-insecure.nix pkgs).str;
+  nixpkgs.config.permittedInsecurePackages = (import ./packages/insecure.nix pkgs).str;
 
   # Variables
   home.sessionVariables = {
@@ -23,9 +23,9 @@
 
   # Packages
   home.packages = builtins.concatLists [
-    (import ./packages.nix pkgs)
-    (import ./packages-insecure.nix pkgs).packages
-    (import ./packages-darwin.nix pkgs)
+    (import ./packages pkgs)
+    (import ./packages/insecure.nix pkgs).packages
+    (import ./packages/darwin.nix pkgs)
   ];
 
   # Home Manager Programs
