@@ -35,11 +35,13 @@
     fzf = import ./fzf.nix;
     zoxide = import ./zoxide.nix;
     neovim = import ./neovim.nix pkgs;
-    fish = import ./fish.nix;
     git = import ./git.nix;
-    starship = import ./starship.nix;
-    wezterm = import ./wezterm.nix;
-    zsh = import ./zsh.nix;
+    
+    # shell
+    fish = import ./shell/fish.nix;
+    starship = import ./shell/starship.nix;
+    wezterm = import ./shell/wezterm.nix;
+    zsh = import ./shell/zsh.nix;
   };
 
 }
