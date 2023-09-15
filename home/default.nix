@@ -13,20 +13,18 @@
 
   # nixpkgs Configs
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = (pkg: true);
-  nixpkgs.config.permittedInsecurePackages = [
-    "nodejs-16.20.2"
-  ];
+  nixpkgs.config.allowUnfreePredicate = (pkgs: true);
+  nixpkgs.config.permittedInsecurePackages = (import ./packages-insecure.nix pkgs).str;
 
   # Variables
   home.sessionVariables = {
     NODE_OPTIONS = "--openssl-legacy-provider";
-    NIXPKGS_ALLOW_INSECURE = 1;
   };
 
   # Packages
   home.packages = builtins.concatLists [
     (import ./packages.nix pkgs)
+    (import ./packages-insecure.nix pkgs).packages
     (import ./packages-darwin.nix pkgs)
   ];
 

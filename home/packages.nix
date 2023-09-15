@@ -3,11 +3,11 @@
 with pkgs; [
 
   # cli
-  neofetch
   bottom
-  trash-cli
+  neofetch
   ripgrep
   tealdeer
+  trash-cli
 
   # gui
   vscodium
