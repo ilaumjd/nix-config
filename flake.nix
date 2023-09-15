@@ -18,12 +18,12 @@
         system = env.system;
         modules = [
           ./darwin
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = false;
-            home-manager.useUserPackages = true;
-            home-manager.users.${env.user}.imports = [ ./home ];
-          }
+        ];
+      };
+      homeConfigurations."${env.user}@${env.hostname}" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."${env.system}";
+        modules = [
+          ./home
         ];
       };
     };

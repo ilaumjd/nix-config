@@ -1,9 +1,12 @@
 { pkgs, ... }:
 
 {
-
   # DO NOT CHANGE!!! 
   home.stateVersion = "23.05";
+
+  # Home config
+  home.username = "iam";
+  home.homeDirectory = "/Users/iam";
 
   # Enable Home Manager
   programs.home-manager.enable = true;
@@ -32,8 +35,8 @@
 
     # gui
     vscodium
-    slack
-    zoom-us
+    # slack
+    #zoom-us
 
     # insecure
     nodejs_16
