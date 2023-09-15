@@ -14,18 +14,27 @@
       env = import ./env.nix;
     in
     {
-      darwinConfigurations.${env.hostname} = nix-darwin.lib.darwinSystem {
-        specialArgs = { env = env; };
-        modules = [
-          ./darwin
-        ];
+
+      # Darwin
+      darwinConfigurations = {
+        ${env.hostname} = nix-darwin.lib.darwinSystem {
+          specialArgs = { env = env; };
+          modules = [
+            ./darwin
+          ];
+        };
       };
-      homeConfigurations."${env.user}@${env.hostname}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."${env.system}";
-        extraSpecialArgs = { env = env; };
-        modules = [
-          ./home
-        ];
+
+      # Home Manager
+      homeConfigurations = {
+        "${env.user}@${env.hostname}" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."${env.system}";
+          extraSpecialArgs = { env = env; };
+          modules = [
+            ./home
+          ];
+        };
       };
+
     };
 }

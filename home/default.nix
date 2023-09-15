@@ -4,7 +4,7 @@
   # DO NOT CHANGE!!! 
   home.stateVersion = "23.05";
 
-  # Home config
+  # Home Configs
   home.username = "${env.user}";
   home.homeDirectory = "/Users/${env.user}";
 

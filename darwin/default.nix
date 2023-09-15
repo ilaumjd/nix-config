@@ -5,7 +5,7 @@
   # DO NOT CHANGE!!!
   system.stateVersion = 4;
 
-  # Darwin configs
+  # Darwin Configs
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.hostPlatform = env.system;
@@ -28,7 +28,7 @@
   ];
   environment.loginShell = pkgs.fish;
 
-  # System settings
+  # System Settings
   system.defaults = import ./system.nix;
 
   # Homebrew
