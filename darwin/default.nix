@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-let
-  env = import ../env.nix;
-in
+{ pkgs, env, ... }:
+
 {
 
   # DO NOT CHANGE!!!

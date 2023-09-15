@@ -15,13 +15,14 @@
     in
     {
       darwinConfigurations.${env.hostname} = nix-darwin.lib.darwinSystem {
-        system = env.system;
+        specialArgs = { env = env; };
         modules = [
           ./darwin
         ];
       };
       homeConfigurations."${env.user}@${env.hostname}" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."${env.system}";
+        extraSpecialArgs = { env = env; };
         modules = [
           ./home
         ];

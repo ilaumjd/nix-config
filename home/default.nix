@@ -1,12 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, env, ... }:
 
 {
   # DO NOT CHANGE!!! 
   home.stateVersion = "23.05";
 
   # Home config
-  home.username = "iam";
-  home.homeDirectory = "/Users/iam";
+  home.username = "${env.user}";
+  home.homeDirectory = "/Users/${env.user}";
 
   # Enable Home Manager
   programs.home-manager.enable = true;
