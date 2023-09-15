@@ -25,22 +25,9 @@
   };
 
   # Packages
-  home.packages = with pkgs; [
-
-    # cli
-    neofetch
-    bottom
-    trash-cli
-    ripgrep
-    tealdeer
-
-    # gui
-    vscodium
-    slack
-    zoom-us
-
-    # insecure
-    nodejs_16
+  home.packages = builtins.concatLists [
+    (import ./packages.nix pkgs)
+    (import ./packages-darwin.nix pkgs)
   ];
 
   # Home Manager Programs
