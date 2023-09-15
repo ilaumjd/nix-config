@@ -34,7 +34,8 @@
     exa = import ./exa.nix;
     fzf = import ./fzf.nix;
     zoxide = import ./zoxide.nix;
-    neovim = import ./neovim.nix pkgs;
+
+    neovim = import ./nvim/nvim.nix pkgs;
     git = import ./git.nix;
     
     # shell

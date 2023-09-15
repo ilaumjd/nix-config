@@ -21,5 +21,5 @@
       '';
     }
   ];
-  extraLuaConfig = builtins.readFile ./neovim.lua;
+  extraLuaConfig = builtins.readFile ./nvim.lua;
 }
