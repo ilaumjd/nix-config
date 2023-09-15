@@ -1,5 +1,7 @@
 { pkgs, ... }:
-
+let
+  env = import ../env.nix;
+in
 {
 
   # DO NOT CHANGE!!!
@@ -8,10 +10,10 @@
   # Darwin configs
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = env.system;
 
   # Paths
-  users.users.iam.home = "/Users/iam";
+  users.users."${env.user}".home = "/Users/${env.user}";
   environment.systemPath = [ "/opt/homebrew/bin" ];
   environment.pathsToLink = [ "/Applications" ];
 

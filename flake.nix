@@ -9,18 +9,22 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager }: {
-    darwinConfigurations.macos = nix-darwin.lib.darwinSystem {
-      system = "aarch64_darwin";
-      modules = [
-        ./darwin
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = false;
-          home-manager.useUserPackages = true;
-          home-manager.users.iam.imports = [ ./home ];
-        }
-      ];
+  outputs = { self, nixpkgs, nix-darwin, home-manager }:
+    let
+      env = import ./env.nix;
+    in
+    {
+      darwinConfigurations.${env.hostname} = nix-darwin.lib.darwinSystem {
+        system = env.system;
+        modules = [
+          ./darwin
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = false;
+            home-manager.useUserPackages = true;
+            home-manager.users.${env.user}.imports = [ ./home ];
+          }
+        ];
+      };
     };
-  };
 }
