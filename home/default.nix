@@ -13,6 +13,7 @@
 
   # nixpkgs Configs
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
   nixpkgs.config.permittedInsecurePackages = [
     "nodejs-16.20.2"
   ];
@@ -35,8 +36,8 @@
 
     # gui
     vscodium
-    # slack
-    #zoom-us
+    slack
+    zoom-us
 
     # insecure
     nodejs_16
