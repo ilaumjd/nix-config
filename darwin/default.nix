@@ -11,7 +11,7 @@
   nixpkgs.hostPlatform = env.system;
 
   # Paths
-  users.users."${env.user}".home = "/Users/${env.user}";
+  users.users.${env.user}.home = "/Users/${env.user}";
   environment.systemPath = [ "/opt/homebrew/bin" ];
   environment.pathsToLink = [ "/Applications" ];
 

@@ -28,7 +28,7 @@
       # Home Manager
       homeConfigurations = {
         "${env.user}@${env.hostname}" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."${env.system}";
+          pkgs = nixpkgs.legacyPackages.${env.system};
           extraSpecialArgs = { inherit env; };
           modules = [
             ./home
