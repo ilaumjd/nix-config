@@ -30,19 +30,21 @@
 
   # Home Manager Programs
   programs = {
-    bat = import ./bat.nix pkgs;
-    exa = import ./exa.nix;
-    fzf = import ./fzf.nix;
-    zoxide = import ./zoxide.nix;
 
-    neovim = import ./nvim/nvim.nix pkgs;
-    git = import ./git.nix;
-    
     # shell
     fish = import ./shell/fish.nix;
     starship = import ./shell/starship.nix;
     wezterm = import ./shell/wezterm.nix;
     zsh = import ./shell/zsh.nix;
+
+    #cli
+    bat = import ./cli/bat.nix pkgs;
+    exa = import ./cli/exa.nix;
+    fzf = import ./cli/fzf.nix;
+    zoxide = import ./cli/zoxide.nix;
+
+    neovim = import ./nvim/nvim.nix pkgs;
+    git = import ./git.nix;
   };
 
 }
