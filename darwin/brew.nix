@@ -6,11 +6,7 @@
   casks = [
     "brave-browser"
     "firefox"
-    "handbrake"
-    "iterm2"
     "mac-mouse-fix"
-    "raycast"
-    "utm"
   ];
 }
 
