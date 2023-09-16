@@ -25,7 +25,7 @@
   programs = {
 
     # shell
-    bash.enable = true;
+    bash = import ./shell/bash.nix;
     direnv = import ./shell/direnv.nix;
     fish = import ./shell/fish.nix;
     starship = import ./shell/starship.nix;

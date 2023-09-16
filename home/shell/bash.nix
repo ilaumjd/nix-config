@@ -1,0 +1,4 @@
+{
+  enable = true;
+  enableCompletion = true;
+}
