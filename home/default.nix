@@ -16,11 +16,6 @@
   nixpkgs.config.allowUnfreePredicate = (pkgs: true);
   nixpkgs.config.permittedInsecurePackages = (import ./packages/insecure.nix pkgs).str;
 
-  # Variables
-  home.sessionVariables = {
-    NODE_OPTIONS = "--openssl-legacy-provider";
-  };
-
   # Packages
   home.packages = builtins.concatLists [
     (import ./packages pkgs)
@@ -32,6 +27,7 @@
   programs = {
 
     # shell
+    direnv = import ./shell/direnv.nix;
     fish = import ./shell/fish.nix;
     starship = import ./shell/starship.nix;
     wezterm = import ./shell/wezterm.nix;
@@ -45,6 +41,7 @@
 
     neovim = import ./nvim/nvim.nix pkgs;
     git = import ./git.nix;
+
   };
 
 }
