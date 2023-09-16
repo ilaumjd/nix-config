@@ -34,7 +34,7 @@
 
     #cli
     bat = import ./cli/bat.nix pkgs;
-    exa = import ./cli/exa.nix;
+    eza = import ./cli/eza.nix;
     fzf = import ./cli/fzf.nix;
     zoxide = import ./cli/zoxide.nix;
 
