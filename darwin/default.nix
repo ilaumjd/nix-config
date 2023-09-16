@@ -15,7 +15,7 @@
   environment.systemPath = [ "/opt/homebrew/bin" ];
   environment.pathsToLink = [ "/Applications" ];
 
-  # Shell
+  # Shells
   programs = {
     bash.enable = true;
     zsh.enable = true;
@@ -26,7 +26,6 @@
     zsh
     fish
   ];
-  environment.loginShell = pkgs.fish;
 
   # System Settings
   system.defaults = import ./system.nix;

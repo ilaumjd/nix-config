@@ -1,9 +1,7 @@
 {
   enable = true;
   enableAutosuggestions = true;
-#  enableCompletion = true;
-#  oh-my-zsh = {
-#    enable = true;
-#  };
+  enableCompletion = true;
   syntaxHighlighting.enable = true;
+  shellAliases = import ./alias.nix;
 }
