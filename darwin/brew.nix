@@ -7,6 +7,7 @@
     "brave-browser"
     "firefox"
     "mac-mouse-fix"
+    "raycast"
   ];
 }
 
