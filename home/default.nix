@@ -14,12 +14,10 @@
   # nixpkgs Configs
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkgs: true);
-  nixpkgs.config.permittedInsecurePackages = (import ./packages/insecure.nix pkgs).str;
 
   # Packages
   home.packages = builtins.concatLists [
     (import ./packages pkgs)
-    (import ./packages/insecure.nix pkgs).packages
     (import ./packages/darwin.nix pkgs)
   ];
 

@@ -11,7 +11,4 @@ with pkgs; [
 
   # gui
   vscodium
-
-  # insecure
-  nodejs_16
 ]
