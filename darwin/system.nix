@@ -29,8 +29,46 @@
       IncludeDevelopMenu = true;
       WebKitDeveloperExtrasEnabledPreferenceKey = true;
     };
+    "com.raycast.macos" = {
+      NSNavLastRootDirectory = "~/src/scripts/raycast";
+      "NSStatusItem Visible raycastIcon" = 0;
+      commandsPreferencesExpandedItemIds = [
+        "extension_noteplan-3__00cda425-a991-4e4e-8031-e5973b8b24f6"
+        "builtin_package_navigation"
+        "builtin_package_scriptCommands"
+        "builtin_package_floatingNotes"
+      ];
+      "emojiPicker_skinTone" = "mediumLight";
+      initialSpotlightHotkey = "Command-49";
+      navigationCommandStyleIdentifierKey = "legacy";
+      "onboarding_canShowActionPanelHint" = 0;
+      "onboarding_canShowBackNavigationHint" = 0;
+      "onboarding_completedTaskIdentifiers" = [
+        "startWalkthrough"
+        "calendar"
+        "setHotkeyAndAlias"
+        "snippets"
+        "quicklinks"
+        "installFirstExtension"
+        "floatingNotes"
+        "windowManagement"
+        "calculator"
+        "raycastShortcuts"
+        "openActionPanel"
+      ];
+      organizationsPreferencesTabVisited = 1;
+      popToRootTimeout = 60;
+      raycastAPIOptions = 8;
+      raycastGlobalHotkey = "Command-49";
+      raycastPreferredWindowMode = "default";
+      raycastShouldFollowSystemAppearance = 1;
+      raycastWindowPresentationMode = 1;
+      showGettingStartedLink = 0;
+      "store_termsAccepted" = 1;
+      suggestedPreferredGoogleBrowser = 1;
+    };
   };
-  
+
   dock = {
     autohide = true;
     autohide-delay = 0.0;
@@ -45,7 +83,7 @@
     tilesize = 48;
     wvous-br-corner = 1;
   };
-  
+
   finder = {
     AppleShowAllExtensions = true;
     FXEnableExtensionChangeWarning = false;
@@ -54,13 +92,13 @@
     ShowPathbar = true;
     _FXShowPosixPathInTitle = true;
   };
-  
+
   trackpad = {
     ActuationStrength = 0;
     Clicking = true;
     TrackpadRightClick = true;
   };
-  
+
   loginwindow.GuestEnabled = false;
   menuExtraClock.ShowSeconds = true;
 }
