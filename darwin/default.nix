@@ -29,6 +29,8 @@
 
   # System Settings
   system.defaults = import ./system.nix;
+  system.keyboard.enableKeyMapping = true;
+  system.keyboard.remapCapsLockToEscape = true;
 
   # Homebrew
   homebrew = import ./brew.nix;
