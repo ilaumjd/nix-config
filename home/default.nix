@@ -32,15 +32,18 @@
     wezterm = import ./shell/wezterm.nix;
     zsh = import ./shell/zsh.nix;
 
-    #cli
+    # cli
     bat = import ./cli/bat.nix pkgs;
     eza = import ./cli/eza.nix;
     fzf = import ./cli/fzf.nix;
     zoxide = import ./cli/zoxide.nix;
 
+    # git
+    git = import ./git/git.nix;
+    lazygit = import ./git/lazygit.nix;
+    
     neovim = import ./nvim/nvim.nix pkgs;
-    git = import ./git.nix;
-
+    vscode = import ./vscode.nix;
   };
 
   targets.darwin.currentHostDefaults."com.apple.controlcenter".BatteryShowPercentage = true;

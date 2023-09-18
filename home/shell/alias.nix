@@ -9,4 +9,5 @@
   vf = "vim $(fzf)";
   vi = "nvim";
   vim = "nvim";
+  lg = "lazygit";
 }
