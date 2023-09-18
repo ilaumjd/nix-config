@@ -33,7 +33,7 @@
   system.keyboard.remapCapsLockToEscape = true;
 
   # Homebrew
-  homebrew = import ./brew.nix;
+  homebrew = import ./brew.nix env;
 
   # Fonts
   fonts = import ./fonts.nix pkgs;

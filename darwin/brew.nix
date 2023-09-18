@@ -1,3 +1,5 @@
+env:
+
 {
   enable = true;
   global.brewfile = true;
@@ -6,8 +8,13 @@
   casks = [
     "brave-browser"
     "firefox"
-    "mac-mouse-fix"
     "raycast"
-  ];
+  ]
+  ++ (
+    if env.arch == "aarch64" then
+      [ "mac-mouse-fix" ]
+    else
+      [ "mouse-fix" ]
+  );
 }
 

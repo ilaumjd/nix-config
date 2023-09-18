@@ -1,5 +1,14 @@
-{
+let
   user = "iam";
   hostname = "macos";
-  system = "aarch64-darwin";
+  arch = "aarch64";
+  os = "darwin";
+  system = "${arch}-${os}";
+in
+{
+  inherit user;
+  inherit hostname;
+  inherit arch;
+  inherit os;
+  inherit system;
 }

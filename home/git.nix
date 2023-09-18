@@ -1,6 +1,6 @@
 {
   enable = true;
-  userName = "aulmajid";
+  userName = "Ilham AM";
   userEmail = "aulmajid@gmail.com";
   ignores = [
     ".envrc"
