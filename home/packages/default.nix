@@ -2,9 +2,13 @@
 
 with pkgs; [
 
-  # cli
+  # aw 
   bottom
+  btop
+  htop
   neofetch
+
+  # cli
   ripgrep
   tealdeer
   translate-shell
