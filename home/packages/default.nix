@@ -7,6 +7,7 @@ with pkgs; [
   neofetch
   ripgrep
   tealdeer
+  translate-shell
   trash-cli
 
   # gui

@@ -6,8 +6,8 @@
     "--border double"
   ];
   colors = {
-    "bg" = "#2c2e34";
-    "bg+" = "#2c2e34";
+    "bg" = "Normal";
+    "bg+" = "Normal";
     "fg" = "#9da0a2";
     "fg+" = "#dcdfe4";
     "hl" = "#df5273";
