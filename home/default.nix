@@ -11,6 +11,11 @@
   # Enable Home Manager
   programs.home-manager.enable = true;
 
+  # Variables
+  home.sessionVariables = {
+    "DIRENV_LOG_FORMAT" = "";
+  };
+
   # nixpkgs Configs
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkgs: true);
