@@ -38,4 +38,14 @@
   # Fonts
   fonts = import ./fonts.nix pkgs;
 
+  services.yabai = {
+    enable = true;
+    enableScriptingAddition = true;
+    extraConfig = builtins.readFile ./yabairc;
+  };
+
+  services.skhd = {
+    enable = true;
+    skhdConfig = builtins.readFile ./skhdrc;
+  };
 }

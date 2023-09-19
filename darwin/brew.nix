@@ -5,6 +5,7 @@ env:
   global.brewfile = true;
   onActivation.cleanup = "uninstall";
   caskArgs.no_quarantine = true;
+  brews = [];
   casks = [
     "brave-browser"
     "firefox"
