@@ -35,7 +35,7 @@
     fish = import ./shell/fish.nix;
     starship = import ./shell/starship.nix;
     wezterm = import ./shell/wezterm.nix;
-    zsh = import ./shell/zsh.nix;
+    zsh = import ./shell/zsh.nix pkgs; 
 
     # cli
     bat = import ./cli/bat.nix pkgs;
