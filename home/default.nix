@@ -48,7 +48,7 @@
     lazygit = import ./git/lazygit.nix;
     scmpuff = import ./cli/zoxide.nix;
     
-    neovim = import ./nvim/nvim.nix pkgs;
+    neovim = import ./nvim pkgs;
     vscode = import ./vscode.nix;
   };
 

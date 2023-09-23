@@ -26,8 +26,7 @@ opt.scrolloff = 5
 
 -- colors
 opt.termguicolors = true
-cmd [[colorscheme sonokai]]
 --opt.signcolumn = "yes"
 
 -- clipboard
-opt.clipboard:append("unnamedplus")
+opt.clipboard = "unnamedplus"
