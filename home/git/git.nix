@@ -1,7 +1,7 @@
 {
   enable = true;
-  userName = "Ilham AM";
-  userEmail = "aulmajid@gmail.com";
+  userName = "ilaumjd";
+  userEmail = "ilaumjd@gmail.com";
   extraConfig = {
     commit.gpgsign = true;
     gpg.format = "ssh";
