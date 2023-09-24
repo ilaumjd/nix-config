@@ -2,7 +2,7 @@ pkgs:
 
 with pkgs.vimPlugins; [
 
-  ###### USEFUL COMMANDS #####
+  ###### USEFUL COMMANDS ######
   {
     plugin = comment-nvim;
     type = "lua";
@@ -14,10 +14,9 @@ with pkgs.vimPlugins; [
     config = "require('nvim-surround').setup()";
   }
   vim-ReplaceWithRegister
-  vim-tmux-navigator
 
 
-  ###### LSP #####
+  ###### LSP ######
   {
     plugin = lazy-lsp-nvim;
     type = "lua";
@@ -25,7 +24,7 @@ with pkgs.vimPlugins; [
   }
 
 
-  ###### FILE EXPLORER #####
+  ###### FILE EXPLORER ######
   {
     plugin = nvim-tree-lua;
     type = "lua";
@@ -34,7 +33,7 @@ with pkgs.vimPlugins; [
   nvim-web-devicons
 
 
-  ###### FUZZY FINDER #####
+  ###### FUZZY FINDER ######
   {
     plugin = telescope-nvim;
     type = "lua";
@@ -43,7 +42,7 @@ with pkgs.vimPlugins; [
   telescope-fzf-native-nvim
 
 
-  ###### COMPLETION #####
+  ###### COMPLETION ######
   {
     plugin = nvim-cmp;
     type = "lua";
@@ -57,7 +56,7 @@ with pkgs.vimPlugins; [
   friendly-snippets
 
 
-  ###### THEMES #####
+  ###### THEMES ######
   {
     plugin = lualine-nvim;
     type = "lua";
