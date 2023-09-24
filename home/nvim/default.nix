@@ -7,5 +7,5 @@ pkgs:
   vimAlias = true;
   vimdiffAlias = true;
   plugins = import ./plugins pkgs;
-  extraLuaConfig = builtins.readFile ./init.lua;
+  extraLuaConfig = builtins.readFile ./options.lua;
 }

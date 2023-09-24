@@ -13,6 +13,7 @@ with pkgs; [
   tealdeer
   translate-shell
   trash-cli
+  wget
 
   # gui
   vscodium
