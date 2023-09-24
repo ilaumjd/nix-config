@@ -11,4 +11,4 @@ require('nvim-tree').setup {
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>ee", ":NvimTreeToggle<CR>", opts)

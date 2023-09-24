@@ -45,12 +45,12 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Prevent copy on press x
 keymap("n", "x", '"_x', opts)
 
--- Disable highlight
-keymap("n", "<leader>nh", ":nohl<CR>", opts)
-
 -- Increase & decrease number
 keymap("n", "+", "<C-a>", opts)
 keymap("n", "_", "<C-x>", opts)
+
+-- Disable highlight
+keymap("n", "<leader>nh", ":nohl<CR>", opts)
 
 -- Manipulating splits
 keymap("n", "<leader>sv", "<C-w>v", opts)
@@ -59,7 +59,7 @@ keymap("n", "<leader>se", "<C-w>=", opts)
 keymap("n", "<leader>sx", ":close<CR>", opts)
 
 -- Manipulating tabs
-keymap("n", "<leader>to", ":tabnew<CR>", opts)
+keymap("n", "<leader>tn", ":tabnew<CR>", opts)
 keymap("n", "<leader>tx", ":tabclose<CR>", opts)
 keymap("n", "<leader>th", ":tabp<CR>", opts)
 keymap("n", "<leader>tl", ":tabn<CR>", opts)
