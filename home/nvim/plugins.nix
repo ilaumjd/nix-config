@@ -6,7 +6,7 @@ with pkgs.vimPlugins; [
   nvim-web-devicons
 
 
-  ###### COMMANDS #####
+  ###### USEFUL COMMANDS #####
   {
     plugin = comment-nvim;
     type = "lua";
@@ -51,7 +51,23 @@ with pkgs.vimPlugins; [
       vim.g.loaded_netrwPlugin = 1
     '';
   }
-  
+
+
+  ###### FUZZY FINDER #####
+  {
+    plugin = telescope-nvim;
+    type = "lua";
+    config = ''
+      local telescope = require('telescope')
+      telescope.setup()
+    '';
+  }
+  {
+    plugin = telescope-fzf-native-nvim;
+    type = "lua";
+    config = "telescope.load_extension('fzf')";
+  }
+
 
   ###### THEMES #####
   {
