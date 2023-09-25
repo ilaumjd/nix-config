@@ -2,6 +2,7 @@ pkgs:
 
 with pkgs.vimPlugins; [
 
+
   ###### USEFUL COMMANDS ######
   {
     plugin = comment-nvim;
@@ -16,30 +17,28 @@ with pkgs.vimPlugins; [
   vim-ReplaceWithRegister
 
 
+  ###### DASHBOARD ######
+  {
+    plugin = dashboard-nvim;
+    type = "lua";
+    config = "require('dashboard').setup()";
+  }
+
+
+  ###### TREESITTER ######
+  {
+    plugin = nvim-treesitter.withAllGrammars;
+    type = "lua";
+    config = builtins.readFile ./treesitter.lua;
+  }
+
+
   ###### LSP ######
   {
     plugin = lazy-lsp-nvim;
     type = "lua";
     config = builtins.readFile ./lazy-lsp.lua;
   }
-
-
-  ###### FILE EXPLORER ######
-  {
-    plugin = nvim-tree-lua;
-    type = "lua";
-    config = builtins.readFile ./nvim-tree.lua;
-  }
-  nvim-web-devicons
-
-
-  ###### FUZZY FINDER ######
-  {
-    plugin = telescope-nvim;
-    type = "lua";
-    config = builtins.readFile ./telescope.lua;
-  }
-  telescope-fzf-native-nvim
 
 
   ###### COMPLETION ######
@@ -54,6 +53,24 @@ with pkgs.vimPlugins; [
   cmp_luasnip
   luasnip
   friendly-snippets
+
+
+  ###### FILE EXPLORER ######
+  {
+    plugin = neo-tree-nvim;
+    type = "lua";
+    config = builtins.readFile ./neo-tree.lua;
+  }
+  nvim-web-devicons
+
+
+  ###### FUZZY FINDER ######
+  {
+    plugin = telescope-nvim;
+    type = "lua";
+    config = builtins.readFile ./telescope.lua;
+  }
+  telescope-fzf-native-nvim
 
 
   ###### THEMES ######
