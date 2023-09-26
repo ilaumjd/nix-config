@@ -62,7 +62,6 @@ with pkgs.vimPlugins; [
     type = "lua";
     config = builtins.readFile ./neo-tree.lua;
   }
-  nvim-web-devicons
 
 
   ###### FUZZY FINDER ######
@@ -81,8 +80,14 @@ with pkgs.vimPlugins; [
     config = builtins.readFile ./theme.lua;
   }
   {
+    plugin = tabby-nvim;
+    type = "lua";
+    config = builtins.readFile ./tabby.lua;
+  }
+  {
     plugin = sonokai;
     config = "colorscheme sonokai";
   }
+  nvim-web-devicons
 
 ]
