@@ -12,5 +12,5 @@ require('lazy-lsp').setup {
   },
 }
 
-keymap("n", "<leader>fo", ":lua vim.lsp.buf.format()<CR>", opts)
+keymap("n", "<leader>bf", ":lua vim.lsp.buf.format()<CR>", opts)
 keymap("n", "<leader>es", ":EslintFixAll<CR>", opts)

@@ -31,7 +31,10 @@ with pkgs.vimPlugins; [
     type = "lua";
     config = builtins.readFile ./treesitter.lua;
   }
+  nvim-treesitter-context
   nvim-treesitter-refactor
+  nvim-ts-autotag
+  twilight-nvim
 
 
   ###### LSP ######
@@ -73,7 +76,7 @@ with pkgs.vimPlugins; [
   telescope-fzf-native-nvim
 
 
-  ###### THEMES ######
+  ###### LINES ######
   {
     plugin = lualine-nvim;
     type = "lua";
@@ -84,6 +87,9 @@ with pkgs.vimPlugins; [
     type = "lua";
     config = builtins.readFile ./tabby.lua;
   }
+
+
+  ###### THEMES ######
   {
     plugin = sonokai;
     config = "colorscheme sonokai";
