@@ -20,6 +20,11 @@ vim.g.maplocalleader = " "
 
 
 
+------ DISABLE DEFAULT KEYMAP ------
+vim.cmd('map q <Nop>')
+
+
+
 ------ NORMAL ------
 
 -- Better window navigation

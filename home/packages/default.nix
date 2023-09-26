@@ -9,6 +9,7 @@ with pkgs; [
   neofetch
 
   # cli
+  fd
   ripgrep
   tealdeer
   translate-shell
