@@ -31,6 +31,7 @@ with pkgs.vimPlugins; [
     type = "lua";
     config = builtins.readFile ./treesitter.lua;
   }
+  nvim-treesitter-refactor
 
 
   ###### LSP ######
