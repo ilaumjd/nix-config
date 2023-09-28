@@ -17,32 +17,14 @@ with pkgs.vimPlugins; [
   vim-ReplaceWithRegister
 
 
-  ###### DASHBOARD ######
-  {
-    plugin = dashboard-nvim;
-    type = "lua";
-    config = "require('dashboard').setup()";
-  }
-
-
   ###### TREESITTER ######
   {
     plugin = nvim-treesitter.withAllGrammars;
     type = "lua";
     config = builtins.readFile ./treesitter.lua;
   }
-  nvim-treesitter-context
-  nvim-treesitter-refactor
   nvim-ts-autotag
   twilight-nvim
-
-
-  ###### LSP ######
-  {
-    plugin = lazy-lsp-nvim;
-    type = "lua";
-    config = builtins.readFile ./lazy-lsp.lua;
-  }
 
 
   ###### COMPLETION ######
@@ -54,9 +36,28 @@ with pkgs.vimPlugins; [
   cmp-buffer
   cmp-path
   cmp-cmdline
+
+
+  ###### SNIPPET ######
   cmp_luasnip
-  luasnip
   friendly-snippets
+  luasnip
+
+
+  ###### LSP ######
+  {
+    plugin = lazy-lsp-nvim;
+    type = "lua";
+    config = ''
+      ${builtins.readFile ./lsp/lazy-lsp.lua}
+      ${builtins.readFile ./lsp/lspsaga.lua}
+      ${builtins.readFile ./lsp/null-ls.lua}
+    '';
+  }
+  cmp-nvim-lsp
+  null-ls-nvim 
+  lspkind-nvim
+  lspsaga-nvim
 
 
   ###### FILE EXPLORER ######
@@ -76,11 +77,19 @@ with pkgs.vimPlugins; [
   telescope-fzf-native-nvim
 
 
+  ###### DASHBOARD ######
+  {
+    plugin = dashboard-nvim;
+    type = "lua";
+    config = "require('dashboard').setup()";
+  }
+
+
   ###### LINES ######
   {
     plugin = lualine-nvim;
     type = "lua";
-    config = builtins.readFile ./theme.lua;
+    config = builtins.readFile ./lualine.lua;
   }
   {
     plugin = tabby-nvim;

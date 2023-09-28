@@ -18,4 +18,8 @@ with pkgs; [
 
   # gui
   vscodium
+  
+  # nvim
+  stylua
+  nodePackages.prettier
 ]

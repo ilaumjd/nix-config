@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -18,12 +18,8 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-
-
 ------ DISABLE DEFAULT KEYMAP ------
-vim.cmd('map q <Nop>')
-
-
+vim.cmd("map q <Nop>")
 
 ------ NORMAL ------
 
@@ -69,14 +65,10 @@ keymap("n", "<leader>tx", ":tabclose<CR>", opts)
 keymap("n", "<leader>th", ":tabp<CR>", opts)
 keymap("n", "<leader>tl", ":tabn<CR>", opts)
 
-
-
 ----- INSERT ------
 
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
-
-
 
 ----- VISUAL ------
 
@@ -89,8 +81,6 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
-
-
 ------ VISUAL BLOCK ------
 
 -- Move text up and down
@@ -98,8 +88,6 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
-
 
 ------ TERMINAL ------
 
