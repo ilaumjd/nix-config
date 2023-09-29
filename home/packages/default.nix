@@ -9,12 +9,15 @@ with pkgs; [
   neofetch
 
   # cli
+  dua
   fd
   ripgrep
   tealdeer
+  tokei
   translate-shell
   trash-cli
   wget
+  xh
 
   # gui
   vscodium
