@@ -2,11 +2,11 @@
 
 {
 
-  # DO NOT CHANGE!!!
-  system.stateVersion = 4;
-
   # Enable Nix Daemon
   services.nix-daemon.enable = true;
+
+  # State Version
+  system.stateVersion = 4;
 
   # Nix Configs
   nix = {
@@ -33,10 +33,17 @@
     config.allowUnfreePredicate = (pkgs: true);
   };
 
-  # Paths
-  users.users.${env.user}.home = "/Users/${env.user}";
-  environment.systemPath = [ "/opt/homebrew/bin" ];
-  environment.pathsToLink = [ "/Applications" ];
+  # User Configs
+  users.users.${env.user} = {
+    name = env.user;
+    home = env.home_path;
+  };
+
+  # Environment Configs
+  environment = {
+    systemPath = [ "/opt/homebrew/bin" ];
+    pathsToLink = [ "/Applications" ];
+  };
 
   imports = [
     (import ./system.nix)

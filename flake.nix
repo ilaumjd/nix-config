@@ -9,7 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager }:
+  outputs = { nix-darwin, home-manager, ... }:
     let
       env = import ./env.nix;
     in
@@ -17,7 +17,7 @@
 
       # Darwin
       darwinConfigurations = import ./darwin {
-        inherit nixpkgs env nix-darwin home-manager;
+        inherit env nix-darwin home-manager;
       };
 
     };

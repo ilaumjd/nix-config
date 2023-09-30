@@ -1,15 +1,15 @@
 { pkgs, env, ... }:
 
 {
-  # DO NOT CHANGE!!! 
+  # Enable Home Manager
+  programs.home-manager.enable = true;
+
+  # State Version
   home.stateVersion = "23.05";
 
   # Home Configs
-  home.username = "${env.user}";
-  home.homeDirectory = "/Users/${env.user}";
-
-  # Enable Home Manager
-  programs.home-manager.enable = true;
+  home.username = env.user;
+  home.homeDirectory = env.home_path;
 
   # Variables
   home.sessionVariables = {
@@ -21,7 +21,7 @@
     # common packages
     (import ./packages pkgs)
     (import ./packages/${env.os}.nix pkgs)
-    
+
     # shell
     (import ./shell/bash.nix)
     (import ./shell/direnv.nix)
@@ -47,5 +47,4 @@
 
   ];
 
-  targets.darwin.currentHostDefaults."com.apple.controlcenter".BatteryShowPercentage = true;
 }
