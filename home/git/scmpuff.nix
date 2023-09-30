@@ -1,8 +1,8 @@
 {
-  programs.wezterm = {
+  programs.scmpuff = {
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    extraConfig = builtins.readFile ./wezterm.lua;
+    enableFishIntegration = true;
   };
 }

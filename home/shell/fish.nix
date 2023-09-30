@@ -1,4 +1,6 @@
 {
-  enable = true;
-  shellAbbrs = import ./alias.nix;
+  programs.fish = {
+    enable = true;
+    shellAbbrs = import ./alias.nix;
+  };
 }

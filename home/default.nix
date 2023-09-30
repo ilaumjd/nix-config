@@ -16,42 +16,36 @@
     "DIRENV_LOG_FORMAT" = "";
   };
 
-  # Packages
-  home.packages = builtins.concatLists [
+  imports = [
+
+    # common packages
     (import ./packages pkgs)
-  ]
-  ++ (
-    if env.os == "darwin" then
-      (import ./packages/darwin.nix pkgs)
-    else
-      [ ]
-  );
-
-  # Home Manager Programs
-  programs = {
-
+    (import ./packages/${env.os}.nix pkgs)
+    
     # shell
-    bash = import ./shell/bash.nix;
-    direnv = import ./shell/direnv.nix;
-    fish = import ./shell/fish.nix;
-    starship = import ./shell/starship.nix;
-    wezterm = import ./shell/wezterm.nix;
-    zsh = import ./shell/zsh.nix pkgs;
+    (import ./shell/bash.nix)
+    (import ./shell/direnv.nix)
+    (import ./shell/fish.nix)
+    (import ./shell/starship.nix)
+    (import ./shell/wezterm.nix)
+    (import ./shell/zsh.nix pkgs)
 
     # cli
-    bat = import ./cli/bat.nix pkgs;
-    eza = import ./cli/eza.nix;
-    fzf = import ./cli/fzf.nix;
-    zoxide = import ./cli/zoxide.nix;
+    (import ./cli/bat.nix pkgs)
+    (import ./cli/eza.nix)
+    (import ./cli/fzf.nix)
+    (import ./cli/zoxide.nix)
 
     # git
-    git = import ./git/git.nix;
-    lazygit = import ./git/lazygit.nix;
-    scmpuff = import ./cli/zoxide.nix;
+    (import ./git/git.nix)
+    (import ./git/lazygit.nix)
+    (import ./git/scmpuff.nix)
 
-    neovim = import ./nvim pkgs;
-    vscode = import ./vscode.nix;
-  };
+    # text editor
+    (import ./nvim pkgs)
+    (import ./vscode.nix)
+
+  ];
 
   targets.darwin.currentHostDefaults."com.apple.controlcenter".BatteryShowPercentage = true;
 }

@@ -1,28 +1,31 @@
 pkgs:
 
-with pkgs; [
+{
+  home.packages =
+    with pkgs; [
 
-  # aw 
-  bottom
-  btop
-  htop
-  neofetch
+      # aw 
+      bottom
+      btop
+      htop
+      neofetch
 
-  # cli
-  dua
-  fd
-  ripgrep
-  tealdeer
-  tokei
-  translate-shell
-  trash-cli
-  wget
-  xh
+      # cli
+      dua
+      fd
+      ripgrep
+      tealdeer
+      tokei
+      translate-shell
+      trash-cli
+      wget
+      xh
 
-  # gui
-  vscodium
-  
-  # nvim
-  stylua
-  nodePackages.prettier
-]
+      # gui
+      vscodium
+
+      # nvim
+      stylua
+      nodePackages.prettier
+    ];
+}
