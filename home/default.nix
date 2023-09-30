@@ -16,10 +16,6 @@
     "DIRENV_LOG_FORMAT" = "";
   };
 
-  # nixpkgs Configs
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = (pkgs: true);
-
   # Packages
   home.packages = builtins.concatLists [
     (import ./packages pkgs)

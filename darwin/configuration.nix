@@ -5,6 +5,9 @@
   # DO NOT CHANGE!!!
   system.stateVersion = 4;
 
+  # Enable Nix Daemon
+  services.nix-daemon.enable = true;
+
   # Nix Configs
   nix = {
     settings = {
@@ -18,15 +21,17 @@
     };
     package = pkgs.nixVersions.unstable;
     extraOptions = ''
-      experimental-features = nix-command flakes
       keep-outputs = true
       keep-derivations = true
     '';
   };
 
-  # Darwin Configs
-  services.nix-daemon.enable = true;
-  nixpkgs.hostPlatform = env.system;
+  # Nixpkgs Configs
+  nixpkgs = {
+    hostPlatform = env.system;
+    config.allowUnfree = true;
+    config.allowUnfreePredicate = (pkgs: true);
+  };
 
   # Paths
   users.users.${env.user}.home = "/Users/${env.user}";
