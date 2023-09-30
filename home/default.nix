@@ -23,8 +23,13 @@
   # Packages
   home.packages = builtins.concatLists [
     (import ./packages pkgs)
-    (import ./packages/darwin.nix pkgs)
-  ];
+  ]
+  ++ (
+    if env.os == "darwin" then
+      (import ./packages/darwin.nix pkgs)
+    else
+      [ ]
+  );
 
   # Home Manager Programs
   programs = {
@@ -35,7 +40,7 @@
     fish = import ./shell/fish.nix;
     starship = import ./shell/starship.nix;
     wezterm = import ./shell/wezterm.nix;
-    zsh = import ./shell/zsh.nix pkgs; 
+    zsh = import ./shell/zsh.nix pkgs;
 
     # cli
     bat = import ./cli/bat.nix pkgs;
@@ -47,7 +52,7 @@
     git = import ./git/git.nix;
     lazygit = import ./git/lazygit.nix;
     scmpuff = import ./cli/zoxide.nix;
-    
+
     neovim = import ./nvim pkgs;
     vscode = import ./vscode.nix;
   };

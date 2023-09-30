@@ -3,7 +3,11 @@ env:
 {
   enable = true;
   global.brewfile = true;
-  onActivation.cleanup = "uninstall";
+  onActivation = {
+    autoUpdate = true;
+    cleanup = "uninstall";
+    upgrade = true;
+  };
   caskArgs.no_quarantine = true;
   casks = [
     "brave-browser"

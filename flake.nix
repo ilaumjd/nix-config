@@ -16,25 +16,11 @@
     {
 
       # Darwin
-      darwinConfigurations = {
-        ${env.hostname} = nix-darwin.lib.darwinSystem {
-          specialArgs = { inherit env; };
-          modules = [
-            ./darwin
-          ];
-        };
-      };
-
-      # Home Manager
-      homeConfigurations = {
-        "${env.user}@${env.hostname}" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${env.system};
-          extraSpecialArgs = { inherit env; };
-          modules = [
-            ./home
-          ];
-        };
-      };
+      darwinConfigurations = (
+        import ./darwin {
+          inherit nixpkgs env nix-darwin home-manager;
+        }
+      );
 
     };
 }
