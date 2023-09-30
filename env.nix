@@ -6,9 +6,5 @@ let
   system = "${arch}-${os}";
 in
 {
-  inherit user;
-  inherit hostname;
-  inherit arch;
-  inherit os;
-  inherit system;
+  inherit user hostname arch os system;
 }

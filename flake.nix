@@ -16,11 +16,9 @@
     {
 
       # Darwin
-      darwinConfigurations = (
-        import ./darwin {
-          inherit nixpkgs env nix-darwin home-manager;
-        }
-      );
+      darwinConfigurations = import ./darwin {
+        inherit nixpkgs env nix-darwin home-manager;
+      };
 
     };
 }
