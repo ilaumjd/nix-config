@@ -5,7 +5,10 @@ pkgs:
     enable = true;
     enableAutosuggestions = true;
     autocd = true;
-    shellAliases = import ./alias.nix;
+    zsh-abbr = {
+      enable = true;
+      abbreviations = import ./alias.nix;
+    };
     plugins = with pkgs; [
       {
         name = "zsh-autocomplete";
@@ -22,18 +25,7 @@ pkgs:
       #      src = zsh-fzf-tab;
       #      file = "share/fzf-tab/fzf-tab.plugin.zsh";
       #    }
-      #    {
-      #      name = "zsh-abbr";
-      #      src = fetchFromGitHub {
-      #        owner = "olets";
-      #        repo = "zsh-abbr";
-      #        rev = "v5.1.0";
-      #        sha256 = "iKL2vn7TmQr78y0Bn02DgNf9DS5jZyh6uK9MzYTFZaA=";
-      #      };
-      #    }
+      # {
     ];
-    #  initExtra = ''
-    #    zstyle ':fzf-tab:*' fzf-pad 4
-    #  '';
   };
 }

@@ -1,9 +1,7 @@
 {
-  programs.scmpuff = {
+  programs.thefuck = {
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    enableFishIntegration = true;
-    enableAliases = false;
   };
 }
