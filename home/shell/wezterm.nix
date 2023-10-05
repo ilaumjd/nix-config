@@ -1,7 +1,7 @@
 {
   programs.wezterm = {
     enable = true;
-    enableBashIntegration = true;
+    enableBashIntegration = false;
     enableZshIntegration = true;
     extraConfig = builtins.readFile ./wezterm.lua;
   };

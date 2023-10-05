@@ -1,7 +1,7 @@
 {
   programs.zoxide = {
     enable = true;
-    enableBashIntegration = true;
+    enableBashIntegration = false;
     enableZshIntegration = true;
     enableFishIntegration = true;
   };

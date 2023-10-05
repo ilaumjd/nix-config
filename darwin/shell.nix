@@ -2,12 +2,12 @@ pkgs:
 
 {
   programs = {
-    bash.enable = true;
+    bash.enable = false;
     zsh.enable = true;
     fish.enable = true;
   };
   environment.shells = with pkgs; [
-    bash
+    # bash
     zsh
     fish
   ];
