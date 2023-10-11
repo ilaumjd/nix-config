@@ -3,7 +3,12 @@ require("lspsaga").setup({
 	scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
 	-- use enter to open file with definition preview
 	definition = {
-		edit = "<CR>",
+		keys = {
+			edit = "oo",
+			split = "sh",
+			vsplit = "sv",
+			tabe = "tn",
+		},
 	},
 	ui = {
 		colors = {

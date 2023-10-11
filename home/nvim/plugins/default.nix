@@ -31,11 +31,15 @@ with pkgs.vimPlugins; [
   {
     plugin = nvim-cmp;
     type = "lua";
-    config = builtins.readFile ./nvim-cmp.lua;
+    config = ''
+      ${builtins.readFile ./nvim-cmp.lua}
+      ${builtins.readFile ./nvim-autopairs.lua}
+    '';
   }
   cmp-buffer
   cmp-path
   cmp-cmdline
+  nvim-autopairs
 
 
   ###### SNIPPET ######
@@ -55,7 +59,7 @@ with pkgs.vimPlugins; [
     '';
   }
   cmp-nvim-lsp
-  null-ls-nvim 
+  null-ls-nvim
   lspkind-nvim
   lspsaga-nvim
 
