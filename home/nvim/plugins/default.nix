@@ -81,6 +81,14 @@ with pkgs.vimPlugins; [
   telescope-fzf-native-nvim
 
 
+  ###### GIT ######
+  {
+    plugin = gitsigns-nvim;
+    type = "lua";
+    config = "require('gitsigns').setup()";
+  }
+
+
   ###### DASHBOARD ######
   {
     plugin = dashboard-nvim;
@@ -108,5 +116,22 @@ with pkgs.vimPlugins; [
     config = "colorscheme sonokai";
   }
   nvim-web-devicons
+
+
+  ###### OTHERS #######
+  {
+    plugin = pkgs.vimUtils.buildVimPlugin {
+      name = "nvim-lsp-file-operations";
+      src = pkgs.fetchFromGitHub {
+        owner = "antosha417";
+        repo = "nvim-lsp-file-operations";
+        rev = "master";
+        hash = "sha256-EjjHOZI9aHd8uefQXfcJGKCJMB3xy5HeTh9jFpBKOEo=";
+      };
+    };
+    type = "lua";
+    config = "require('lsp-file-operations').setup()";
+  }
+
 
 ]
