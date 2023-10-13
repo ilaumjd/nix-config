@@ -55,13 +55,23 @@ with pkgs.vimPlugins; [
     config = ''
       ${builtins.readFile ./lsp/lazy-lsp.lua}
       ${builtins.readFile ./lsp/lspsaga.lua}
-      ${builtins.readFile ./lsp/null-ls.lua}
+      ${builtins.readFile ./lsp/conform.lua}
     '';
   }
   cmp-nvim-lsp
-  null-ls-nvim
   lspkind-nvim
   lspsaga-nvim
+  {
+    plugin = pkgs.vimUtils.buildVimPlugin {
+      name = "conform-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "stevearc";
+        repo = "conform.nvim";
+        rev = "v3.10.0";
+        hash = "sha256-aMVJr4yY+4VbQ7R7u+6RB3vUJrQf5Ocrs52ILBottAg=";
+      };
+    };
+  }
 
 
   ###### FILE EXPLORER ######
