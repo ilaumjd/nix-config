@@ -1,6 +1,4 @@
-{ pkgs, env, ... }:
-
-{
+{ pkgs, env, ... }: {
   # Enable Home Manager
   programs.home-manager.enable = true;
 
@@ -12,12 +10,9 @@
   home.homeDirectory = env.home_path;
 
   # Variables
-  home.sessionVariables = {
-    "DIRENV_LOG_FORMAT" = "";
-  };
+  home.sessionVariables = { "DIRENV_LOG_FORMAT" = ""; };
 
   imports = [
-
     # common packages
     (import ./packages pkgs)
     (import ./packages/${env.os}.nix pkgs)
@@ -44,7 +39,5 @@
     # text editor
     (import ./nvim pkgs)
     (import ./vscode.nix)
-
   ];
-
 }

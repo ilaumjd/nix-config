@@ -5,7 +5,4 @@ let
   os = "darwin";
   system = "${arch}-${os}";
   home_path = "/Users/${user}";
-in
-{
-  inherit user hostname arch os system home_path;
-}
+in { inherit user hostname arch os system home_path; }

@@ -10,15 +10,10 @@
   };
 
   outputs = { nix-darwin, home-manager, ... }:
-    let
-      env = import ./env.nix;
-    in
-    {
-
+    let env = import ./env.nix;
+    in {
       # Darwin
-      darwinConfigurations = import ./darwin {
-        inherit env nix-darwin home-manager;
-      };
-
+      darwinConfigurations =
+        import ./darwin { inherit env nix-darwin home-manager; };
     };
 }

@@ -2,10 +2,7 @@
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
-    defaultOptions = [
-      "--height ~10"
-      "--border double"
-    ];
+    defaultOptions = [ "--height ~10" "--border double" ];
     colors = {
       "fg" = "#9da0a2";
       "fg+" = "#dcdfe4";

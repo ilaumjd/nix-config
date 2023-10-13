@@ -1,8 +1,5 @@
 pkgs:
-
 with pkgs.vimPlugins; [
-
-
   ###### USEFUL COMMANDS ######
   {
     plugin = comment-nvim;
@@ -16,7 +13,6 @@ with pkgs.vimPlugins; [
   }
   vim-ReplaceWithRegister
 
-
   ###### TREESITTER ######
   {
     plugin = nvim-treesitter.withAllGrammars;
@@ -25,7 +21,6 @@ with pkgs.vimPlugins; [
   }
   nvim-ts-autotag
   twilight-nvim
-
 
   ###### COMPLETION ######
   {
@@ -41,12 +36,10 @@ with pkgs.vimPlugins; [
   cmp-cmdline
   nvim-autopairs
 
-
   ###### SNIPPET ######
   cmp_luasnip
   friendly-snippets
   luasnip
-
 
   ###### LSP ######
   {
@@ -73,14 +66,12 @@ with pkgs.vimPlugins; [
     };
   }
 
-
   ###### FILE EXPLORER ######
   {
     plugin = neo-tree-nvim;
     type = "lua";
     config = builtins.readFile ./neo-tree.lua;
   }
-
 
   ###### FUZZY FINDER ######
   {
@@ -90,7 +81,6 @@ with pkgs.vimPlugins; [
   }
   telescope-fzf-native-nvim
 
-
   ###### GIT ######
   {
     plugin = gitsigns-nvim;
@@ -98,14 +88,12 @@ with pkgs.vimPlugins; [
     config = "require('gitsigns').setup()";
   }
 
-
   ###### DASHBOARD ######
   {
     plugin = dashboard-nvim;
     type = "lua";
     config = "require('dashboard').setup()";
   }
-
 
   ###### LINES ######
   {
@@ -119,14 +107,12 @@ with pkgs.vimPlugins; [
     config = builtins.readFile ./tabby.lua;
   }
 
-
   ###### THEMES ######
   {
     plugin = sonokai;
     config = "colorscheme sonokai";
   }
   nvim-web-devicons
-
 
   ###### OTHERS #######
   {
@@ -142,6 +128,4 @@ with pkgs.vimPlugins; [
     type = "lua";
     config = "require('lsp-file-operations').setup()";
   }
-
-
 ]

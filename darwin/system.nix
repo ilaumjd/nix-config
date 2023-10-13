@@ -1,8 +1,6 @@
 {
   system = {
-
     defaults = {
-
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         AppleInterfaceStyle = "Dark";
@@ -20,9 +18,7 @@
       };
 
       CustomUserPreferences = {
-        NSGlobalDomain = {
-          WebKitDeveloperExtras = true;
-        };
+        NSGlobalDomain = { WebKitDeveloperExtras = true; };
         "com.apple.desktopservices" = {
           DSDonntWriteNetworkStores = true;
           DSDonntWriteUSBStores = true;
@@ -104,13 +100,11 @@
 
       loginwindow.GuestEnabled = false;
       menuExtraClock.ShowSeconds = true;
-
     };
 
     keyboard = {
       enableKeyMapping = true;
       remapCapsLockToEscape = true;
     };
-
   };
 }

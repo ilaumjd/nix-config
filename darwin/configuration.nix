@@ -1,7 +1,4 @@
-{ pkgs, env, ... }:
-
-{
-
+{ pkgs, env, ... }: {
   # Enable Nix Daemon
   services.nix-daemon.enable = true;
 
@@ -30,7 +27,7 @@
   nixpkgs = {
     hostPlatform = env.system;
     config.allowUnfree = true;
-    config.allowUnfreePredicate = (pkgs: true);
+    config.allowUnfreePredicate = pkgs: true;
   };
 
   # User Configs

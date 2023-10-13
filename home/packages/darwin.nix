@@ -1,9 +1,1 @@
-pkgs:
-
-{
-  home.packages = with pkgs; [
-    slack
-    utm
-    zoom-us
-  ];
-}
+pkgs: { home.packages = with pkgs; [ slack utm zoom-us ]; }
