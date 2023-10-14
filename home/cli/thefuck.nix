@@ -1,7 +1,7 @@
 {
   programs.thefuck = {
     enable = true;
-    enableBashIntegration = false;
+    enableBashIntegration = true;
     enableZshIntegration = true;
   };
 }

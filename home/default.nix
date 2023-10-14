@@ -29,6 +29,7 @@
     (import ./cli/bat.nix pkgs)
     (import ./cli/eza.nix)
     (import ./cli/fzf.nix)
+    (import ./cli/thefuck.nix)
     (import ./cli/zoxide.nix)
 
     # git
@@ -40,4 +41,8 @@
     (import ./nvim pkgs)
     (import ./vscode.nix)
   ];
+  programs.alacritty = {
+    enable = true;
+    settings = import ./shell/alacritty.nix;
+  };
 }
