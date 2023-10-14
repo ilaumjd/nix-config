@@ -115,8 +115,8 @@ with pkgs.vimPlugins; [
 
   ###### THEMES ######
   {
-    plugin = sonokai;
-    config = "colorscheme sonokai";
+    plugin = vim-code-dark;
+    config = "colorscheme codedark";
   }
   nvim-web-devicons
 

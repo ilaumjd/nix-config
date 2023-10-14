@@ -22,6 +22,7 @@ pkgs: {
 
     # formatter
     nixfmt
+    shfmt
     stylua
     nodePackages.prettier
   ];

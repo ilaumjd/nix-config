@@ -1,0 +1,42 @@
+#!/bin/bash
+
+catppuccin=("catppuccin-nvim" "catppuccin-frappe" "catppuccin-frappe")
+gruvbox=("gruvbox-material" "gruvbox-material" "Gruvbox Material (Gogh)")
+gruvboxflat=("gruvbox-flat-nvim" "gruvbox-flat" "Gruvbox dark, soft (base16)")
+kanagawa=("kanagawa-nvim" "kanagawa" "kanagawabones")
+sonokai=("sonokai" "sonokai" "Sonokai (Gogh)")
+tokyonight=("tokyonight-nvim" "tokyonight-night" "tokyonight_night")
+tokyonightstorm=("tokyonight-nvim" "tokyonight-storm" "tokyonight_storm")
+vscode=("vim-code-dark" "codedark" "Vs Code Dark+ (Gogh)")
+
+apply_nvim() {
+
+	local plugin_file=$(find . -print | grep "nvim/plugins/default.nix")
+
+	local plugin_line=$(awk '/THEMES/ {getline; getline; print}' $plugin_file)
+	local plugin=$(echo "$plugin_line" | sed -n 's/.*plugin = \([^;]*\);.*/\1/p')
+	local new_plugin_line=$(echo "$plugin_line" | sed "s/$plugin/$1/")
+	sed -i '' "s/$plugin_line/$new_plugin_line/g" $plugin_file
+
+	local colorscheme_line=$(awk '/THEMES/ {getline; getline; getline; print}' $plugin_file)
+	local colorscheme=$(echo "$colorscheme_line" | sed -n 's/.*colorscheme \([^"]*\).*/\1/p')
+	local new_colorscheme_line=$(echo "$colorscheme_line" | sed "s/$colorscheme/$2/")
+	sed -i '' "s/$colorscheme_line/$new_colorscheme_line/g" $plugin_file
+}
+
+apply_wezterm() {
+	local config_file=$(find . -print | grep "wezterm.lua")
+	local colorscheme_line=$(awk '/get_builtin_color_schemes/ {print}' $config_file)
+	local colorscheme=$(echo "$colorscheme_line" | sed -n 's/.*\["\([^"]*\)"\].*/\1/p')
+	sed -i '' "s/$colorscheme/$3/g" "$config_file"
+}
+
+if [ $# -eq 1 ] && [ "${!1}" ]; then
+	theme_name="$1"
+	theme_array="${theme_name}[@]"
+	a="${!theme_array}"
+	apply_nvim "${!theme_array}"
+	apply_wezterm "${!theme_array}"
+else
+	echo "Theme not found"
+fi
