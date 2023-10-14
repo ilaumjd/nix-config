@@ -23,6 +23,7 @@
     (import ./shell/fish.nix)
     (import ./shell/starship.nix)
     (import ./shell/wezterm.nix)
+    (import ./shell/zellij.nix)
     (import ./shell/zsh.nix pkgs)
 
     # cli
