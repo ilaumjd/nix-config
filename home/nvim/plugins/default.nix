@@ -85,8 +85,14 @@ with pkgs.vimPlugins; [
   {
     plugin = gitsigns-nvim;
     type = "lua";
-    config = "require('gitsigns').setup()";
+    config = ''
+      ${builtins.readFile ./git/gitsigns.lua}
+      ${builtins.readFile ./git/git-conflict.lua}
+      ${builtins.readFile ./git/lazygit.lua}
+    '';
   }
+  git-conflict-nvim
+  lazygit-nvim
 
   ###### DASHBOARD ######
   {
