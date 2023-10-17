@@ -1,7 +1,8 @@
-{ env, nix-darwin, home-manager, }: {
+{ env, nix-darwin, home-manager, nixvim, nixneovimplugins }: {
   ${env.hostname} = nix-darwin.lib.darwinSystem {
     specialArgs = { inherit env; };
     modules = [
+
       # Darwin
       ./configuration.nix
 
@@ -14,6 +15,7 @@
           extraSpecialArgs = { inherit env; };
           users.${env.user}.imports = [
             ../home
+            nixvim.homeManagerModules.nixvim
             {
               targets.darwin.currentHostDefaults."com.apple.controlcenter".BatteryShowPercentage =
                 true;
@@ -21,6 +23,17 @@
           ];
         };
       }
+
+      # Nixpkgs Configs
+      {
+        nixpkgs = {
+          hostPlatform = env.system;
+          config.allowUnfree = true;
+          config.allowUnfreePredicate = pkgs: true;
+          overlays = [ nixneovimplugins.overlays.default ];
+        };
+      }
+
     ];
   };
 }

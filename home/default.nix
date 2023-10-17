@@ -39,7 +39,8 @@
     (import ./git/scmpuff.nix)
 
     # text editor
-    (import ./nvim pkgs)
+    # (import ./nvim pkgs)
+    (import ./nixvim pkgs)
     (import ./vscode.nix)
   ];
   programs.alacritty = {

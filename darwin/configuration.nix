@@ -23,13 +23,6 @@
     '';
   };
 
-  # Nixpkgs Configs
-  nixpkgs = {
-    hostPlatform = env.system;
-    config.allowUnfree = true;
-    config.allowUnfreePredicate = pkgs: true;
-  };
-
   # User Configs
   users.users.${env.user} = {
     name = env.user;

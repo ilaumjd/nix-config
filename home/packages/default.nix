@@ -19,11 +19,5 @@ pkgs: {
 
     # gui
     vscodium
-
-    # formatter
-    nixfmt
-    shfmt
-    stylua
-    nodePackages.prettier
   ];
 }
