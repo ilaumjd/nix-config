@@ -18,6 +18,7 @@
     (import ./packages/${env.os}.nix pkgs)
 
     # shell
+    (import ./shell/alacritty.nix)
     (import ./shell/bash.nix)
     (import ./shell/direnv.nix)
     (import ./shell/fish.nix)
@@ -43,8 +44,5 @@
     (import ./nixvim pkgs)
     (import ./vscode.nix)
   ];
-  programs.alacritty = {
-    enable = true;
-    settings = import ./shell/alacritty.nix;
-  };
+
 }
