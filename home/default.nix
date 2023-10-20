@@ -39,14 +39,8 @@
     (import ./git/scmpuff.nix)
 
     # text editor
-    # (import ./nvim pkgs)
     (import ./nixvim pkgs)
     (import ./vscode.nix)
-  ];
-
-  home.packages = with pkgs; [
-    android-tools
-    scrcpy
   ];
 
 }

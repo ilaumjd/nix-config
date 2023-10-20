@@ -13,7 +13,8 @@
       "<CR>" = "cmp.mapping.confirm({ select = false })";
     };
     mappingPresets = [ "insert" ];
-    snippet.expand.__raw = "function (args) require('luasnip').lsp_expand(args.body) end";
+    snippet.expand.__raw =
+      "function (args) require('luasnip').lsp_expand(args.body) end";
     sources = [
       { name = "nvim_lsp"; }
       { name = "luasnip"; }
@@ -35,7 +36,7 @@
   # SNIPPET
   luasnip = {
     enable = true;
-    fromVscode = [{ }];
+    fromVscode = [ { } ];
   };
 
   # LSP
@@ -70,9 +71,7 @@
       })
     '';
   };
-  lsp-format = {
-    enable = true;
-  };
+  lsp-format = { enable = true; };
   lspkind = {
     enable = true;
     cmp.enable = true;
@@ -111,9 +110,11 @@
     enableGitStatus = true;
     window = {
       mappings = {
-        "e".__raw = "function() vim.api.nvim_exec('Neotree filesystem', true) end";
+        "e".__raw =
+          "function() vim.api.nvim_exec('Neotree filesystem', true) end";
         "b".__raw = "function() vim.api.nvim_exec('Neotree buffers', true) end";
-        "g".__raw = "function() vim.api.nvim_exec('Neotree git_status', true) end";
+        "g".__raw =
+          "function() vim.api.nvim_exec('Neotree git_status', true) end";
         "h".__raw = "function() end";
       };
       width = 35;

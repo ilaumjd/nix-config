@@ -15,8 +15,7 @@
 
   outputs = { nix-darwin, home-manager, nixvim, nixneovimplugins, ... }:
     let env = import ./env.nix;
-    in
-    {
+    in {
       # Darwin
       darwinConfigurations = import ./darwin {
         inherit env nix-darwin home-manager nixvim nixneovimplugins;

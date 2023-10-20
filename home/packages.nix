@@ -22,24 +22,14 @@ let
       xh
     ];
 
-    darwin = [
-      utm
-    ];
+    darwin = [ utm ];
 
-    formatter = [
-      nixfmt
-      shfmt
-      stylua
-      nodePackages.prettier
-    ];
+    formatter = [ nixfmt shfmt stylua nodePackages.prettier ];
 
-    works = [
-      slack
-      zoom-us
-    ];
+    works = [ slack zoom-us ];
 
   };
-in
-{
-  home.packages = builtins.concatLists (builtins.map (x: groups."${x}") env.package_groups);
+in {
+  home.packages =
+    builtins.concatLists (builtins.map (x: groups."${x}") env.package_groups);
 }
