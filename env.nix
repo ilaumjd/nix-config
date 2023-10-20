@@ -5,4 +5,6 @@ let
   os = "darwin";
   system = "${arch}-${os}";
   home_path = "/Users/${user}";
-in { inherit user hostname arch os system home_path; }
+  package_groups = [ os "default" "formatter" ];
+in
+{ inherit user hostname arch os system home_path package_groups; }

@@ -14,8 +14,7 @@
 
   imports = [
     # common packages
-    (import ./packages pkgs)
-    (import ./packages/${env.os}.nix pkgs)
+    (import ./packages.nix pkgs env)
 
     # shell
     (import ./shell/alacritty.nix)
@@ -43,6 +42,11 @@
     # (import ./nvim pkgs)
     (import ./nixvim pkgs)
     (import ./vscode.nix)
+  ];
+
+  home.packages = with pkgs; [
+    android-tools
+    scrcpy
   ];
 
 }
