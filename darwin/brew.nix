@@ -12,9 +12,10 @@ env: {
       no_quarantine = true;
     };
     casks = [ "brave-browser" "firefox" "raycast" ]
-      ++ (if env.arch == "aarch64" then
-        [ "mac-mouse-fix" ]
-      else
+      ++ (if env.arch == "aarch64" then [
+        "mac-mouse-fix"
+        "vivaldi"
+      ] else
         [ "mouse-fix" ]);
   };
 }
