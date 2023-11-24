@@ -13,12 +13,31 @@
     nixneovimplugins.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nix-darwin, home-manager, nixvim, nixneovimplugins, ... }:
+  outputs = { nixpkgs, nix-darwin, home-manager, nixvim, nixneovimplugins, ... }:
     let env = import ./env.nix;
-    in {
+    in
+    {
       # Darwin
       darwinConfigurations = import ./darwin {
         inherit env nix-darwin home-manager nixvim nixneovimplugins;
+      };
+
+      # Home Manager
+      homeConfigurations."${env.user}" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."${env.system}";
+        extraSpecialArgs = { inherit env; };
+        modules = [
+          ./home
+          nixvim.homeManagerModules.nixvim
+          # Nixpkgs Configs
+          {
+            nixpkgs = {
+              config.allowUnfree = true;
+              config.allowUnfreePredicate = pkgs: true;
+              overlays = [ nixneovimplugins.overlays.default ];
+            };
+          }
+        ];
       };
     };
 }
