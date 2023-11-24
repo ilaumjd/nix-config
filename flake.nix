@@ -29,7 +29,10 @@
         modules = [
           ./home
           nixvim.homeManagerModules.nixvim
-          (import ./nixpkgs.nix env nixneovimplugins)
+          (import ./nix-settings.nix env nixneovimplugins)
+          {
+            nix.package = nixpkgs.legacyPackages."${env.system}".nixVersions.unstable;
+          }
         ];
       };
     };

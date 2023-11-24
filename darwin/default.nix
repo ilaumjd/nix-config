@@ -6,6 +6,9 @@
       # Darwin
       ./configuration.nix
 
+      # Nix Settings
+      (import ../nix-settings.nix env nixneovimplugins)
+
       # Home Manager
       home-manager.darwinModules.home-manager
       {
@@ -23,9 +26,6 @@
           ];
         };
       }
-
-      # Nixpkgs Configs
-      (import ../nixpkgs.nix env nixneovimplugins)
 
     ];
   };

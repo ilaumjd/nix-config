@@ -9,20 +9,20 @@
 
   # Nix Configs
   nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = "nix-command flakes";
-    };
+    #   settings = {
+    #     auto-optimise-store = true;
+    #     experimental-features = "nix-command flakes";
+    #   };
     gc = {
       automatic = true;
       interval.Day = 7;
       options = "--delete-older-than 7d";
     };
     package = pkgs.nixVersions.unstable;
-    extraOptions = ''
-      keep-outputs = true
-      keep-derivations = true
-    '';
+    #   extraOptions = ''
+    #     keep-outputs = true
+    #     keep-derivations = true
+    #   '';
   };
 
   # User Configs
