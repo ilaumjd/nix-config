@@ -25,14 +25,7 @@
       }
 
       # Nixpkgs Configs
-      {
-        nixpkgs = {
-          hostPlatform = env.system;
-          config.allowUnfree = true;
-          config.allowUnfreePredicate = pkgs: true;
-          overlays = [ nixneovimplugins.overlays.default ];
-        };
-      }
+      (import ../nixpkgs.nix env nixneovimplugins)
 
     ];
   };

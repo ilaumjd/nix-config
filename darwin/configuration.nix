@@ -5,6 +5,8 @@
   # State Version
   system.stateVersion = 4;
 
+  nixpkgs.hostPlatform = env.system;
+
   # Nix Configs
   nix = {
     settings = {

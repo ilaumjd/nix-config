@@ -29,14 +29,7 @@
         modules = [
           ./home
           nixvim.homeManagerModules.nixvim
-          # Nixpkgs Configs
-          {
-            nixpkgs = {
-              config.allowUnfree = true;
-              config.allowUnfreePredicate = pkgs: true;
-              overlays = [ nixneovimplugins.overlays.default ];
-            };
-          }
+          (import ./nixpkgs.nix env nixneovimplugins)
         ];
       };
     };
