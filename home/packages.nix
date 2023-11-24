@@ -26,10 +26,11 @@ let
 
     formatter = [ nixfmt shfmt stylua nodePackages.prettier ];
 
-    works = [ slack zoom-us ];
+    works = [ slack vscodium zoom-us ];
 
   };
-in {
+in
+{
   home.packages =
     builtins.concatLists (builtins.map (x: groups."${x}") env.package_groups);
 }

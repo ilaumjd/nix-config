@@ -90,7 +90,6 @@
   # TREE SITTER
   treesitter.enable = true;
   ts-autotag.enable = true;
-  ts-context-commentstring.enable = true;
   rainbow-delimiters.enable = true;
   nvim-autopairs = {
     enable = true;
@@ -205,15 +204,15 @@
   todo-comments.enable = true;
 
   # LEARNING HELPERS
-  hardtime = {
-    enable = true;
-    resettingKeys = {
-      h = [ "n" ];
-      j = [ "n" ];
-      k = [ "n" ];
-      l = [ "n" ];
-    };
-  };
+  # hardtime = {
+  #   enable = true;
+  #   resettingKeys = {
+  #     h = [ "n" ];
+  #     j = [ "n" ];
+  #     k = [ "n" ];
+  #     l = [ "n" ];
+  #   };
+  # };
 
   # NIX
   hmts.enable = true;

@@ -3,6 +3,7 @@
     enable = true;
     userName = "ilaumjd";
     userEmail = "ilaumjd@gmail.com";
+    lfs.enable = true;
     extraConfig = {
       commit.gpgsign = true;
       gpg.format = "ssh";

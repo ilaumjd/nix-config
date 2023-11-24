@@ -10,7 +10,10 @@
   home.homeDirectory = env.home_path;
 
   # Variables
-  home.sessionVariables = { "DIRENV_LOG_FORMAT" = ""; };
+  home.sessionVariables = {
+    "DIRENV_LOG_FORMAT" = "";
+    "EDITOR" = "nvim";
+  };
 
   imports = [
     # common packages
@@ -40,7 +43,6 @@
 
     # text editor
     (import ./nixvim pkgs)
-    (import ./vscode.nix)
   ];
 
 }
