@@ -23,17 +23,9 @@
       };
 
       # Home Manager
-      homeConfigurations."${env.user}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."${env.system}";
-        extraSpecialArgs = { inherit env; };
-        modules = [
-          ./home
-          nixvim.homeManagerModules.nixvim
-          (import ./nix-settings.nix env nixneovimplugins)
-          {
-            nix.package = nixpkgs.legacyPackages."${env.system}".nixVersions.unstable;
-          }
-        ];
+      homeConfigurations."${env.user}" = import ./home/standalone.nix {
+        inherit env nixpkgs home-manager nixvim nixneovimplugins;
       };
+
     };
 }
