@@ -1,18 +1,16 @@
 pkgs: env:
 let
 
+  nixGLWrap = import ./nixgl.nix pkgs;
+
   groups = with pkgs; {
 
     default = [
-      # aw
       bottom
-      btop
-      htop
-      neofetch
-
-      # cli
       dua
       fd
+      htop
+      neofetch
       ripgrep
       tealdeer
       tokei
@@ -23,6 +21,25 @@ let
     ];
 
     darwin = [ utm ];
+
+    linux = [
+      (nixGLWrap kitty)
+      lxqt.lximage-qt
+      rofi
+      pantheon.elementary-files
+      (pkgs.nerdfonts.override {
+        fonts = [
+          "CascadiaCode"
+          "FiraCode"
+          "Hack"
+          "JetBrainsMono"
+          "Meslo"
+          "Mononoki"
+          "RobotoMono"
+          "SourceCodePro"
+        ];
+      })
+    ];
 
     formatter = [ nixfmt shfmt stylua nodePackages.prettier ];
 
