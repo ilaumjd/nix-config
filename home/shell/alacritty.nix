@@ -163,7 +163,7 @@
       live_config_reload = true;
 
       shell = {
-        program = "/run/current-system/sw/bin/zsh";
+        program = "/home/iam/.nix-profile/bin/fish";
         args = [ "-l" ];
       };
 

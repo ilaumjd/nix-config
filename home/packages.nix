@@ -26,7 +26,9 @@ let
       (nixGLWrap kitty)
       lxqt.lximage-qt
       rofi
+      dmenu
       pantheon.elementary-files
+      brave
       (pkgs.nerdfonts.override {
         fonts = [
           "CascadiaCode"
@@ -39,6 +41,9 @@ let
           "SourceCodePro"
         ];
       })
+      nixgl.nixGLIntel
+      wev
+      ironbar
     ];
 
     formatter = [ nixfmt shfmt stylua nodePackages.prettier ];
