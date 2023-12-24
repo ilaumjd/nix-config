@@ -24,11 +24,11 @@ let
 
     linux = [
       (nixGLWrap kitty)
-      lxqt.lximage-qt
+      # lxqt.lximage-qt
       rofi
-      dmenu
-      pantheon.elementary-files
+      # pantheon.elementary-files
       brave
+      firefox
       (pkgs.nerdfonts.override {
         fonts = [
           "CascadiaCode"
@@ -43,7 +43,15 @@ let
       })
       nixgl.nixGLIntel
       wev
-      ironbar
+      cinnamon.nemo
+      imv
+      mate.engrampa
+      grim
+      slurp
+      wl-clipboard
+      swappy
+      wf-recorder
+      mpv
     ];
 
     formatter = [ nixfmt shfmt stylua nodePackages.prettier ];
