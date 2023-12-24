@@ -11,6 +11,7 @@ let
       fd
       htop
       neofetch
+      pfetch
       ripgrep
       tealdeer
       tokei
@@ -52,6 +53,11 @@ let
       swappy
       wf-recorder
       mpv
+      bluez
+      pamixer
+      # gtk3
+      # gtk-layer-shell
+      # waybar
     ];
 
     formatter = [ nixfmt shfmt stylua nodePackages.prettier ];

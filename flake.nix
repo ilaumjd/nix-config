@@ -13,9 +13,10 @@
     nixneovimplugins.inputs.nixpkgs.follows = "nixpkgs";
     nixgl.url = "github:nix-community/nixGL";
     nixgl.inputs.nixpkgs.follows = "nixpkgs";
+    gbar.url = "github:scorpion-26/gBar";
   };
 
-  outputs = { nixpkgs, nix-darwin, home-manager, nixvim, nixneovimplugins, nixgl, ... }:
+  outputs = { nixpkgs, nix-darwin, home-manager, nixvim, nixneovimplugins, nixgl, gbar, ... }:
     let env = import ./env.nix;
     in
     {
@@ -26,7 +27,7 @@
 
       # Home Manager
       homeConfigurations."${env.user}" = import ./home/standalone.nix {
-        inherit env nixpkgs home-manager nixvim nixneovimplugins nixgl;
+        inherit env nixpkgs home-manager nixvim nixneovimplugins nixgl gbar;
       };
 
     };
