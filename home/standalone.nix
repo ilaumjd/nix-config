@@ -39,6 +39,14 @@ home-manager.lib.homeManagerConfiguration {
       services.mako = {
         enable = true;
       };
+      programs.wpaperd = {
+        enable = true;
+        settings = {
+          default = {
+            path = "~/wallpaper";
+          };
+        };
+      };
     }
   ];
 }
