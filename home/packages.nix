@@ -58,6 +58,7 @@ let
       # gtk3
       # gtk-layer-shell
       # waybar
+      libnotify
     ];
 
     formatter = [ nixfmt shfmt stylua nodePackages.prettier ];

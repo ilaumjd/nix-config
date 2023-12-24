@@ -32,6 +32,9 @@ home-manager.lib.homeManagerConfiguration {
           DrmAmdCard: card1
         '';
       };
+      services.mako = {
+        enable = true;
+      };
     }
   ];
 }
