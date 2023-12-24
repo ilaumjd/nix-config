@@ -23,7 +23,11 @@ home-manager.lib.homeManagerConfiguration {
         enable = true;
         package = pkgs.hyprland;
         extraConfig = builtins.readFile ../hyprland.conf;
-        systemd.enable = true;
+        systemd = {
+          enable = true;
+          variables = [ "-all" ];
+        };
+        xwayland.enable = true;
       };
       programs.fuzzel.enable = true;
       programs.gBar = {

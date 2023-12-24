@@ -59,6 +59,8 @@ let
       # gtk-layer-shell
       # waybar
       libnotify
+      polkit
+      libsForQt5.polkit-kde-agent
     ];
 
     formatter = [ nixfmt shfmt stylua nodePackages.prettier ];
