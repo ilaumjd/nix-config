@@ -10,6 +10,9 @@
       ./hardware-configuration.nix
     ];
 
+  # Kernel
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_lqx;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
