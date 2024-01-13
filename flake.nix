@@ -26,28 +26,8 @@
       };
 
       # NixOS
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          system = env.system;
-          modules = [
-            ./configuration.nix
-
-            (import ./nix-settings.nix env nixneovimplugins)
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit env; };
-                users.${env.user}.imports = [
-                  ./home
-                  nixvim.homeManagerModules.nixvim
-                ];
-              };
-            }
-          ];
-        };
+      nixosConfigurations = import ./nixos {
+        inherit env nixpkgs home-manager nixvim nixneovimplugins;
       };
 
       # Home Manager
