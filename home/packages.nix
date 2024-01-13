@@ -24,8 +24,7 @@ let
     linux = [
       brave
       firefox
-      steam
-      lutris
+      mpv
       (pkgs.nerdfonts.override {
         fonts = [
           "CascadiaCode"
@@ -38,12 +37,27 @@ let
           "SourceCodePro"
         ];
       })
-      mpv
     ];
 
-    formatter = [ nixfmt shfmt stylua nodePackages.prettier ];
+    formatter = [
+      nixfmt
+      shfmt
+      stylua
+      nodePackages.prettier
+    ];
 
-    works = [ slack vscodium zoom-us ];
+    games = [
+      bottles
+      lutris
+      steam
+      wine
+    ];
+
+    works = [
+      slack
+      vscodium
+      zoom-us
+    ];
 
   };
 in
