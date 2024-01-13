@@ -1,8 +1,6 @@
 pkgs: env:
 let
 
-  nixGLWrap = import ./nixgl.nix pkgs;
-
   groups = with pkgs; {
 
     default = [
@@ -26,6 +24,8 @@ let
     linux = [
       brave
       firefox
+      steam
+      lutris
       (pkgs.nerdfonts.override {
         fonts = [
           "CascadiaCode"
