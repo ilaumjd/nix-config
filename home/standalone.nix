@@ -22,7 +22,7 @@ home-manager.lib.homeManagerConfiguration {
       wayland.windowManager.hyprland = {
         enable = true;
         package = pkgs.hyprland;
-        extraConfig = builtins.readFile ../hyprland.conf;
+        extraConfig = builtins.readFile ./hyprland.conf;
         systemd = {
           enable = true;
           variables = [ "-all" ];
@@ -47,6 +47,30 @@ home-manager.lib.homeManagerConfiguration {
           };
         };
       };
+      home.packages = with pkgs; [
+        (nixGLWrap kitty)
+        # lxqt.lximage-qt
+        rofi
+        # pantheon.elementary-files
+        nixgl.nixGLIntel
+        wev
+        cinnamon.nemo
+        imv
+        mate.engrampa
+        grim
+        slurp
+        wl-clipboard
+        swappy
+        wf-recorder
+        bluez
+        pamixer
+        # gtk3
+        # gtk-layer-shell
+        # waybar
+        libnotify
+        polkit
+        libsForQt5.polkit-kde-agent
+      ];
     }
   ];
 }

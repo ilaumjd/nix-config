@@ -24,10 +24,6 @@ let
     darwin = [ utm ];
 
     linux = [
-      (nixGLWrap kitty)
-      # lxqt.lximage-qt
-      rofi
-      # pantheon.elementary-files
       brave
       firefox
       (pkgs.nerdfonts.override {
@@ -42,25 +38,7 @@ let
           "SourceCodePro"
         ];
       })
-      nixgl.nixGLIntel
-      wev
-      cinnamon.nemo
-      imv
-      mate.engrampa
-      grim
-      slurp
-      wl-clipboard
-      swappy
-      wf-recorder
       mpv
-      bluez
-      pamixer
-      # gtk3
-      # gtk-layer-shell
-      # waybar
-      libnotify
-      polkit
-      libsForQt5.polkit-kde-agent
     ];
 
     formatter = [ nixfmt shfmt stylua nodePackages.prettier ];
