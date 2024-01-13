@@ -25,6 +25,31 @@
         inherit env nix-darwin home-manager nixvim nixneovimplugins;
       };
 
+      # NixOS
+      nixosConfigurations = {
+        nixos = nixpkgs.lib.nixosSystem {
+          system = env.system;
+          modules = [
+            ./configuration.nix
+
+            (import ./nix-settings.nix env nixneovimplugins)
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit env; };
+                users.${env.user}.imports = [
+                  ./home
+                  nixvim.homeManagerModules.nixvim
+                ];
+              };
+            }
+          ];
+        };
+      };
+
       # Home Manager
       homeConfigurations."${env.user}" = import ./home/standalone.nix {
         inherit env nixpkgs home-manager nixvim nixneovimplugins nixgl gbar;
