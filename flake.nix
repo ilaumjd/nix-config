@@ -7,32 +7,29 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    nixneovimplugins.url = "github:nixneovim/nixneovimplugins";
-    nixneovimplugins.inputs.nixpkgs.follows = "nixpkgs";
     nixgl.url = "github:nix-community/nixGL";
-    nixgl.inputs.nixpkgs.follows = "nixpkgs";
     gbar.url = "github:scorpion-26/gBar";
   };
 
-  outputs = { nixpkgs, nix-darwin, home-manager, nixvim, nixneovimplugins, nixgl, gbar, ... }:
+  outputs = { nixpkgs, nix-darwin, home-manager, nixvim, nixgl, gbar, ... }:
     let env = import ./env.nix;
     in
     {
       # Darwin
       darwinConfigurations = import ./darwin {
-        inherit env nix-darwin home-manager nixvim nixneovimplugins;
+        inherit env nix-darwin home-manager nixvim;
       };
 
       # NixOS
       nixosConfigurations = import ./nixos {
-        inherit env nixpkgs home-manager nixvim nixneovimplugins;
+        inherit env nixpkgs home-manager nixvim;
       };
 
       # Home Manager
       homeConfigurations."${env.user}" = import ./home/standalone.nix {
-        inherit env nixpkgs home-manager nixvim nixneovimplugins nixgl gbar;
+        inherit env nixpkgs home-manager nixvim nixgl gbar;
       };
 
     };

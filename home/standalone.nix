@@ -1,4 +1,4 @@
-{ env, nixpkgs, home-manager, nixvim, nixneovimplugins, nixgl, gbar }:
+{ env, nixpkgs, home-manager, nixvim, nixgl, gbar }:
 let
   pkgs = import nixpkgs {
     system = "${env.system}";
@@ -13,7 +13,7 @@ home-manager.lib.homeManagerConfiguration {
     ./.
     nixvim.homeManagerModules.nixvim
     gbar.homeManagerModules.x86_64-linux.default
-    (import ../nix-settings.nix env nixneovimplugins)
+    (import ../nix-settings.nix env)
     {
       nix.package = pkgs.nixVersions.unstable;
       fonts.fontconfig.enable = true;

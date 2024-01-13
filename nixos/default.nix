@@ -1,4 +1,4 @@
-{ env, nixpkgs, home-manager, nixvim, nixneovimplugins }: {
+{ env, nixpkgs, home-manager, nixvim }: {
   ${env.hostname} = nixpkgs.lib.nixosSystem {
     system = env.system;
     modules = [
@@ -7,7 +7,7 @@
       ./configuration.nix
 
       # Nix Settings
-      (import ../nix-settings.nix env nixneovimplugins)
+      (import ../nix-settings.nix env)
 
       # Home Manager
       home-manager.nixosModules.home-manager

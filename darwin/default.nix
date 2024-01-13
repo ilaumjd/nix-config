@@ -1,4 +1,4 @@
-{ env, nix-darwin, home-manager, nixvim, nixneovimplugins }: {
+{ env, nix-darwin, home-manager, nixvim }: {
   ${env.hostname} = nix-darwin.lib.darwinSystem {
     specialArgs = { inherit env; };
     modules = [
@@ -7,7 +7,7 @@
       ./configuration.nix
 
       # Nix Settings
-      (import ../nix-settings.nix env nixneovimplugins)
+      (import ../nix-settings.nix env)
 
       # Home Manager
       home-manager.darwinModules.home-manager
