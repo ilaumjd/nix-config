@@ -3,10 +3,11 @@ let
 
   groups = with pkgs; {
 
+    darwin = [ ];
+
     default = [
       # aw
       bottom
-      btop
       htop
       neofetch
 
@@ -20,13 +21,33 @@ let
       trash-cli
       wget
       xh
+
+      # gui
+      vscodium
     ];
 
-    darwin = [ utm ];
+    android = [
+      android-file-transfer
+      android-tools
+      scrcpy
+    ];
 
-    formatter = [ nixfmt shfmt stylua nodePackages.prettier ];
+    formatter = [
+      nixfmt
+      shfmt
+      stylua
+      nodePackages.prettier
+    ];
 
-    works = [ slack vscodium zoom-us ];
+    personal = [
+      discord
+    ];
+
+    works = [
+      slack
+      utm
+      zoom-us
+    ];
 
   };
 in
