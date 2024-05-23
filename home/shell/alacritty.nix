@@ -163,7 +163,7 @@
       live_config_reload = true;
 
       shell = {
-        program = "/home/iam/.nix-profile/bin/fish";
+        program = "/etc/profiles/per-user/nasang/bin/fish";
         args = [ "-l" ];
       };
 

@@ -12,18 +12,18 @@
       "<C-e>" = "cmp.mapping.abort()";
       "<CR>" = "cmp.mapping.confirm({ select = false })";
     };
-    mappingPresets = [ "insert" ];
-    snippet.expand.__raw =
-      "function (args) require('luasnip').lsp_expand(args.body) end";
-    sources = [
-      { name = "nvim_lsp"; }
-      { name = "luasnip"; }
-      { name = "treesitter"; }
-      { name = "path"; }
-      { name = "buffer"; }
-      { name = "rg"; }
-      { name = "calc"; }
-    ];
+    # mappingPresets = [ "insert" ];
+    # snippet.expand.__raw =
+    #   "function (args) require('luasnip').lsp_expand(args.body) end";
+    # sources = [
+    #   { name = "nvim_lsp"; }
+    #   { name = "luasnip"; }
+    #   { name = "treesitter"; }
+    #   { name = "path"; }
+    #   { name = "buffer"; }
+    #   { name = "rg"; }
+    #   { name = "calc"; }
+    # ];
   };
   cmp-buffer.enable = true;
   cmp-calc.enable = true;
@@ -36,7 +36,7 @@
   # SNIPPET
   luasnip = {
     enable = true;
-    fromVscode = [ { } ];
+    fromVscode = [{ }];
   };
 
   # LSP
@@ -161,7 +161,7 @@
   # USEFUL MOTIONS
   comment-nvim = {
     enable = true;
-    mappings.extended = true;
+    # mappings.extended = true;
   };
   surround.enable = true;
 
