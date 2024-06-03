@@ -11,11 +11,19 @@ env: {
       require_sha = false;
       no_quarantine = true;
     };
-    casks = [ "brave-browser" "firefox" "raycast" ]
-      ++ (if env.arch == "aarch64" then [
-        "mac-mouse-fix"
-        "vivaldi"
-      ] else
-        [ "mouse-fix" ]);
+    brews = [
+      "awscli"
+      "aws-sam-cli"
+    ];
+    casks = [ 
+      "brave-browser" 
+      "docker"
+      "firefox" 
+      "linearmouse"
+      "postman"
+      "raycast" 
+      "slack"
+      "zoom"
+    ];
   };
 }

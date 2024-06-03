@@ -19,7 +19,7 @@ let
       xh
     ];
 
-    darwin = [ utm ];
+    darwin = [ vscodium ];
 
     linux = [
       brave
@@ -51,12 +51,6 @@ let
       lutris
       steam
       wine
-    ];
-
-    works = [
-      slack
-      vscodium
-      zoom-us
     ];
 
   };

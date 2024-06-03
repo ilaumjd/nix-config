@@ -14,11 +14,12 @@
     #     experimental-features = "nix-command flakes";
     #   };
     gc = {
+      user = "root";
       automatic = true;
       interval.Day = 7;
       options = "--delete-older-than 7d";
     };
-    package = pkgs.nixVersions.unstable;
+    package = pkgs.nixVersions.latest;
     #   extraOptions = ''
     #     keep-outputs = true
     #     keep-derivations = true
