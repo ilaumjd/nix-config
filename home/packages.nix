@@ -25,6 +25,7 @@ let
       brave
       firefox
       mpv
+      qbittorrent
       (pkgs.nerdfonts.override {
         fonts = [
           "CascadiaCode"

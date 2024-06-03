@@ -1,9 +1,9 @@
 {
 
   # CMP
-  nvim-cmp = {
+  cmp = {
     enable = true;
-    mapping = {
+    settings.mapping = {
       "<C-k>" = "cmp.mapping.select_prev_item()";
       "<C-j>" = "cmp.mapping.select_next_item()";
       "<C-b>" = "cmp.mapping.scroll_docs(-4)";
@@ -93,10 +93,12 @@
   rainbow-delimiters.enable = true;
   nvim-autopairs = {
     enable = true;
-    checkTs = true;
-    tsConfig = {
-      lua = [ "string" "source" ];
-      javascript = [ "string" "template_string" ];
+    settings = {
+      check_ts = true;
+      ts_config = {
+        lua = [ "string" "source" ];
+        javascript = [ "string" "template_string" ];
+      };
     };
   };
 
@@ -127,7 +129,7 @@
       frecency.enable = true;
       fzf-native.enable = true;
     };
-    defaults = {
+    settings.defaults = {
       mappings.i = {
         "<C-k>".__raw = "require('telescope.actions').move_selection_previous";
         "<C-j>".__raw = "require('telescope.actions').move_selection_next";
@@ -159,7 +161,7 @@
   # };
 
   # USEFUL MOTIONS
-  comment-nvim = {
+  comment = {
     enable = true;
     # mappings.extended = true;
   };

@@ -1,7 +1,7 @@
 pkgs: {
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     autocd = true;
     zsh-abbr = {
       enable = true;
