@@ -4,6 +4,7 @@ let
   groups = with pkgs; {
 
     default = [
+      # cli
       bottom
       dua
       fd
@@ -17,15 +18,31 @@ let
       trash-cli
       wget
       xh
+
+      # gui
+      discord
+      mpv
+      vscodium
+
+      # formatter
+      nixfmt-rfc-style
+      shfmt
+      stylua
+      nodePackages.prettier
     ];
 
-    darwin = [ vscodium ];
+    darwin = [ 
+      postman
+      slack 
+      zoom-us 
+    ];
 
     linux = [
       brave
       firefox
-      mpv
       qbittorrent
+
+      # fonts
       (pkgs.nerdfonts.override {
         fonts = [
           "CascadiaCode"
@@ -38,16 +55,8 @@ let
           "SourceCodePro"
         ];
       })
-    ];
 
-    formatter = [
-      nixfmt
-      shfmt
-      stylua
-      nodePackages.prettier
-    ];
-
-    games = [
+      # games
       bottles
       lutris
       steam
@@ -57,6 +66,5 @@ let
   };
 in
 {
-  home.packages =
-    builtins.concatLists (builtins.map (x: groups."${x}") env.package_groups);
+  home.packages = groups.default ++ groups."${env.os}";
 }

@@ -20,10 +20,7 @@ env: {
       "docker"
       "firefox" 
       "linearmouse"
-      "postman"
       "raycast" 
-      "slack"
-      "zoom"
     ];
   };
 }
