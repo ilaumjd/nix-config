@@ -19,4 +19,6 @@ config.color_schemes = {
 }
 config.color_scheme = "scheme"
 
+config.enable_wayland = false
+
 return config

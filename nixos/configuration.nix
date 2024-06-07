@@ -49,7 +49,20 @@
   services.xserver.enable = true;
 
   # Enable the Desktop Environment.
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  # Exclude GNOME packages
+  environment.gnome.excludePackages = with pkgs.gnome; [
+    gnome-contacts
+    gnome-maps
+    gnome-music
+    gnome-weather
+    epiphany
+    geary
+    simple-scan
+    totem
+  ];
 
   # Bluetooth
   hardware.bluetooth.enable = true;
