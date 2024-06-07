@@ -1,16 +1,16 @@
-{ env, nix-darwin, home-manager, nixvim }: {
-  ${env.hostname} = nix-darwin.lib.darwinSystem {
-    specialArgs = { inherit env; };
+{ env, nixpkgs, home-manager, nixvim }: {
+  ${env.hostname} = nixpkgs.lib.nixosSystem {
+    system = env.system;
     modules = [
 
-      # Darwin
+      # NixOS
       ./configuration.nix
 
       # Nix Settings
       (import ../nix-settings.nix env)
 
       # Home Manager
-      home-manager.darwinModules.home-manager
+      home-manager.nixosModules.home-manager
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -19,14 +19,9 @@
           users.${env.user}.imports = [
             ../home
             nixvim.homeManagerModules.nixvim
-            {
-              targets.darwin.currentHostDefaults."com.apple.controlcenter".BatteryShowPercentage =
-                true;
-            }
           ];
         };
       }
-
     ];
   };
 }

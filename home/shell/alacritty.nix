@@ -163,7 +163,7 @@
       live_config_reload = true;
 
       shell = {
-        program = "/run/current-system/sw/bin/zsh";
+        program = "/etc/profiles/per-user/nasang/bin/fish";
         args = [ "-l" ];
       };
 

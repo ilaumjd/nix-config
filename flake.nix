@@ -7,18 +7,23 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    nixneovimplugins.url = "github:nixneovim/nixneovimplugins";
-    nixneovimplugins.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nix-darwin, home-manager, nixvim, nixneovimplugins, ... }:
+  outputs = { nixpkgs, nix-darwin, home-manager, nixvim, ... }:
     let env = import ./env.nix;
-    in {
+    in
+    {
       # Darwin
       darwinConfigurations = import ./darwin {
-        inherit env nix-darwin home-manager nixvim nixneovimplugins;
+        inherit env nix-darwin home-manager nixvim;
       };
+
+      # NixOS
+      nixosConfigurations = import ./nixos {
+        inherit env nixpkgs home-manager nixvim;
+      };
+
     };
 }

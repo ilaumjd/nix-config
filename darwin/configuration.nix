@@ -5,22 +5,25 @@
   # State Version
   system.stateVersion = 4;
 
+  nixpkgs.hostPlatform = env.system;
+
   # Nix Configs
   nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = "nix-command flakes";
-    };
+    #   settings = {
+    #     auto-optimise-store = true;
+    #     experimental-features = "nix-command flakes";
+    #   };
     gc = {
+      user = "root";
       automatic = true;
       interval.Day = 7;
       options = "--delete-older-than 7d";
     };
-    package = pkgs.nixVersions.unstable;
-    extraOptions = ''
-      keep-outputs = true
-      keep-derivations = true
-    '';
+    package = pkgs.nixVersions.latest;
+    #   extraOptions = ''
+    #     keep-outputs = true
+    #     keep-derivations = true
+    #   '';
   };
 
   # User Configs

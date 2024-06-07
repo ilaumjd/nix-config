@@ -3,17 +3,14 @@ let
 
   groups = with pkgs; {
 
-    darwin = [ ];
-
     default = [
-      # aw
-      bottom
-      htop
-      neofetch
-
       # cli
+      bottom
       dua
       fd
+      htop
+      neofetch
+      pfetch
       ripgrep
       tealdeer
       tokei
@@ -23,35 +20,51 @@ let
       xh
 
       # gui
+      discord
+      mpv
       vscodium
-    ];
 
-    android = [
-      android-file-transfer
-      android-tools
-      scrcpy
-    ];
-
-    formatter = [
-      nixfmt
+      # formatter
+      nixfmt-rfc-style
       shfmt
       stylua
       nodePackages.prettier
     ];
 
-    personal = [
-      discord
+    darwin = [ 
+      postman
+      slack 
+      zoom-us 
     ];
 
-    works = [
-      slack
-      utm
-      zoom-us
+    linux = [
+      brave
+      firefox
+      qbittorrent
+
+      # fonts
+      (pkgs.nerdfonts.override {
+        fonts = [
+          "CascadiaCode"
+          "FiraCode"
+          "Hack"
+          "JetBrainsMono"
+          "Meslo"
+          "Mononoki"
+          "RobotoMono"
+          "SourceCodePro"
+        ];
+      })
+
+      # games
+      bottles
+      lutris
+      steam
+      wine
     ];
 
   };
 in
 {
-  home.packages =
-    builtins.concatLists (builtins.map (x: groups."${x}") env.package_groups);
+  home.packages = groups.default ++ groups."${env.os}";
 }

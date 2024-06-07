@@ -7,27 +7,24 @@ env: {
       cleanup = "uninstall";
       upgrade = false;
     };
-    brews = [
-      "libyaml"
-      "rbenv"
-      "ruby-build"
-    ];
     caskArgs = {
       require_sha = false;
       no_quarantine = true;
     };
-    casks = [
-      "brave-browser"
-      "firefox"
-      "raycast"
-    ]
-    ++ (
-      if env.arch == "aarch64" then [
-        "mac-mouse-fix"
-        "vivaldi"
-      ] else [
-        "mouse-fix"
-      ]
-    );
+    brews = [
+      "awscli"
+      "aws-sam-cli"
+    ];
+    casks = [ 
+      "brave-browser" 
+      "docker"
+      "firefox" 
+      "linearmouse"
+      "localsend"
+      "raycast" 
+    ];
+    taps = [
+      "localsend/localsend"
+    ];
   };
 }

@@ -3,7 +3,7 @@
   programs.home-manager.enable = true;
 
   # State Version
-  home.stateVersion = "23.05";
+  home.stateVersion = "24.11";
 
   # Home Configs
   home.username = env.user;

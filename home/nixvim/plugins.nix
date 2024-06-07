@@ -1,9 +1,9 @@
 {
 
   # CMP
-  nvim-cmp = {
+  cmp = {
     enable = true;
-    mapping = {
+    settings.mapping = {
       "<C-k>" = "cmp.mapping.select_prev_item()";
       "<C-j>" = "cmp.mapping.select_next_item()";
       "<C-b>" = "cmp.mapping.scroll_docs(-4)";
@@ -12,18 +12,18 @@
       "<C-e>" = "cmp.mapping.abort()";
       "<CR>" = "cmp.mapping.confirm({ select = false })";
     };
-    mappingPresets = [ "insert" ];
-    snippet.expand.__raw =
-      "function (args) require('luasnip').lsp_expand(args.body) end";
-    sources = [
-      { name = "nvim_lsp"; }
-      { name = "luasnip"; }
-      { name = "treesitter"; }
-      { name = "path"; }
-      { name = "buffer"; }
-      { name = "rg"; }
-      { name = "calc"; }
-    ];
+    # mappingPresets = [ "insert" ];
+    # snippet.expand.__raw =
+    #   "function (args) require('luasnip').lsp_expand(args.body) end";
+    # sources = [
+    #   { name = "nvim_lsp"; }
+    #   { name = "luasnip"; }
+    #   { name = "treesitter"; }
+    #   { name = "path"; }
+    #   { name = "buffer"; }
+    #   { name = "rg"; }
+    #   { name = "calc"; }
+    # ];
   };
   cmp-buffer.enable = true;
   cmp-calc.enable = true;
@@ -36,7 +36,7 @@
   # SNIPPET
   luasnip = {
     enable = true;
-    fromVscode = [ { } ];
+    fromVscode = [{ }];
   };
 
   # LSP
@@ -93,10 +93,12 @@
   rainbow-delimiters.enable = true;
   nvim-autopairs = {
     enable = true;
-    checkTs = true;
-    tsConfig = {
-      lua = [ "string" "source" ];
-      javascript = [ "string" "template_string" ];
+    settings = {
+      check_ts = true;
+      ts_config = {
+        lua = [ "string" "source" ];
+        javascript = [ "string" "template_string" ];
+      };
     };
   };
 
@@ -127,7 +129,7 @@
       frecency.enable = true;
       fzf-native.enable = true;
     };
-    defaults = {
+    settings.defaults = {
       mappings.i = {
         "<C-k>".__raw = "require('telescope.actions').move_selection_previous";
         "<C-j>".__raw = "require('telescope.actions').move_selection_next";
@@ -159,9 +161,9 @@
   # };
 
   # USEFUL MOTIONS
-  comment-nvim = {
+  comment = {
     enable = true;
-    mappings.extended = true;
+    # mappings.extended = true;
   };
   surround.enable = true;
 
