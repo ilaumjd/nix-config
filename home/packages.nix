@@ -7,9 +7,9 @@ let
       # cli
       bottom
       dua
+      fastfetch
       fd
       htop
-      neofetch
       pfetch
       ripgrep
       tealdeer
