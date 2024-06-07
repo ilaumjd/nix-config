@@ -38,7 +38,6 @@ let
     ];
 
     linux = [
-      brave
       firefox
       qbittorrent
 

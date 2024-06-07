@@ -53,13 +53,19 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Exclude GNOME packages
-  environment.gnome.excludePackages = with pkgs.gnome; [
+  environment.gnome.excludePackages = with pkgs; with pkgs.gnome; [
+    gnome-connections
+    gnome-photos
+    gnome-tour
+    snapshot
+
+    epiphany
+    evince
+    geary
     gnome-contacts
     gnome-maps
     gnome-music
     gnome-weather
-    epiphany
-    geary
     simple-scan
     totem
   ];
