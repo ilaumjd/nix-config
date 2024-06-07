@@ -12,18 +12,9 @@
       "<C-e>" = "cmp.mapping.abort()";
       "<CR>" = "cmp.mapping.confirm({ select = false })";
     };
-    # mappingPresets = [ "insert" ];
-    # snippet.expand.__raw =
-    #   "function (args) require('luasnip').lsp_expand(args.body) end";
-    # sources = [
-    #   { name = "nvim_lsp"; }
-    #   { name = "luasnip"; }
-    #   { name = "treesitter"; }
-    #   { name = "path"; }
-    #   { name = "buffer"; }
-    #   { name = "rg"; }
-    #   { name = "calc"; }
-    # ];
+    cmdline.luasnip.snippet.expand =
+      "function (args) require('luasnip').lsp_expand(args.body) end";
+    autoEnableSources = true;
   };
   cmp-buffer.enable = true;
   cmp-calc.enable = true;
@@ -43,15 +34,11 @@
   lsp = {
     enable = true;
     servers = {
-      # js/ts
-      eslint.enable = true;
-      tsserver.enable = true;
-      tailwindcss.enable = true;
       # lua
       lua-ls.enable = true;
       # nix
-      nil_ls.enable = true;
-      rnix-lsp.enable = true;
+      nil-ls.enable = true;
+      nixd.enable = true;
     };
     keymaps = {
       lspBuf = {
@@ -60,16 +47,6 @@
         gt = "type_definition";
       };
     };
-    postConfig = ''
-      require("typescript").setup({
-          disable_commands = false,
-          debug = false,
-          go_to_source_definition = {
-              fallback = true,
-          },
-          server = __setup,
-      })
-    '';
   };
   lsp-format = { enable = true; };
   lspkind = {
@@ -147,24 +124,11 @@
   };
 
   # GIT
-  gitsigns.enable = true; # TODO: lazygit git conflicts
-
-  # SESSION MANAGER
-  # auto-session = {
-  #   enable = true;
-  #   autoSession = {
-  #     enabled = true;
-  #     enableLastSession = true;
-  #   };
-  #   autoSave.enabled = true;
-  #   autoRestore.enabled = true;
-  # };
+  gitsigns.enable = true;
 
   # USEFUL MOTIONS
-  comment = {
-    enable = true;
-    # mappings.extended = true;
-  };
+  
+  comment.enable = true;
   surround.enable = true;
 
   # JUMPS
@@ -200,21 +164,8 @@
   };
 
   # VISUAL HELPERS
-  notify.enable = true;
   nvim-colorizer.enable = true;
   nvim-lightbulb.enable = true;
-  todo-comments.enable = true;
-
-  # LEARNING HELPERS
-  # hardtime = {
-  #   enable = true;
-  #   resettingKeys = {
-  #     h = [ "n" ];
-  #     j = [ "n" ];
-  #     k = [ "n" ];
-  #     l = [ "n" ];
-  #   };
-  # };
 
   # NIX
   hmts.enable = true;
@@ -222,8 +173,6 @@
 
   # OTHER TOOLS
   startify.enable = true;
-  markdown-preview.enable = true;
-  trouble.enable = true;
   which-key.enable = true;
 
 }
