@@ -11,7 +11,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 1.0
 config.default_cursor_style = "BlinkingUnderline"
 
-local scheme = wezterm.get_builtin_color_schemes()["Vs Code Dark+ (Gogh)"]
+local scheme = wezterm.get_builtin_color_schemes()["Gruvbox Material (Gogh)"]
 scheme.cursor_fg = "#373837"
 scheme.cursor_bg = "#ededed"
 config.color_schemes = {

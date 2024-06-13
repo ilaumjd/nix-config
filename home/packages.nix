@@ -32,6 +32,7 @@ let
     ];
 
     darwin = [ 
+      act
       postman
       slack 
       zoom-us 
@@ -41,8 +42,14 @@ let
       firefox
       qbittorrent
 
+      # games
+      bottles
+      lutris
+      steam
+      wine
+
       # fonts
-      (pkgs.nerdfonts.override {
+      (nerdfonts.override {
         fonts = [
           "CascadiaCode"
           "FiraCode"
@@ -54,12 +61,6 @@ let
           "SourceCodePro"
         ];
       })
-
-      # games
-      bottles
-      lutris
-      steam
-      wine
     ];
 
   };

@@ -20,7 +20,7 @@ pkgs: {
       # }
     ];
     # initExtra = "zstyle ':fzf-tab:*' fzf-pad 4";
-    initExtra = ''eval "$(rbenv init - zsh)"'';
+    # initExtra = ''eval "$(rbenv init - zsh)"'';
   };
 }
 
