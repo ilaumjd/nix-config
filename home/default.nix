@@ -1,4 +1,5 @@
-{ pkgs, env, ... }: {
+{ pkgs, env, ... }:
+{
   # Enable Home Manager
   programs.home-manager.enable = true;
 
@@ -40,9 +41,5 @@
     (import ./git/git.nix)
     (import ./git/lazygit.nix)
     (import ./git/scmpuff.nix)
-
-    # text editor
-    (import ./nixvim pkgs)
   ];
-
 }

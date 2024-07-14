@@ -22,20 +22,21 @@ let
       # gui
       discord
       mpv
-      vscodium
+      # vscodium
 
-      # formatter
+      # neovim
+      neovim
       nixfmt-rfc-style
       shfmt
       stylua
       nodePackages.prettier
     ];
 
-    darwin = [ 
+    darwin = [
       act
       postman
-      slack 
-      zoom-us 
+      slack
+      zoom-us
     ];
 
     linux = [
@@ -62,7 +63,6 @@ let
         ];
       })
     ];
-
   };
 in
 {

@@ -1,4 +1,9 @@
-{ env, nixpkgs, home-manager, nixvim }: {
+{
+  env,
+  nixpkgs,
+  home-manager,
+}:
+{
   ${env.hostname} = nixpkgs.lib.nixosSystem {
     system = env.system;
     modules = [
@@ -15,11 +20,10 @@
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          extraSpecialArgs = { inherit env; };
-          users.${env.user}.imports = [
-            ../home
-            nixvim.homeManagerModules.nixvim
-          ];
+          extraSpecialArgs = {
+            inherit env;
+          };
+          users.${env.user}.imports = [ ../home ];
         };
       }
     ];
