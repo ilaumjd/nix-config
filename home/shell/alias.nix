@@ -3,8 +3,6 @@
   cd = "z";
   man = "batman";
   rm = "trash";
-  vi = "nvim";
-  vim = "nvim";
   lg = "lazygit";
   drs = "darwin-rebuild switch --flake .";
 
