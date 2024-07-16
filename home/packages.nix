@@ -27,6 +27,8 @@ let
       # neovim
       neovim
       nixfmt-rfc-style
+      nodejs_20
+      rust-analyzer
       shfmt
       stylua
       nodePackages.prettier
