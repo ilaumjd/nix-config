@@ -26,9 +26,15 @@
       keybinds = {
         unbind = "Ctrl h";
         "shared_except \"locked\"" = {
-          "bind \"Ctrl b\"" = { SwitchToMode = "move"; };
+          "bind \"Ctrl b\"" = {
+            SwitchToMode = "move";
+          };
         };
-        "move" = { "bind \"Ctrl b\"" = { SwitchToMode = "normal"; }; };
+        "move" = {
+          "bind \"Ctrl b\"" = {
+            SwitchToMode = "normal";
+          };
+        };
       };
     };
   };

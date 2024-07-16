@@ -15,16 +15,14 @@ env: {
       "awscli"
       "aws-sam-cli"
     ];
-    casks = [ 
-      "brave-browser" 
+    casks = [
+      "brave-browser"
       "docker"
-      "firefox" 
+      "firefox"
       "linearmouse"
       "localsend"
-      "raycast" 
+      "raycast"
     ];
-    taps = [
-      "localsend/localsend"
-    ];
+    taps = [ "localsend/localsend" ];
   };
 }

@@ -2,7 +2,9 @@
   programs.alacritty = {
     enable = false;
     settings = {
-      env = { TERM = "alacritty"; };
+      env = {
+        TERM = "alacritty";
+      };
 
       window = {
         dimensions = {
@@ -30,7 +32,9 @@
       };
 
       font = {
-        normal = { family = "MesloLGS Nerd Font"; };
+        normal = {
+          family = "MesloLGS Nerd Font";
+        };
         bold = {
           family = "MesloLGS Nerd Font";
           style = "Bold";
@@ -172,8 +176,12 @@
       ipc_socket = true;
 
       mouse = {
-        double_click = { threshold = 300; };
-        triple_click = { threshold = 300; };
+        double_click = {
+          threshold = 300;
+        };
+        triple_click = {
+          threshold = 300;
+        };
         hide_when_typing = false;
       };
 

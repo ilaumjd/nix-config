@@ -1,4 +1,5 @@
-{ pkgs, env, ... }: {
+{ pkgs, env, ... }:
+{
   # Enable Nix Daemon
   services.nix-daemon.enable = true;
 

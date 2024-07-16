@@ -18,7 +18,9 @@
       };
 
       CustomUserPreferences = {
-        NSGlobalDomain = { WebKitDeveloperExtras = true; };
+        NSGlobalDomain = {
+          WebKitDeveloperExtras = true;
+        };
         "com.apple.desktopservices" = {
           DSDonntWriteNetworkStores = true;
           DSDonntWriteUSBStores = true;

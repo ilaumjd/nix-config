@@ -23,4 +23,3 @@ pkgs: {
     # initExtra = ''eval "$(rbenv init - zsh)"'';
   };
 }
-

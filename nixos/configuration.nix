@@ -4,11 +4,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Kernel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_lqx;
@@ -53,22 +52,25 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Exclude GNOME packages
-  environment.gnome.excludePackages = with pkgs; with pkgs.gnome; [
-    gnome-connections
-    gnome-photos
-    gnome-tour
-    snapshot
+  environment.gnome.excludePackages =
+    with pkgs;
+    with pkgs.gnome;
+    [
+      gnome-connections
+      gnome-photos
+      gnome-tour
+      snapshot
 
-    epiphany
-    evince
-    geary
-    gnome-contacts
-    gnome-maps
-    gnome-music
-    gnome-weather
-    simple-scan
-    totem
-  ];
+      epiphany
+      evince
+      geary
+      gnome-contacts
+      gnome-maps
+      gnome-music
+      gnome-weather
+      simple-scan
+      totem
+    ];
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -106,7 +108,10 @@
   users.users.nasang = {
     isNormalUser = true;
     description = "Nasang";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [ ];
   };
 
@@ -145,5 +150,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
