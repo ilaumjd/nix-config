@@ -4,7 +4,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.default_prog = { "/etc/profiles/per-user/nasang/bin/fish", "-l" }
+config.default_prog = { "/etc/profiles/per-user/iam/bin/fish", "-l" }
 config.font = wezterm.font("MesloLGS Nerd Font")
 config.font_size = 15.0
 config.hide_tab_bar_if_only_one_tab = true
