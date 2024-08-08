@@ -22,10 +22,11 @@ let
       # gui
       discord
       mpv
-      # vscodium
+      vscode
 
       # neovim
       neovim
+      cargo
       nixfmt-rfc-style
       nodejs_20
       rust-analyzer
