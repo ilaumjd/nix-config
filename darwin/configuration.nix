@@ -10,10 +10,6 @@
 
   # Nix Configs
   nix = {
-    #   settings = {
-    #     auto-optimise-store = true;
-    #     experimental-features = "nix-command flakes";
-    #   };
     gc = {
       user = "root";
       automatic = true;
@@ -21,10 +17,6 @@
       options = "--delete-older-than 7d";
     };
     package = pkgs.nixVersions.latest;
-    #   extraOptions = ''
-    #     keep-outputs = true
-    #     keep-derivations = true
-    #   '';
   };
 
   # User Configs

@@ -108,5 +108,7 @@
       enableKeyMapping = true;
       remapCapsLockToEscape = true;
     };
+
+    startup.chime = false;
   };
 }

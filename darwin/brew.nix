@@ -29,7 +29,6 @@ env: {
       "linearmouse"
       "localsend"
       "raycast"
-      "wezterm"
     ];
     taps = [ "localsend/localsend" ];
   };
