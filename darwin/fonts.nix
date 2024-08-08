@@ -1,7 +1,6 @@
 pkgs: {
   fonts = {
-    fontDir.enable = true;
-    fonts = [
+    packages = [
       (pkgs.nerdfonts.override {
         fonts = [
           "CascadiaCode"

@@ -21,7 +21,6 @@ let
 
       # gui
       discord
-      mpv
       vscode
 
       # neovim
