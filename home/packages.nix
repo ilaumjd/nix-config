@@ -5,6 +5,7 @@ let
 
     default = [
       # cli
+      android-tools
       bottom
       dua
       fastfetch
