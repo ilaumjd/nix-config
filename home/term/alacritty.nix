@@ -1,6 +1,6 @@
-{
+env: {
   programs.alacritty = {
-    enable = false;
+    enable = true;
     settings = {
       env = {
         TERM = "alacritty";
@@ -167,7 +167,7 @@
       live_config_reload = true;
 
       shell = {
-        program = "/etc/profiles/per-user/nasang/bin/fish";
+        program = "/etc/profiles/per-user/" + env.user + "/bin/zsh";
         args = [ "-l" ];
       };
 

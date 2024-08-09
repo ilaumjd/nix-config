@@ -29,9 +29,9 @@
     (import ./shell/zsh.nix pkgs)
 
     #term
-    (import ./term/alacritty.nix)
-    (import ./term/kitty.nix)
-    (import ./term/wezterm.nix)
+    (import ./term/alacritty.nix env)
+    (import ./term/kitty.nix env)
+    (import ./term/wezterm.nix env)
 
     # cli
     (import ./cli/bat.nix pkgs)

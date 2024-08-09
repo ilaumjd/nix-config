@@ -1,4 +1,4 @@
-{
+env: {
   programs.kitty = {
     enable = true;
     theme = "Gruvbox Dark Soft";
@@ -7,7 +7,7 @@
       enableZshIntegration = true;
     };
     settings = {
-      shell = "/etc/profiles/per-user/iam/bin/zsh --login";
+      shell = "/etc/profiles/per-user/" + env.user + "/bin/zsh --login";
     };
     extraConfig = builtins.readFile ./kitty.conf;
   };
