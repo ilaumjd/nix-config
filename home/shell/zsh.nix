@@ -20,6 +20,13 @@ pkgs: {
       # }
     ];
     # initExtra = "zstyle ':fzf-tab:*' fzf-pad 4";
-    # initExtra = ''eval "$(rbenv init - zsh)"'';
+    initExtra = ''
+      # fish-like line navigation binding
+      bindkey '^[[1;9D' beginning-of-line
+      bindkey '^[[1;9C' end-of-line
+
+      # rbenv
+      eval "$(rbenv init - zsh)"
+    '';
   };
 }

@@ -21,14 +21,17 @@
     (import ./packages.nix pkgs env)
 
     # shell
-    (import ./shell/alacritty.nix)
     (import ./shell/bash.nix)
     (import ./shell/direnv.nix)
     (import ./shell/fish.nix)
     (import ./shell/starship.nix)
-    (import ./shell/wezterm.nix)
     (import ./shell/zellij.nix)
     (import ./shell/zsh.nix pkgs)
+
+    #term
+    (import ./term/alacritty.nix)
+    (import ./term/kitty.nix)
+    (import ./term/wezterm.nix)
 
     # cli
     (import ./cli/bat.nix pkgs)
