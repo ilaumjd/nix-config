@@ -7,6 +7,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    stable.url = "github:NixOS/nixpkgs/nixos-23.05-small";
   };
 
   outputs =
@@ -14,14 +15,23 @@
       nixpkgs,
       nix-darwin,
       home-manager,
+      stable,
       ...
     }:
     let
       env = import ./env.nix;
+      my-nixpkgs = import ./nixpkgs.nix nixpkgs stable env;
     in
     {
       # Darwin
-      darwinConfigurations = import ./darwin { inherit env nix-darwin home-manager; };
+      darwinConfigurations = import ./darwin {
+        inherit
+          env
+          my-nixpkgs
+          nix-darwin
+          home-manager
+          ;
+      };
 
       # NixOS
       nixosConfigurations = import ./nixos { inherit env nixpkgs home-manager; };
