@@ -1,73 +1,73 @@
-pkgs: env:
+pkgs:
 let
 
-  groups = with pkgs; {
+  default = with pkgs; [
+    # cli
+    bottom
+    dua
+    fastfetch
+    fd
+    htop
+    pfetch
+    ripgrep
+    tealdeer
+    tokei
+    translate-shell
+    trash-cli
+    wget
+    xh
 
-    default = [
-      # cli
-      android-tools
-      bottom
-      dua
-      fastfetch
-      fd
-      htop
-      pfetch
-      ripgrep
-      tealdeer
-      tokei
-      translate-shell
-      trash-cli
-      wget
-      xh
+    # gui
+    discord
+    vscode
 
-      # gui
-      discord
-      vscode
+    # android
+    android-file-transfer
+    android-tools
 
-      # neovim
-      neovim
-      cargo
-      nixfmt-rfc-style
-      nodejs_20
-      rust-analyzer
-      shfmt
-      stylua
-      nodePackages.prettier
-    ];
+    # neovim
+    neovim
+    cargo
+    nixfmt-rfc-style
+    nodejs_20
+    rust-analyzer
+    shfmt
+    stylua
+    nodePackages.prettier
+  ];
 
-    darwin = [
-      act
-      postman
-      slack
-      zoom-us
-    ];
+  darwin = with pkgs; [
+    act
+    postman
+    slack
+    zoom-us
+  ];
 
-    linux = [
-      firefox
-      qbittorrent
+  linux = with pkgs; [
+    firefox
+    qbittorrent
 
-      # games
-      bottles
-      lutris
-      steam
-      wine
+    # games
+    bottles
+    lutris
+    steam
+    wine
 
-      # fonts
-      (nerdfonts.override {
-        fonts = [
-          "CascadiaCode"
-          "FiraCode"
-          "Hack"
-          "JetBrainsMono"
-          "Meslo"
-          "Mononoki"
-          "RobotoMono"
-          "SourceCodePro"
-        ];
-      })
-    ];
-  };
+    # fonts
+    (nerdfonts.override {
+      fonts = [
+        "CascadiaCode"
+        "FiraCode"
+        "Hack"
+        "JetBrainsMono"
+        "Meslo"
+        "Mononoki"
+        "RobotoMono"
+        "SourceCodePro"
+      ];
+    })
+  ];
 in
 {
-  home.packages = groups.default ++ groups."${env.os}";
+  home.packages = default ++ (if pkgs.stdenv.isDarwin then darwin else linux);
 }

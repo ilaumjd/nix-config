@@ -18,7 +18,7 @@
 
   imports = [
     # common packages
-    (import ./packages.nix pkgs env)
+    (import ./packages.nix pkgs)
 
     # shell
     (import ./shell/bash.nix)

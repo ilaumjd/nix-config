@@ -1,6 +1,6 @@
 env: {
   programs.alacritty = {
-    enable = true;
+    enable = false;
     settings = {
       env = {
         TERM = "alacritty";
