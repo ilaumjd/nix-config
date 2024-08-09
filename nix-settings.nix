@@ -9,8 +9,4 @@ env: {
       keep-derivations = true
     '';
   };
-  nixpkgs = {
-    config.allowUnfree = true;
-    config.allowUnfreePredicate = pkgs: true;
-  };
 }
