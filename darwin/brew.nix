@@ -21,6 +21,8 @@ env: {
       # mobile
       "cocoapods"
       "fastlane"
+      # python
+      "pyenv"
     ];
     casks = [
       "brave-browser"
