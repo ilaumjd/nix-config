@@ -23,6 +23,10 @@ env: {
       "fastlane"
       # python
       "pyenv"
+      # nodejs
+      "nvm"
+      # rust
+      "rustup"
     ];
     casks = [
       "brave-browser"
