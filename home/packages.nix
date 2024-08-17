@@ -8,6 +8,7 @@ let
     fastfetch
     fd
     htop
+    jq
     pfetch
     ripgrep
     tealdeer
