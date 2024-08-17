@@ -33,9 +33,8 @@ env: {
       "docker"
       "firefox"
       "linearmouse"
-      "localsend"
       "raycast"
     ];
-    taps = [ "localsend/localsend" ];
+    taps = [ ];
   };
 }

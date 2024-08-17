@@ -19,6 +19,7 @@ let
 
     # gui
     discord
+    localsend
     vscode
 
     # android
