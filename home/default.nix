@@ -44,5 +44,8 @@
     (import ./git/git.nix)
     (import ./git/lazygit.nix)
     (import ./git/scmpuff.nix)
+
+    # vim
+    (import ./vim/vim.nix pkgs)
   ];
 }

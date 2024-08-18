@@ -28,7 +28,6 @@ let
     android-tools
 
     # neovim
-    vim
     neovim
     nixfmt-rfc-style
     shfmt
