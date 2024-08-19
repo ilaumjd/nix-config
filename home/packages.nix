@@ -43,6 +43,15 @@ let
   ];
 
   linux = with pkgs; [
+    gnomeExtensions.alphabetical-app-grid
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.pano
+    gnomeExtensions.paperwm
+    gnomeExtensions.search-light
+    gnomeExtensions.user-themes
+    gnomeExtensions.wiggle
+
+    # gui
     firefox
     qbittorrent
 
