@@ -26,7 +26,8 @@ pkgs: {
       bindkey '^[[1;9C' end-of-line
 
       # asdf
-      export PATH="$HOME/.asdf/shims:$PATH"
+      . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+      . "${pkgs.asdf-vm}/share/asdf-vm/completions/asdf.bash"
 
       # android
       export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
