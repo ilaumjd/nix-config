@@ -35,5 +35,11 @@
 
       # NixOS
       nixosConfigurations = import ./nixos { inherit env nixpkgs home-manager; };
+
+      # Home Manager
+      homeConfigurations."${env.user}" = import ./home/standalone.nix {
+        inherit env nixpkgs home-manager;
+      };
+
     };
 }
