@@ -20,7 +20,6 @@ let
 
     # gui
     discord
-    localsend
     vscode
 
     # android
@@ -37,6 +36,7 @@ let
 
   darwin = with pkgs; [
     act
+    localsend
     postman
     slack
     zoom-us

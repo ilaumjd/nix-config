@@ -3,13 +3,25 @@
   nixpkgs,
   home-manager,
 }:
+let
+  pkgs = nixpkgs.pkgs;
+  nixGLWrap = import ./nixgl.nix pkgs;
+in
 home-manager.lib.homeManagerConfiguration {
-  pkgs = nixpkgs.legacyPackages."${env.system}";
+  pkgs = pkgs;
   extraSpecialArgs = {
     inherit env;
   };
   modules = [
     ./.
-    { nix.package = nixpkgs.legacyPackages."${env.system}".nixVersions.git; }
+
+    # Nix Settings
+    (import ../nix-settings.nix env)
+
+    {
+      nix.package = pkgs.nixVersions.git;
+      programs.kitty.package = nixGLWrap pkgs.kitty;
+      programs.wezterm.package = nixGLWrap pkgs.wezterm;
+    }
   ];
 }
