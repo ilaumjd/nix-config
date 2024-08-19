@@ -1,7 +1,7 @@
 env: {
   programs.kitty = {
     enable = true;
-    theme = "Gruvbox Dark Soft";
+    theme = "Apprentice";
     shellIntegration = {
       enableFishIntegration = true;
       enableZshIntegration = true;
