@@ -11,23 +11,7 @@ env: {
       require_sha = false;
       no_quarantine = true;
     };
-    brews = [
-      # aws
-      "awscli"
-      "aws-sam-cli"
-      # ruby
-      "gmp"
-      "rbenv"
-      # mobile
-      "cocoapods"
-      "fastlane"
-      # python
-      "pyenv"
-      # nodejs
-      "nvm"
-      # rust
-      "rustup"
-    ];
+    brews = [ "fastlane" ];
     casks = [
       "brave-browser"
       "docker"

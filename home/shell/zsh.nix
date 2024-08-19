@@ -25,22 +25,8 @@ pkgs: {
       bindkey '^[[1;9D' beginning-of-line
       bindkey '^[[1;9C' end-of-line
 
-      # rbenv
-      eval "$(rbenv init - zsh)"
-
-      # pyenv
-      export PYENV_ROOT="$HOME/.pyenv"
-      export PATH="$PYENV_ROOT/bin:$PATH"
-      eval "$(pyenv init --path)"
-      eval "$(pyenv init -)"
-
-      # nvm
-      export NVM_DIR="$HOME/.nvm"
-      [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-      [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-
-      # rust
-      . "$HOME/.cargo/env"
+      # asdf
+      export PATH="$HOME/.asdf/shims:$PATH"
 
       # android
       export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
