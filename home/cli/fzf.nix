@@ -2,6 +2,7 @@
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
+    enableZshIntegration = true;
     defaultOptions = [
       "--height ~10"
       "--border double"

@@ -21,6 +21,7 @@
     (import ./packages.nix pkgs)
 
     # shell
+    (import ./shell/atuin.nix)
     (import ./shell/bash.nix)
     (import ./shell/direnv.nix)
     (import ./shell/fish.nix)
