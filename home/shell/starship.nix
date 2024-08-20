@@ -6,7 +6,7 @@
     enableFishIntegration = true;
     settings = {
       format = "$directory$character";
-      right_format = "$git_branch$git_status";
+      right_format = "$git_branch$git_status $all";
       add_newline = false;
       directory = {
         style = "bold cyan";
