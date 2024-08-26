@@ -3,7 +3,6 @@ let
 
   default = with pkgs; [
     # cli
-    asdf-vm
     bottom
     dua
     fastfetch
