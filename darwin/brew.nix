@@ -11,7 +11,10 @@ env: {
       require_sha = false;
       no_quarantine = true;
     };
-    brews = [ "fastlane" ];
+    brews = [
+      "cocoapods"
+      "fastlane"
+    ];
     casks = [
       "brave-browser"
       "docker"
