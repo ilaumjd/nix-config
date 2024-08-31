@@ -43,14 +43,6 @@ let
   ];
 
   linux = with pkgs; [
-    gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.pano
-    gnomeExtensions.paperwm
-    gnomeExtensions.search-light
-    gnomeExtensions.user-themes
-    gnomeExtensions.wiggle
-
     # gui
     firefox
     qbittorrent
@@ -60,6 +52,20 @@ let
     lutris
     steam
     wine
+
+    # tools
+    tree-sitter
+    wl-clipboard
+
+    # gnome
+    gnome-tweaks
+    gnomeExtensions.alphabetical-app-grid
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.pano
+    gnomeExtensions.paperwm
+    gnomeExtensions.search-light
+    gnomeExtensions.user-themes
+    gnomeExtensions.wiggle
 
     # fonts
     (nerdfonts.override {
