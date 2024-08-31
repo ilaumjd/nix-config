@@ -19,7 +19,9 @@ env: {
       "brave-browser"
       "docker"
       "firefox"
+      "iina"
       "linearmouse"
+      "mpv"
       "raycast"
     ];
     taps = [ ];
