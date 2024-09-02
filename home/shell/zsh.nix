@@ -16,8 +16,8 @@ pkgs: {
     ];
     initExtra = ''
       # fish-like line navigation binding
-      bindkey '^[[1;9D' beginning-of-line
-      bindkey '^[[1;9C' end-of-line
+      bindkey '^[[D' beginning-of-line
+      bindkey '^[[C' end-of-line
 
       # android
       export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
