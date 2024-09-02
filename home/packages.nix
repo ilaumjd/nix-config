@@ -25,6 +25,7 @@ let
     # android
     android-file-transfer
     android-tools
+    apktool
 
     # neovim
     neovim
