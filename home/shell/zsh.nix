@@ -30,6 +30,12 @@ pkgs: {
           export PATH=$PATH:$ANDROID_HOME/build-tools/35.0.0
         ''
       else
-        "";
+        ''
+          # fish-like line navigation binding
+          bindkey '^[[1;5D' beginning-of-line
+          bindkey '^[[1;5C' end-of-line
+          bindkey '^[[1;2D' beginning-of-line
+          bindkey '^[[1;2C' end-of-line
+        '';
   };
 }

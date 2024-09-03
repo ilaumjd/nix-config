@@ -9,11 +9,14 @@ let
 in
 home-manager.lib.homeManagerConfiguration {
   pkgs = pkgs;
-  extraSpecialArgs = {
-    inherit env;
-  };
   modules = [
     ./.
+
+    # Home Configs
+    {
+      home.username = env.user;
+      home.homeDirectory = "/home/${env.user}";
+    }
 
     # Nix Settings
     (import ../nix-settings.nix env)
