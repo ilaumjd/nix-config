@@ -27,9 +27,6 @@
           backupFileExtension = "backup";
           useGlobalPkgs = true;
           useUserPackages = true;
-          extraSpecialArgs = {
-            inherit env;
-          };
           users.${env.user}.imports = [
             ../home
             { targets.darwin.currentHostDefaults."com.apple.controlcenter".BatteryShowPercentage = true; }

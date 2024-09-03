@@ -1,4 +1,4 @@
-env: {
+config: {
   programs.alacritty = {
     enable = false;
     settings = {
@@ -167,7 +167,7 @@ env: {
       live_config_reload = true;
 
       shell = {
-        program = "/etc/profiles/per-user/" + env.user + "/bin/zsh";
+        program = "/etc/profiles/per-user/" + config.home.username + "/bin/zsh";
         args = [ "-l" ];
       };
 

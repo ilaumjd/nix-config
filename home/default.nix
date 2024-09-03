@@ -1,14 +1,10 @@
-{ pkgs, env, ... }:
+{ pkgs, config, ... }:
 {
   # Enable Home Manager
   programs.home-manager.enable = true;
 
   # State Version
   home.stateVersion = "24.11";
-
-  # Home Configs
-  home.username = env.user;
-  home.homeDirectory = env.home_path;
 
   # Variables
   home.sessionVariables = {
@@ -30,9 +26,9 @@
     (import ./shell/zsh.nix pkgs)
 
     #term
-    (import ./term/alacritty.nix env)
-    (import ./term/kitty.nix env)
-    (import ./term/wezterm.nix env)
+    (import ./term/alacritty.nix config)
+    (import ./term/kitty.nix config)
+    (import ./term/wezterm.nix config)
 
     # cli
     (import ./cli/bat.nix pkgs)

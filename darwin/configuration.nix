@@ -6,7 +6,7 @@
   # State Version
   system.stateVersion = 4;
 
-  nixpkgs.hostPlatform = env.system;
+  nixpkgs.hostPlatform = pkgs.stdenv.system;
 
   # Nix Configs
   nix = {
@@ -22,7 +22,7 @@
   # User Configs
   users.users.${env.user} = {
     name = env.user;
-    home = env.home_path;
+    home = /Users/${env.user};
   };
 
   # Environment Configs
@@ -35,6 +35,6 @@
     (import ./system.nix)
     (import ./fonts.nix pkgs)
     (import ./shell.nix pkgs)
-    (import ./brew.nix env)
+    (import ./brew.nix)
   ];
 }

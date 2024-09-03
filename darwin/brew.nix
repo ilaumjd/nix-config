@@ -1,4 +1,4 @@
-env: {
+{
   homebrew = {
     enable = true;
     global.brewfile = true;
@@ -21,7 +21,6 @@ env: {
       "firefox"
       "iina"
       "linearmouse"
-      "mpv"
       "raycast"
     ];
     taps = [ ];

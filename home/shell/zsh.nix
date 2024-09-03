@@ -14,18 +14,22 @@ pkgs: {
         file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
       }
     ];
-    initExtra = ''
-      # fish-like line navigation binding
-      bindkey '^[[D' beginning-of-line
-      bindkey '^[[C' end-of-line
+    initExtra =
+      if pkgs.stdenv.isDarwin then
+        ''
+          # fish-like line navigation binding
+          bindkey '^[[D' beginning-of-line
+          bindkey '^[[C' end-of-line
 
-      # android
-      export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
-      export PATH="$JAVA_HOME/bin:$PATH"
-      export ANDROID_HOME=$HOME/Library/Android/sdk
-      export PATH=$PATH:$ANDROID_HOME/emulator
-      export PATH=$PATH:$ANDROID_HOME/platform-tools
-      export PATH=$PATH:$ANDROID_HOME/build-tools/35.0.0
-    '';
+          # android
+          export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+          export PATH="$JAVA_HOME/bin:$PATH"
+          export ANDROID_HOME=$HOME/Library/Android/sdk
+          export PATH=$PATH:$ANDROID_HOME/emulator
+          export PATH=$PATH:$ANDROID_HOME/platform-tools
+          export PATH=$PATH:$ANDROID_HOME/build-tools/35.0.0
+        ''
+      else
+        "";
   };
 }
