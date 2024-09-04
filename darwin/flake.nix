@@ -7,7 +7,6 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    stable.url = "github:NixOS/nixpkgs/nixos-23.05-small";
   };
 
   outputs =
@@ -15,7 +14,6 @@
       nixpkgs,
       nix-darwin,
       home-manager,
-      stable,
       ...
     }:
     let
@@ -41,7 +39,6 @@
                 system = env.system;
                 config.allowUnfree = true;
                 config.allowUnfreePredicate = pkgs: true;
-                overlays = (import ./overlays.nix env.system stable);
               };
             }
 

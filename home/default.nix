@@ -28,7 +28,7 @@
     #term
     (import ./term/alacritty.nix config)
     (import ./term/kitty.nix config)
-    (import ./term/wezterm.nix config)
+    (import ./term/wezterm.nix pkgs config)
 
     # cli
     (import ./cli/bat.nix pkgs)
