@@ -23,7 +23,7 @@
     }:
     let
       env = import ./env.nix;
-      my-pkgs = import ./pkgs.nix nixpkgs stable env nixgl;
+      my-pkgs = import ./pkgs.nix env.system nixpkgs stable nixgl;
     in
     {
       # Darwin

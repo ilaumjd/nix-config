@@ -1,4 +1,4 @@
-nixpkgs: stable: env: nixgl:
+system: nixpkgs: stable: nixgl:
 let
   overlayForSystem =
     system:
@@ -12,9 +12,9 @@ let
       (final: prev: { });
 in
 import nixpkgs {
-  system = env.system;
+  system = system;
   overlays = [
-    (overlayForSystem env.system)
+    (overlayForSystem system)
     nixgl.overlay
   ];
   config.allowUnfree = true;
