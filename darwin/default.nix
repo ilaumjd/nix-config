@@ -1,6 +1,6 @@
 {
   env,
-  my-nixpkgs,
+  pkgs,
   nix-darwin,
   home-manager,
 }:
@@ -18,7 +18,7 @@
       (import ../nix-settings.nix)
 
       # Nixpkgs
-      my-nixpkgs
+      { nixpkgs.pkgs = pkgs; }
 
       # Home Manager
       home-manager.darwinModules.home-manager

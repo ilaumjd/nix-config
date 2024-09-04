@@ -23,17 +23,13 @@
     }:
     let
       env = import ./env.nix;
-      my-nixpkgs = import ./nixpkgs.nix nixpkgs stable env nixgl;
+      my-pkgs = import ./pkgs.nix nixpkgs stable env nixgl;
     in
     {
       # Darwin
       darwinConfigurations = import ./darwin {
-        inherit
-          env
-          my-nixpkgs
-          nix-darwin
-          home-manager
-          ;
+        inherit env nix-darwin home-manager;
+        pkgs = my-pkgs;
       };
 
       # NixOS
@@ -42,7 +38,7 @@
       # Home Manager
       homeConfigurations."${env.user}" = import ./home/standalone.nix {
         inherit env home-manager;
-        nixpkgs = my-nixpkgs.nixpkgs;
+        pkgs = my-pkgs;
       };
 
     };

@@ -10,18 +10,13 @@ let
       )
     else
       (final: prev: { });
-
-  pkgs = import nixpkgs {
-    system = env.system;
-    overlays = [
-      (overlayForSystem env.system)
-      nixgl.overlay
-    ];
-    config.allowUnfree = true;
-    config.allowUnfreePredicate = pkgs: true;
-  };
-
 in
-{
-  nixpkgs.pkgs = pkgs;
+import nixpkgs {
+  system = env.system;
+  overlays = [
+    (overlayForSystem env.system)
+    nixgl.overlay
+  ];
+  config.allowUnfree = true;
+  config.allowUnfreePredicate = pkgs: true;
 }

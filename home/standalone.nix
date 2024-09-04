@@ -1,10 +1,9 @@
 {
   env,
-  nixpkgs,
+  pkgs,
   home-manager,
 }:
 let
-  pkgs = nixpkgs.pkgs;
   nixGLWrap = import ./nixgl.nix pkgs;
 in
 home-manager.lib.homeManagerConfiguration {
