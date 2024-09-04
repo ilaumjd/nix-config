@@ -41,6 +41,7 @@
                 system = env.system;
                 config.allowUnfree = true;
                 config.allowUnfreePredicate = pkgs: true;
+                overlays = (import ./overlays.nix env.system stable);
               };
             }
 
