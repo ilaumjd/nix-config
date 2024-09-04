@@ -1,6 +1,6 @@
 {
   env,
-  pkgs,
+  nixpkgs,
   nix-darwin,
   home-manager,
 }:
@@ -18,7 +18,13 @@
       (import ../nix-settings.nix)
 
       # Nixpkgs
-      { nixpkgs.pkgs = pkgs; }
+      {
+        nixpkgs.pkgs = import nixpkgs {
+          system = env.system;
+          config.allowUnfree = true;
+          config.allowUnfreePredicate = pkgs: true;
+        };
+      }
 
       # Home Manager
       home-manager.darwinModules.home-manager
