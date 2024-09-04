@@ -1,4 +1,4 @@
-{
+pkgs: {
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -8,5 +8,6 @@
       keep-outputs = true
       keep-derivations = true
     '';
+    package = pkgs.nixVersions.git;
   };
 }

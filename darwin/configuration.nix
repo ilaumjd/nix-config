@@ -16,7 +16,6 @@
       interval.Day = 7;
       options = "--delete-older-than 7d";
     };
-    package = pkgs.nixVersions.latest;
   };
 
   # User Configs
