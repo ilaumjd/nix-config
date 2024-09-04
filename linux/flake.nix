@@ -17,7 +17,7 @@
       ...
     }:
     let
-      env = import ../env.nix;
+      env = import ./env.nix;
       pkgs = import nixpkgs {
         system = env.system;
         config.allowUnfree = true;
