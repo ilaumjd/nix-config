@@ -35,6 +35,6 @@
     (import ./system.nix)
     (import ./fonts.nix pkgs)
     (import ./shell.nix pkgs)
-    (import ./brew.nix)
+    (import ./brew.nix pkgs)
   ];
 }

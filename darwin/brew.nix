@@ -1,4 +1,4 @@
-{
+pkgs: {
   homebrew = {
     enable = true;
     global.brewfile = true;
@@ -22,7 +22,7 @@
       "iina"
       "linearmouse"
       "raycast"
-    ];
+    ] ++ (if pkgs.stdenv.isx86_64 then [ "wezterm" ] else [ ]);
     taps = [ ];
   };
 }
