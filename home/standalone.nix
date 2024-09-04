@@ -19,7 +19,7 @@ home-manager.lib.homeManagerConfiguration {
     }
 
     # Nix Settings
-    (import ../nix-settings.nix env)
+    (import ../nix-settings.nix)
 
     {
       nix.package = pkgs.nixVersions.git;

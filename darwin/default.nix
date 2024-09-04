@@ -15,7 +15,7 @@
       ./configuration.nix
 
       # Nix Settings
-      (import ../nix-settings.nix env)
+      (import ../nix-settings.nix)
 
       # Nixpkgs
       my-nixpkgs
