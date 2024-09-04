@@ -1,15 +1,24 @@
 {
   env,
-  pkgs,
+  nixpkgs,
   home-manager,
+  nixgl,
 }:
 let
+  pkgs = import nixpkgs {
+    system = env.system;
+    config.allowUnfree = true;
+    config.allowUnfreePredicate = pkgs: true;
+    overlays = [ nixgl.overlay ];
+  };
   nixGLWrap = import ./nixgl.nix pkgs;
 in
 home-manager.lib.homeManagerConfiguration {
   pkgs = pkgs;
   modules = [
-    ./.
+
+    # Home Manager
+    ../home
 
     # Home Configs
     {
