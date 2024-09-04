@@ -42,10 +42,9 @@
           }
 
           # Nix Settings
-          (import ../nix-settings.nix)
+          (import ../nix-settings.nix pkgs)
 
           {
-            nix.package = pkgs.nixVersions.git;
             programs.kitty.package = nixGLWrap pkgs.kitty;
             programs.wezterm.package = nixGLWrap pkgs.wezterm;
           }
