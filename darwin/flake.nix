@@ -19,7 +19,7 @@
       ...
     }:
     let
-      env = import ../env.nix;
+      env = import ./env.nix;
     in
     {
       darwinConfigurations = {
