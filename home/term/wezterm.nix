@@ -10,6 +10,5 @@ in
     enableBashIntegration = false;
     enableZshIntegration = !isx86Darwin;
     extraConfig = updatedConfig;
-    package = if isx86Darwin then pkgs.hello else pkgs.wezterm;
   };
 }

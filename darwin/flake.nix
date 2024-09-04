@@ -18,6 +18,11 @@
     }:
     let
       env = import ./env.nix;
+      pkgs = import nixpkgs {
+        system = env.system;
+        config.allowUnfree = true;
+        config.allowUnfreePredicate = pkgs: true;
+      };
     in
     {
       darwinConfigurations = {
@@ -34,13 +39,7 @@
             (import ../nix-settings.nix)
 
             # Nixpkgs
-            {
-              nixpkgs.pkgs = import nixpkgs {
-                system = env.system;
-                config.allowUnfree = true;
-                config.allowUnfreePredicate = pkgs: true;
-              };
-            }
+            { nixpkgs.pkgs = pkgs; }
 
             # Home Manager
             home-manager.darwinModules.home-manager
@@ -52,6 +51,8 @@
                 users.${env.user}.imports = [
                   ../home
                   { targets.darwin.currentHostDefaults."com.apple.controlcenter".BatteryShowPercentage = true; }
+
+                  (if pkgs.stdenv.isx86_64 then { programs.wezterm.package = pkgs.hello; } else { })
                 ];
               };
             }
