@@ -29,6 +29,7 @@ let
 
     # neovim
     neovim
+    tree-sitter
     nixfmt-rfc-style
     shfmt
     stylua
@@ -55,7 +56,6 @@ let
     wine
 
     # tools
-    tree-sitter
     wl-clipboard
 
     # gnome
