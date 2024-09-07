@@ -18,8 +18,10 @@ pkgs: {
       if pkgs.stdenv.isDarwin then
         ''
           # fish-like line navigation binding
-          bindkey '^[[D' beginning-of-line
-          bindkey '^[[C' end-of-line
+          bindkey '^[[1;9D' beginning-of-line
+          bindkey '^[[1;9C' end-of-line
+          bindkey '^[[1;2D' beginning-of-line
+          bindkey '^[[1;2C' end-of-line
 
           # android
           export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
