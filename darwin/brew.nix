@@ -22,6 +22,7 @@ pkgs: {
       "iina"
       "linearmouse"
       "raycast"
+      "zed@preview"
     ] ++ (if pkgs.stdenv.isx86_64 then [ "wezterm" ] else [ ]);
     taps = [ ];
   };
