@@ -26,6 +26,7 @@ let
     android-file-transfer
     android-tools
     apktool
+    scrcpy
 
     # neovim
     neovim
