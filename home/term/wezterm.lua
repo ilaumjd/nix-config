@@ -19,6 +19,23 @@ config.color_schemes = {
 }
 config.color_scheme = "scheme"
 
+config.use_fancy_tab_bar = false
+local inactive = {
+	bg_color = scheme.background,
+	fg_color = scheme.foreground,
+}
+config.colors = {
+	tab_bar = {
+		background = scheme.background,
+		active_tab = {
+			bg_color = scheme.foreground,
+			fg_color = scheme.background,
+		},
+		inactive_tab = inactive,
+		new_tab = inactive,
+	},
+}
+
 config.enable_wayland = false
 
 return config
