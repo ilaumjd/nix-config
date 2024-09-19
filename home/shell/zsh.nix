@@ -32,8 +32,8 @@ pkgs: {
           export PATH=$PATH:$ANDROID_HOME/build-tools/35.0.0
 
           # custom rc
-          export PATH=$PATH:$HOME/.shrc/bin
-          source $HOME/.shrc/rc.sh
+          export PATH=$PATH:$HOME/bin
+          source $HOME/.shrc
         ''
       else
         ''
