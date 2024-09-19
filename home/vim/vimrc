@@ -3,53 +3,26 @@ colorscheme nord
 
 " Basic settings
 set background=dark
-set nobackup
-set clipboard=unnamedplus
-set cmdheight=1
-set completeopt=menuone,noselect
-set conceallevel=0
-set encoding=utf-8
-set fileencoding=utf-8
-set hlsearch
-set ignorecase
+set clipboard=unnamed,unnamedplus
+set completeopt=menu,menuone,noselect
+set expandtab
 set mouse=a
-set pumheight=10
-set noshowmode
-set showtabline=2
+set number
+set relativenumber
+set shiftwidth=2
+set ignorecase
 set smartcase
 set smartindent
 set splitbelow
 set splitright
-set noswapfile
-set termguicolors
-set timeoutlen=1000
-set noundofile
-set updatetime=300
-set nowb
-set expandtab
-set shiftwidth=2
 set tabstop=2
+set termguicolors
+set timeoutlen=300
+set undofile
 set cursorline
-set number
-set relativenumber
-set numberwidth=4
-set signcolumn=yes
-set nowrap
 set linebreak
 set scrolloff=5
 set sidescrolloff=8
-
-" Shortmess options
-set shortmess+=c
-
-" Whichwrap settings
-set whichwrap+=<,>,[,],h,l
-
-" Iskeyword settings
-set iskeyword+=-
-
-" Format options
-set formatoptions-=cro
 
 " Additional settings that might be useful
 set incsearch
@@ -68,35 +41,22 @@ let maplocalleader = " "
 " Disable default keymap
 nnoremap q <Nop>
 
+" Prevent copy on press x
+nnoremap x "_x
+
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Resize with arrows
-nnoremap <C-Up> :resize -2<CR>
-nnoremap <C-Down> :resize +2<CR>
-nnoremap <C-Left> :vertical resize -2<CR>
-nnoremap <C-Right> :vertical resize +2<CR>
-
-" Navigate buffers
-nnoremap <S-l> :bnext<CR>
-nnoremap <S-h> :bprevious<CR>
-
-" Move text up and down
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-
-" Prevent copy on press x
-nnoremap x "_x
-
-" Increase & decrease number
-nnoremap + <C-a>
-nnoremap _ <C-x>
+" Manipulating tabs and buffer
+nnoremap <S-h> :tabp<CR>
+nnoremap <S-l> :tabn<CR>
+nnoremap <leader>bd :bdelete<CR>
 
 " Disable highlight
-nnoremap <leader>nh :nohl<CR>
+nnoremap <leader>ch :nohl<CR>
 
 " Manipulating splits
 nnoremap <leader>sv <C-w>v
@@ -104,32 +64,11 @@ nnoremap <leader>sh <C-w>s
 nnoremap <leader>se <C-w>=
 nnoremap <leader>sx :close<CR>
 
-" Manipulating tabs
-nnoremap <leader>tn :tabnew<CR>
-nnoremap <leader>tx :tabclose<CR>
-nnoremap <leader>th :tabp<CR>
-nnoremap <leader>tl :tabn<CR>
-
 " Press jk fast to enter normal mode
 inoremap jk <ESC>
 
-" Stay in indent mode
-vnoremap < <gv
-vnoremap > >gv
-
-" Move text up and down in visual mode
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-vnoremap p "_dP
-
-" Move text up and down in visual block mode
+" Move text in visual block mode
+xnoremap H <gv
 xnoremap J :move '>+1<CR>gv=gv
 xnoremap K :move '<-2<CR>gv=gv
-xnoremap <A-j> :move '>+1<CR>gv=gv
-xnoremap <A-k> :move '<-2<CR>gv=gv
-
-" Better terminal navigation
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
+xnoremap L >gv
