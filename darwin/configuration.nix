@@ -4,7 +4,7 @@
   services.nix-daemon.enable = true;
 
   # State Version
-  system.stateVersion = 4;
+  system.stateVersion = 5;
 
   nixpkgs.hostPlatform = pkgs.stdenv.system;
 
