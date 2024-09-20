@@ -2,7 +2,7 @@ pkgs: config:
 let
   fileConfig = builtins.readFile ./wezterm.lua;
   updatedConfig = builtins.replaceStrings [ "USER" ] [ config.home.username ] fileConfig;
-  isx86Darwin = pkgs.stdenv.isx86_64 && pkgs.stdenv.isDarwin;
+  isx86Darwin = pkgs.stdenv.isDarwin;
 in
 {
   programs.wezterm = {

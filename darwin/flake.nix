@@ -53,7 +53,7 @@
 
                   { targets.darwin.currentHostDefaults."com.apple.controlcenter".BatteryShowPercentage = true; }
 
-                  (if pkgs.stdenv.isx86_64 then { programs.wezterm.package = pkgs.hello; } else { })
+                  (if pkgs.stdenv.isDarwin then { programs.wezterm.package = pkgs.hello; } else { })
                 ];
               };
             }

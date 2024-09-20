@@ -24,7 +24,7 @@ pkgs: {
       "raycast"
       "zed@preview"
       "zen-browser"
-    ] ++ (if pkgs.stdenv.isx86_64 then [ "wezterm" ] else [ ]);
+    ] ++ (if pkgs.stdenv.isDarwin then [ "wezterm" ] else [ ]);
     taps = [ ];
   };
 }
