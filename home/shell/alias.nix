@@ -4,7 +4,8 @@
   man = "batman";
   rm = "trash";
   lg = "lazygit";
-  drs = "darwin-rebuild switch --flake .";
+  drs = "darwin-rebuild switch --flake ./darwin";
+  hms = "home-manager switch --flake ./linux";
 
   # git
   ga = "git add";
