@@ -1,7 +1,7 @@
 let
-  user = "ilham";
-  hostname = "colearn";
-  arch = "x86_64";
+  user = "iam";
+  hostname = "macos";
+  arch = "aarch64";
 in
 {
   inherit user hostname;
