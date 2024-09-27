@@ -36,6 +36,7 @@ config.colors = {
 	},
 }
 
+config.front_end = "WebGpu"
 config.enable_wayland = false
 
 return config
