@@ -3,7 +3,7 @@
     enable = true;
     enableBashIntegration = false;
     enableZshIntegration = true;
-    enableFishIntegration = true;
+    enableFishIntegration = false;
     settings = builtins.fromJSON (builtins.readFile ./oh-my-posh.json);
   };
 }

@@ -22,6 +22,7 @@
     (import ./shell/direnv.nix)
     (import ./shell/fish.nix)
     (import ./shell/oh-my-posh.nix)
+    (import ./shell/starship.nix)
     (import ./shell/zellij.nix)
     (import ./shell/zsh.nix pkgs)
 
