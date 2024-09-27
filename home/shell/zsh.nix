@@ -25,7 +25,7 @@ pkgs: {
 
           # android
           export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
-          export PATH="$JAVA_HOME/bin:$PATH"
+          export PATH=$PATH:$JAVA_HOME/bin
           export ANDROID_HOME=$HOME/Library/Android/sdk
           export PATH=$PATH:$ANDROID_HOME/emulator
           export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -42,6 +42,8 @@ pkgs: {
           bindkey '^[[1;5C' end-of-line
           bindkey '^[[1;2D' beginning-of-line
           bindkey '^[[1;2C' end-of-line
+
+          export PATH=$PATH:$HOME/swift/usr/bin
         '';
   };
 }
