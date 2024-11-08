@@ -60,16 +60,6 @@ let
     # tools
     wl-clipboard
 
-    # gnome
-    gnome-tweaks
-    gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.pano
-    gnomeExtensions.paperwm
-    gnomeExtensions.search-light
-    gnomeExtensions.user-themes
-    gnomeExtensions.wiggle
-
     # fonts
     (nerdfonts.override {
       fonts = [
