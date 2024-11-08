@@ -48,6 +48,7 @@ let
   linux = with pkgs; [
     # gui
     firefox
+    mpv
     qbittorrent
 
     # games
