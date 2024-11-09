@@ -1,1 +1,1 @@
-nix run home-manager/master -- switch --flake . --impure
+nix run home-manager/master -- switch --flake ./linux --impure
