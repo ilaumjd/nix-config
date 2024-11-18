@@ -1,6 +1,6 @@
 config: {
   programs.alacritty = {
-    enable = false;
+    enable = true;
     settings = {
       env = {
         TERM = "alacritty";
@@ -21,8 +21,8 @@ config: {
         startup_mode = "Maximized";
         title = "Terminal";
         dynamic_title = true;
-        decorations_theme_varian = "Dark";
-        resize_increment = false;
+        # decorations_theme_varian = "Dark";
+        # resize_increment = false;
         option_as_alt = "Both";
       };
 
@@ -136,6 +136,7 @@ config: {
         };
         indexed_colors = [ ];
         transparent_background_colors = false;
+        draw_bold_text_with_bright_colors = true;
       };
 
       bell = {
@@ -176,17 +177,16 @@ config: {
       ipc_socket = true;
 
       mouse = {
-        double_click = {
-          threshold = 300;
-        };
-        triple_click = {
-          threshold = 300;
-        };
+        # double_click = {
+        #   threshold = 300;
+        # };
+        # triple_click = {
+        #   threshold = 300;
+        # };
         hide_when_typing = false;
       };
 
-      tabspaces = 4;
-      draw_bold_text_with_bright_colors = true;
+      # tabspaces = 4;
 
       debug = {
         render_timer = false;
@@ -204,71 +204,73 @@ config: {
       #   action = "PasteSelection";
       # }];
 
-      key_bindings = [
-        {
-          key = "N";
-          mods = "Command";
-          action = "SpawnNewInstance";
-        }
-        {
-          key = "V";
-          mods = "Command";
-          action = "Paste";
-        }
-        {
-          key = "C";
-          mods = "Command";
-          action = "Copy";
-        }
-        {
-          key = "V";
-          mods = "Control|Shift";
-          action = "Paste";
-        }
-        {
-          key = "C";
-          mods = "Control|Shift";
-          action = "Copy";
-        }
-        {
-          key = "Paste";
-          action = "Paste";
-        }
-        {
-          key = "Copy";
-          action = "Copy";
-        }
-        {
-          key = "H";
-          mods = "Command";
-          action = "Hide";
-        }
-        {
-          key = "Q";
-          mods = "Command";
-          action = "Quit";
-        }
-        {
-          key = "W";
-          mods = "Command";
-          action = "Quit";
-        }
-        {
-          key = "Key0";
-          mods = "Command";
-          action = "ResetFontSize";
-        }
-        {
-          key = "Equals";
-          mods = "Command";
-          action = "IncreaseFontSize";
-        }
-        {
-          key = "Minus";
-          mods = "Command";
-          action = "DecreaseFontSize";
-        }
-      ];
+      keyboard = {
+        bindings = [
+          # {
+          #   key = "N";
+          #   mods = "Command";
+          #   action = "SpawnNewInstance";
+          # }
+          {
+            key = "V";
+            mods = "Command";
+            action = "Paste";
+          }
+          {
+            key = "C";
+            mods = "Command";
+            action = "Copy";
+          }
+          {
+            key = "V";
+            mods = "Control|Shift";
+            action = "Paste";
+          }
+          {
+            key = "C";
+            mods = "Control|Shift";
+            action = "Copy";
+          }
+          {
+            key = "Paste";
+            action = "Paste";
+          }
+          {
+            key = "Copy";
+            action = "Copy";
+          }
+          {
+            key = "H";
+            mods = "Command";
+            action = "Hide";
+          }
+          {
+            key = "Q";
+            mods = "Command";
+            action = "Quit";
+          }
+          # {
+          #   key = "W";
+          #   mods = "Command";
+          #   action = "Quit";
+          # }
+          {
+            key = "Key0";
+            mods = "Command";
+            action = "ResetFontSize";
+          }
+          {
+            key = "Equals";
+            mods = "Command";
+            action = "IncreaseFontSize";
+          }
+          {
+            key = "Minus";
+            mods = "Command";
+            action = "DecreaseFontSize";
+          }
+        ];
+      };
     };
   };
 }
