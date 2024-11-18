@@ -31,6 +31,9 @@ pkgs: {
             export PATH=$PATH:$ANDROID_HOME/emulator
             export PATH=$PATH:$ANDROID_HOME/platform-tools
             export PATH=$PATH:$ANDROID_HOME/build-tools/35.0.0
+
+            # brew
+            export PATH=$PATH:/opt/homebrew/opt/postgresql@15/bin
           ''
         else
           ''

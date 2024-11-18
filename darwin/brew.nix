@@ -14,6 +14,7 @@ pkgs: {
     brews = [
       "cocoapods"
       "fastlane"
+      "postgresql@15"
     ];
     casks = [
       "brave-browser"
