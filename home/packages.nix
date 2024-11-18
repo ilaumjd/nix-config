@@ -32,9 +32,6 @@ let
     neovim
     tree-sitter
     nixfmt-rfc-style
-    shfmt
-    stylua
-    nodePackages.prettier
   ];
 
   darwin = with pkgs; [
