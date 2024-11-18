@@ -11,6 +11,7 @@
   ga = "git add";
   gco = "git checkout";
   gcm = "git commit -m";
-  glo = "git log --oneliner";
+  gd = "git diff";
+  glo = "git log --oneline --graph";
   gs = "scmpuff status";
 }
