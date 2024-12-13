@@ -15,11 +15,11 @@ pkgs: {
       "cocoapods"
       "fastlane"
       "postgresql@15"
+      "watchman"
     ];
     casks = [
       "brave-browser"
       "docker"
-      "firefox"
       "iina"
       "linearmouse"
       "raycast"

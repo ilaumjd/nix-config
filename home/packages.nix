@@ -20,6 +20,7 @@ let
 
     # gui
     discord
+    qbittorrent
     vscode
 
     # android
@@ -46,7 +47,6 @@ let
     # gui
     firefox
     mpv
-    qbittorrent
 
     # games
     bottles
