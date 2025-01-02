@@ -23,9 +23,12 @@ pkgs: {
       "iina"
       "linearmouse"
       "raycast"
+      "stolendata-mpv"
       "zed@preview"
       "zen-browser"
     ] ++ (if pkgs.stdenv.isx86_64 then [ "wezterm" ] else [ ]);
-    taps = [ ];
+    taps = [
+      "homebrew/services"
+    ];
   };
 }

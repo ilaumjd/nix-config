@@ -34,6 +34,7 @@ pkgs: {
 
             # brew
             export PATH=$PATH:/opt/homebrew/opt/postgresql@15/bin
+            export PATH=$PATH:$HOME/.cargo/bin
           ''
         else
           ''
