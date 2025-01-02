@@ -1,16 +1,11 @@
 pkgs: {
   fonts = {
     packages = [
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "CascadiaCode"
-          "FiraCode"
-          "Hack"
-          "Meslo"
-          "Mononoki"
-          "SourceCodePro"
-        ];
-      })
+      pkgs.nerd-fonts.fira-code
+      pkgs.nerd-fonts.hack
+      pkgs.nerd-fonts.meslo-lg
+      pkgs.nerd-fonts.mononoki
+      pkgs.nerd-fonts.sauce-code-pro
     ];
   };
 }
