@@ -1,6 +1,6 @@
 config: {
   programs.kitty = {
-    enable = true;
+    enable = false;
     theme = "Apprentice";
     shellIntegration = {
       enableFishIntegration = true;
