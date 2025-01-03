@@ -1,6 +1,6 @@
 pkgs: {
   nix = {
-    optimise.automatic = true;
+    # optimise.automatic = true;
     settings = {
       experimental-features = "nix-command flakes";
       substituters = [
@@ -13,6 +13,6 @@ pkgs: {
       keep-outputs = true
       keep-derivations = true
     '';
-    package = pkgs.nixVersions.git;
+    package = pkgs.nixVersions.latest;
   };
 }

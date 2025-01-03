@@ -58,18 +58,11 @@ let
     wl-clipboard
 
     # fonts
-    (nerdfonts.override {
-      fonts = [
-        "CascadiaCode"
-        "FiraCode"
-        "Hack"
-        "JetBrainsMono"
-        "Meslo"
-        "Mononoki"
-        "RobotoMono"
-        "SourceCodePro"
-      ];
-    })
+    nerd-fonts.fira-code
+    nerd-fonts.hack
+    nerd-fonts.meslo-lg
+    nerd-fonts.mononoki
+    nerd-fonts.sauce-code-pro
   ];
 in
 {
