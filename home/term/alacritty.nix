@@ -1,6 +1,6 @@
 config: {
   programs.alacritty = {
-    enable = true;
+    enable = false;
     settings = {
       env = {
         TERM = "alacritty";
