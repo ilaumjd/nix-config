@@ -45,6 +45,7 @@
           (import ../nix-settings.nix pkgs)
 
           {
+            programs.ghostty.package = nixGLWrap pkgs.ghostty;
             programs.kitty.package = nixGLWrap pkgs.kitty;
             programs.wezterm.package = nixGLWrap pkgs.wezterm;
           }

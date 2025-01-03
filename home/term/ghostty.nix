@@ -1,12 +1,13 @@
-{
+config: {
   programs.ghostty = {
     enable = true;
     enableBashIntegration = false;
     enableZshIntegration = true;
     enableFishIntegration = true;
     installBatSyntax = false;
-    installVimSyntax = true;
+    # installVimSyntax = true;
     settings = {
+      command = "/etc/profiles/per-user/" + config.home.username + "/bin/zsh --login";
       theme = "nord";
       # font-family = "SauceCodePro Nerd Font Mono";
       font-size = 14;
