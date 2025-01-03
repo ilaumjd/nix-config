@@ -38,7 +38,7 @@
           "properties": {
             "style": "folder"
           },
-          "template": "<b>{{ .Path }}</b> <p:light-sky-blue>\u26a1</>"
+          "template": "<b>{{ .Path }}</b> "
         },
         {
           "type": "git",
