@@ -9,6 +9,7 @@ let
     fd
     htop
     jq
+    ngrok
     pfetch
     ripgrep
     tealdeer
