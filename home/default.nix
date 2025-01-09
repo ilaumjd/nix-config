@@ -23,6 +23,7 @@
     (import ./shell/fish.nix)
     (import ./shell/oh-my-posh.nix)
     (import ./shell/starship.nix)
+    (import ./shell/tmux.nix pkgs)
     (import ./shell/zellij.nix)
     (import ./shell/zsh.nix pkgs)
 
