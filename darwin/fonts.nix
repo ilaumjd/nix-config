@@ -6,6 +6,7 @@ pkgs: {
       pkgs.nerd-fonts.meslo-lg
       pkgs.nerd-fonts.mononoki
       pkgs.nerd-fonts.sauce-code-pro
+      pkgs.nerd-fonts.zed-mono
     ];
   };
 }
