@@ -15,33 +15,33 @@ pkgs: {
       {
         plugin = tmux-nova;
         extraConfig = ''
-          set -g @nova-nerdfonts true
-          # set -g @nova-nerdfonts-left 
-          # set -g @nova-nerdfonts-right 
+          set -g @nova-nerdfonts false
 
-          set -g @nova-pane-active-border-style "#44475a"
-          set -g @nova-pane-border-style "#282a36"
-          set -g @nova-status-style-bg "#4c566a"
-          set -g @nova-status-style-fg "#d8dee9"
-          set -g @nova-status-style-active-bg "#89c0d0"
-          set -g @nova-status-style-active-fg "#2e3540"
-          set -g @nova-status-style-double-bg "#2d3540"
+          set -g @nova-pane-active-border-style "#9ccfd8"
+          set -g @nova-pane-border-style "#6e6a86"
+          set -g @nova-status-style-bg "#191724"
+          set -g @nova-status-style-fg "#ebbcba"
+          set -g @nova-status-style-active-bg "#ebbcba"
+          set -g @nova-status-style-active-fg "#191724"
 
-          set -g @nova-pane "#I#{?pane_in_mode,  #{pane_mode},}  #W"
+          set -g @nova-pane "#I#{?pane_in_mode,  #{pane_mode},}  #W"
 
           set -g @nova-segment-mode "#{?client_prefix,󰀨,}"
-          set -g @nova-segment-mode-colors "#78a2c1 #2e3440"
+          set -g @nova-segment-mode-colors "#191724 #ebbcba "
 
-          set -g @nova-segment-whoami "#(whoami)@#h"
-          set -g @nova-segment-whoami-colors "#78a2c1 #2e3440"
+          # set -g @nova-segment-whoami "#(whoami)@#h"
+          # set -g @nova-segment-whoami-colors "#ebbcba #191724"
 
           set -g @nova-rows 0
           set -g @nova-segments-0-left "mode"
-          set -g @nova-segments-0-right "whoami"
+          # set -g @nova-segments-0-right "whoami"
         '';
       }
     ];
     extraConfig = ''
+      # STATUS BAR
+      set -g status-position top
+
       # AUTO RENAME
       set-option -g status-interval 1
       set-option -g automatic-rename on
@@ -58,10 +58,11 @@ pkgs: {
       # PANES
       bind w confirm-before -p "kill-pane #P?" kill-pane
       bind \\ split-window -h -c "#{pane_current_path}"
-      bind - split-window -v -c "#{pane_current_path}
+      bind - split-window -v -c "#{pane_current_path}"
 
       # CLEAR 
-      bind C-l send-keys 'C-l'
+      bind -n M-l send-keys C-l
+      bind -n M-k send-keys C-l \; send-keys -R \; clear-history
     '';
   };
 }
