@@ -24,8 +24,9 @@ config: {
       mouse-scroll-multiplier = 2;
       auto-update = "off";
       copy-on-select = "clipboard";
+      macos-option-as-alt = true;
       macos-titlebar-style = "tabs";
-      macos-window-shadow = false;
+      macos-window-shadow = true;
       keybind = [
         "cmd+s>r=reload_config"
         "cmd+s>w=close_surface"
