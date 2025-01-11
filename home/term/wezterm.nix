@@ -1,7 +1,7 @@
-pkgs: config:
+pkgs:
 let
   fileConfig = builtins.readFile ./wezterm.lua;
-  updatedConfig = builtins.replaceStrings [ "USER" ] [ config.home.username ] fileConfig;
+  updatedConfig = builtins.replaceStrings [ "SHELL_PATH" ] [ "${pkgs.zsh}/bin/zsh" ] fileConfig;
   isx86Darwin = pkgs.stdenv.isDarwin;
 in
 {

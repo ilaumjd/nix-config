@@ -1,4 +1,4 @@
-config: {
+pkgs: {
   programs.ghostty = {
     enable = true;
     enableBashIntegration = false;
@@ -7,7 +7,7 @@ config: {
     installBatSyntax = false;
     # installVimSyntax = true;
     settings = {
-      command = "/etc/profiles/per-user/" + config.home.username + "/bin/zsh --login";
+      command = "${pkgs.zsh}/bin/zsh --login";
       theme = "rose-pine";
       font-family = "Zed Nerd Font Mono";
       font-size = 14;
