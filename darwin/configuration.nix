@@ -30,10 +30,14 @@
     pathsToLink = [ "/Applications" ];
   };
 
+  fonts = {
+    packages = import ../fonts.nix pkgs;
+  };
+
   imports = [
     (import ./system.nix)
-    (import ./fonts.nix pkgs)
     (import ./shell.nix pkgs)
     (import ./brew.nix)
   ];
+
 }
