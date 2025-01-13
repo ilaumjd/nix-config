@@ -54,6 +54,7 @@ pkgs: {
       # WINDOWS
       bind t new-window -c "#{pane_current_path}"
       bind x confirm-before -p "kill-window #W?" kill-window
+      bind s choose-tree -Zw
 
       # PANES
       bind w confirm-before -p "kill-pane #P?" kill-pane
@@ -61,8 +62,10 @@ pkgs: {
       bind - split-window -v -c "#{pane_current_path}"
 
       # CLEAR 
+      bind l send-keys C-l
+      bind k clear-history
       bind -n M-l send-keys C-l
-      bind -n M-k send-keys C-l \; send-keys -R \; clear-history
+      bind -n M-k clear-history
     '';
   };
 }
