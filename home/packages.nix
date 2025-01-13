@@ -55,15 +55,22 @@ let
     steam
     wine
 
-    # tools
-    wl-clipboard
-
     # fonts
     nerd-fonts.fira-code
     nerd-fonts.hack
     nerd-fonts.meslo-lg
     nerd-fonts.mononoki
     nerd-fonts.sauce-code-pro
+
+    # x11
+    eww
+    picom
+    rofi
+    xsel
+
+    # wayland
+    # wl-clipboard
+
   ];
 in
 {
