@@ -27,7 +27,7 @@
     (import ./shell/zellij.nix)
     (import ./shell/zsh.nix pkgs)
 
-    #term
+    # term
     # (import ./term/alacritty.nix config)
     (import ./term/ghostty.nix pkgs)
     # (import ./term/kitty.nix config)
