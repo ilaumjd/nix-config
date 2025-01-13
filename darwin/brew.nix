@@ -20,6 +20,7 @@
     casks = [
       "brave-browser"
       "docker"
+      "ghostty"
       "iina"
       "linearmouse"
       "raycast"
