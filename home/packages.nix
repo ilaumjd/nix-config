@@ -55,13 +55,6 @@ let
     steam
     wine
 
-    # fonts
-    nerd-fonts.fira-code
-    nerd-fonts.hack
-    nerd-fonts.meslo-lg
-    nerd-fonts.mononoki
-    nerd-fonts.sauce-code-pro
-
     # x11
     eww
     picom
@@ -72,7 +65,9 @@ let
     # wl-clipboard
 
   ];
+
+  fonts = import ../fonts.nix pkgs;
 in
 {
-  home.packages = default ++ (if pkgs.stdenv.isDarwin then darwin else linux);
+  home.packages = default ++ (if pkgs.stdenv.isDarwin then darwin else linux ++ fonts);
 }
