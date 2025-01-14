@@ -42,6 +42,9 @@ pkgs: {
       # STATUS BAR
       set -g status-position top
 
+      # ESCAPE TIME
+      set -s escape-time 0
+
       # AUTO RENAME
       set-option -g status-interval 1
       set-option -g automatic-rename on
