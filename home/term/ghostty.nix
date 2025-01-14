@@ -1,4 +1,8 @@
-pkgs: {
+pkgs:
+let
+  mod = if pkgs.stdenv.isDarwin then "cmd" else "alt";
+in
+{
   programs.ghostty = {
     enable = true;
     enableBashIntegration = false;
@@ -15,8 +19,6 @@ pkgs: {
       shell-integration-features = "no-cursor,sudo,no-title";
       cursor-style = "block";
       cursor-style-blink = false;
-      # window-padding-x = 4;
-      # window-padding-balance = true;
       window-colorspace = "display-p3";
       window-save-state = "always";
       focus-follows-mouse = true;
@@ -27,33 +29,34 @@ pkgs: {
       macos-option-as-alt = true;
       macos-titlebar-style = "tabs";
       macos-window-shadow = true;
+      gtk-titlebar = false;
       keybind = [
-        "cmd+s>r=reload_config"
-        "cmd+s>w=close_surface"
-        "cmd+s>n=new_window"
-        "cmd+s>t=new_tab"
-        "cmd+s>shift+l=next_tab"
-        "cmd+s>shift+h=previous_tab"
-        "cmd+s>comma=move_tab:-1"
-        "cmd+s>period=move_tab:1"
-        "cmd+s>1=goto_tab:1"
-        "cmd+s>2=goto_tab:2"
-        "cmd+s>3=goto_tab:3"
-        "cmd+s>4=goto_tab:4"
-        "cmd+s>5=goto_tab:5"
-        "cmd+s>6=goto_tab:6"
-        "cmd+s>7=goto_tab:7"
-        "cmd+s>8=goto_tab:8"
-        "cmd+s>9=goto_tab:9"
-        "cmd+s>0=goto_tab:10"
-        "cmd+s>\\=new_split:right"
-        "cmd+s>-=new_split:down"
-        "cmd+s>j=goto_split:bottom"
-        "cmd+s>k=goto_split:top"
-        "cmd+s>h=goto_split:left"
-        "cmd+s>l=goto_split:right"
-        "cmd+s>z=toggle_split_zoom"
-        "cmd+s>e=equalize_splits"
+        "${mod}+s>r=reload_config"
+        "${mod}+s>w=close_surface"
+        "${mod}+s>n=new_window"
+        "${mod}+s>t=new_tab"
+        "${mod}+s>shift+l=next_tab"
+        "${mod}+s>shift+h=previous_tab"
+        "${mod}+s>comma=move_tab:-1"
+        "${mod}+s>period=move_tab:1"
+        "${mod}+s>1=goto_tab:1"
+        "${mod}+s>2=goto_tab:2"
+        "${mod}+s>3=goto_tab:3"
+        "${mod}+s>4=goto_tab:4"
+        "${mod}+s>5=goto_tab:5"
+        "${mod}+s>6=goto_tab:6"
+        "${mod}+s>7=goto_tab:7"
+        "${mod}+s>8=goto_tab:8"
+        "${mod}+s>9=goto_tab:9"
+        "${mod}+s>0=goto_tab:10"
+        "${mod}+s>\\=new_split:right"
+        "${mod}+s>-=new_split:down"
+        "${mod}+s>j=goto_split:bottom"
+        "${mod}+s>k=goto_split:top"
+        "${mod}+s>h=goto_split:left"
+        "${mod}+s>l=goto_split:right"
+        "${mod}+s>z=toggle_split_zoom"
+        "${mod}+s>e=equalize_splits"
       ];
     };
   };
