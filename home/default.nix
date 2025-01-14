@@ -10,6 +10,7 @@
   home.sessionVariables = {
     "DIRENV_LOG_FORMAT" = "";
     "EDITOR" = "nvim";
+    "SHELL" = "${pkgs.zsh}/bin/zsh";
   };
 
   imports = [
