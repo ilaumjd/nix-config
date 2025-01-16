@@ -11,24 +11,29 @@ in
     installBatSyntax = false;
     # installVimSyntax = true;
     settings = {
+      auto-update = "off";
       command = "${pkgs.zsh}/bin/zsh --login";
+      copy-on-select = "clipboard";
+      # ui
       theme = "rose-pine";
       font-family = "Zed Nerd Font Mono";
       font-size = 14;
       adjust-cell-height = "20%";
-      shell-integration-features = "no-cursor,sudo,no-title";
       cursor-style = "block";
       cursor-style-blink = false;
+      shell-integration-features = "no-cursor,sudo,no-title";
       window-colorspace = "display-p3";
+      window-decoration = true;
       window-save-state = "always";
+      # mouse
       focus-follows-mouse = true;
       mouse-hide-while-typing = true;
       mouse-scroll-multiplier = 2;
-      auto-update = "off";
-      copy-on-select = "clipboard";
+      # macos
       macos-option-as-alt = true;
       macos-titlebar-style = "tabs";
       macos-window-shadow = true;
+      # gtk
       gtk-titlebar = false;
       keybind = [
         "${mod}+s>r=reload_config"
