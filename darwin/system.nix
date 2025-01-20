@@ -70,6 +70,16 @@
         };
       };
 
+      controlcenter = {
+        AirDrop = false;
+        BatteryShowPercentage = true;
+        Bluetooth = true;
+        Display = false;
+        FocusModes = false;
+        NowPlaying = false;
+        Sound = true;
+      };
+
       dock = {
         autohide = true;
         autohide-delay = 0.0;

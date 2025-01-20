@@ -52,10 +52,6 @@
                   ../home
 
                   {
-                    targets.darwin.currentHostDefaults."com.apple.controlcenter".BatteryShowPercentage = true;
-                  }
-
-                  {
                     programs.ghostty.package = pkgs.hello;
                   }
                 ];
