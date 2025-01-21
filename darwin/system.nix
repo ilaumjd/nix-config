@@ -99,9 +99,12 @@
         AppleShowAllExtensions = true;
         FXEnableExtensionChangeWarning = false;
         FXPreferredViewStyle = "Nlsv";
+        NewWindowTarget = "Home";
         QuitMenuItem = true;
         ShowPathbar = true;
         _FXShowPosixPathInTitle = true;
+        _FXSortFoldersFirst = true;
+        _FXSortFoldersFirstOnDesktop = true;
       };
 
       trackpad = {
