@@ -13,5 +13,6 @@
   gcm = "git commit -m";
   gd = "git diff";
   glo = "git log --oneline --graph";
+  gp = "git pull";
   gs = "scmpuff status";
 }
