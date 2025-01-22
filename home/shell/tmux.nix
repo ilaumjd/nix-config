@@ -29,12 +29,12 @@ pkgs: {
           set -g @nova-segment-mode "#{?client_prefix,󰀨,}"
           set -g @nova-segment-mode-colors "#191724 #ebbcba "
 
-          # set -g @nova-segment-whoami "#(whoami)@#h"
-          # set -g @nova-segment-whoami-colors "#ebbcba #191724"
+          set -g @nova-segment-custom "#S"
+          set -g @nova-segment-custom-colors "#ebbcba #191724"
 
           set -g @nova-rows 0
           set -g @nova-segments-0-left "mode"
-          # set -g @nova-segments-0-right "whoami"
+          set -g @nova-segments-0-right "custom"
         '';
       }
     ];
