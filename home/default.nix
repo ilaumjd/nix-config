@@ -40,6 +40,7 @@
     (import ./cli/fzf.nix)
     (import ./cli/mise.nix)
     (import ./cli/thefuck.nix)
+    (import ./cli/yazi.nix)
     (import ./cli/zoxide.nix)
 
     # git
