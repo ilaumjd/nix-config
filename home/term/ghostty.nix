@@ -19,6 +19,7 @@ in
       font-family = "Zed Nerd Font Mono";
       font-size = 14;
       adjust-cell-height = "20%";
+      background-opacity = if pkgs.stdenv.isDarwin then 1.0 else 0.8;
       cursor-style = "block";
       cursor-style-blink = false;
       shell-integration-features = "no-cursor,sudo,no-title";
