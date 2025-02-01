@@ -49,20 +49,28 @@ let
     firefox
     mpv
 
-    # games
-    bottles
-    lutris
-    steam
-    wine
+    # wm
+    eww
+    imv
+    inter
+    nautilus
+    # rofi
+    # rofimoji
+    rofi-power-menu
 
     # x11
-    eww
-    picom
-    rofi
-    xsel
+    # picom
+    # scrot
+    # simplescreenrecorder
+    # xidlehook
+    # xsel
 
     # wayland
-    # wl-clipboard
+    hypridle
+    swww
+    wev
+    wf-recorder
+    wl-clipboard
 
   ];
 
