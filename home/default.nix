@@ -13,6 +13,9 @@
     "SHELL" = "${pkgs.zsh}/bin/zsh";
   };
 
+  # Fonts
+  fonts.fontconfig.enable = true;
+
   imports = [
     # common packages
     (import ./packages.nix pkgs)
