@@ -4,12 +4,20 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.default_cursor_style = "BlinkingUnderline"
 config.default_prog = { "SHELL_PATH", "-l" }
-config.font = wezterm.font("Hack Nerd Font")
+config.font = wezterm.font("IntoneMono Nerd Font")
 config.font_size = 15.0
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 1.0
-config.default_cursor_style = "BlinkingUnderline"
+config.line_height = 1.2
+config.window_background_opacity = 0.8
+
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
 
 local scheme = wezterm.get_builtin_color_schemes()["Rosé Pine (base16)"]
 scheme.cursor_fg = "#373837"

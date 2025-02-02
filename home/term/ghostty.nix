@@ -16,7 +16,7 @@ in
       copy-on-select = "clipboard";
       # ui
       theme = "rose-pine";
-      font-family = "Zed Nerd Font Mono";
+      font-family = "IntoneMono Nerd Font";
       font-size = 14;
       adjust-cell-height = "20%";
       background-opacity = if pkgs.stdenv.isDarwin then 1.0 else 0.8;
