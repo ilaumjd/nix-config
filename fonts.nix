@@ -1,8 +1,9 @@
 pkgs: with pkgs.nerd-fonts; [
   fira-code
   hack
+  intone-mono
+  jetbrains-mono
   meslo-lg
-  mononoki
-  sauce-code-pro
+  recursive-mono
   zed-mono
 ]
