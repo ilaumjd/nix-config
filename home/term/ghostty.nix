@@ -13,7 +13,7 @@ in
     settings = {
       auto-update = "off";
       command = "${pkgs.zsh}/bin/zsh --login";
-      copy-on-select = "clipboard";
+      copy-on-select = false;
       # ui
       theme = "rose-pine";
       font-family = "IntoneMono Nerd Font";
