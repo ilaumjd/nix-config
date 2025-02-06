@@ -33,6 +33,7 @@ let
     # neovim
     neovim
     tree-sitter
+    kdlfmt
     nixfmt-rfc-style
   ];
 
@@ -46,17 +47,18 @@ let
 
   linux = with pkgs; [
     # gui
-    firefox
     mpv
 
     # wm
+    blueberry
+    dunst
     eww
-    imv
+    ffmpeg
     inter
-    nautilus
-    # rofi
+    eog
     # rofimoji
     rofi-power-menu
+    sass
 
     # x11
     # picom
@@ -71,7 +73,7 @@ let
     wev
     wf-recorder
     wl-clipboard
-
+    xwayland-satellite
   ];
 
   fonts = import ../fonts.nix pkgs;
