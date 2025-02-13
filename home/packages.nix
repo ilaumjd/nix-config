@@ -9,26 +9,28 @@ let
     fd
     htop
     jq
-    ngrok
-    pfetch
     ripgrep
     tealdeer
-    tokei
-    translate-shell
     trash-cli
     wget
-    xh
 
-    # gui
-    discord
-    qbittorrent
-    vscode
-
-    # android
-    android-file-transfer
-    android-tools
-    apktool
-    scrcpy
+    # # optional
+    # ngrok
+    # pfetch
+    # tokei
+    # translate-shell
+    # xh
+    #
+    # # gui
+    # discord
+    # qbittorrent
+    # vscode
+    #
+    # # android
+    # android-file-transfer
+    # android-tools
+    # apktool
+    # scrcpy
 
     # neovim
     neovim
@@ -58,7 +60,7 @@ let
     eog
     # rofimoji
     rofi-power-menu
-    sass
+    # sass
 
     # x11
     # picom
@@ -69,6 +71,7 @@ let
 
     # wayland
     hypridle
+    rofi-wayland
     swww
     wev
     wf-recorder
