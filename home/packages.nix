@@ -51,16 +51,26 @@ let
     # gui
     mpv
 
+    # fonts
+    inter
+
     # wm
     blueberry
     dunst
     eww
     ffmpeg
-    inter
     eog
     # rofimoji
     rofi-power-menu
     # sass
+
+    # wayland
+    hypridle
+    rofi-wayland
+    wev
+    wf-recorder
+    wl-clipboard
+    xwayland-satellite
 
     # x11
     # picom
@@ -69,14 +79,6 @@ let
     # xidlehook
     # xsel
 
-    # wayland
-    hypridle
-    rofi-wayland
-    swww
-    wev
-    wf-recorder
-    wl-clipboard
-    xwayland-satellite
   ];
 
   fonts = import ../fonts.nix pkgs;
