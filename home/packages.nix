@@ -4,7 +4,6 @@ let
   default = with pkgs; [
     # cli
     bottom
-    dua
     fastfetch
     fd
     htop
@@ -15,6 +14,7 @@ let
     wget
 
     # # optional
+    # dua
     # ngrok
     # pfetch
     # tokei
@@ -40,9 +40,9 @@ let
   ];
 
   darwin = with pkgs; [
-    act
+    # act
     localsend
-    postman
+    # postman
     slack
     zoom-us
   ];
