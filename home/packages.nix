@@ -48,9 +48,6 @@ let
   ];
 
   linux = with pkgs; [
-    # gui
-    mpv
-
     # fonts
     inter
 
@@ -59,14 +56,12 @@ let
     dunst
     eww
     ffmpeg
-    eog
-    # rofimoji
-    rofi-power-menu
-    # sass
+    xfce.thunar
 
     # wayland
     hypridle
     rofi-wayland
+    swaybg
     wev
     wf-recorder
     wl-clipboard
