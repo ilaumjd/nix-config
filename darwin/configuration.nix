@@ -1,8 +1,5 @@
 { pkgs, env, ... }:
 {
-  # Enable Nix Daemon
-  services.nix-daemon.enable = true;
-
   # State Version
   system.stateVersion = 5;
 
@@ -11,7 +8,6 @@
   # Nix Configs
   nix = {
     gc = {
-      user = "root";
       automatic = true;
       interval.Day = 7;
       options = "--delete-older-than 7d";
