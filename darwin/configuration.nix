@@ -7,11 +7,12 @@
 
   # Nix Configs
   nix = {
-    gc = {
-      automatic = true;
-      interval.Day = 7;
-      options = "--delete-older-than 7d";
-    };
+    enable = false;
+    #    gc = {
+    #      automatic = true;
+    #      interval.Day = 7;
+    #      options = "--delete-older-than 7d";
+    #    };
   };
 
   # User Configs
