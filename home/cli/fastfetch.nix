@@ -66,11 +66,11 @@
           key = "├─";
           keyColor = "blue";
         }
-        {
-          type = "de";
-          key = "├─";
-          keyColor = "blue";
-        }
+        # {
+        #   type = "de";
+        #   key = "├─";
+        #   keyColor = "blue";
+        # }
         {
           type = "wm";
           key = "╰─";
