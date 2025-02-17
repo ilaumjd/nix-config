@@ -43,6 +43,10 @@ pkgs: {
             bindkey '^[[1;5C' end-of-line
             bindkey '^[[1;2D' beginning-of-line
             bindkey '^[[1;2C' end-of-line
+            bindkey '^[[H' beginning-of-line
+            bindkey '^[[F' end-of-line
+            bindkey '^[[1~' beginning-of-line
+            bindkey '^[[4~' end-of-line
 
             # swift
             export PATH=$PATH:$HOME/swift/usr/bin
