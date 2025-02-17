@@ -40,6 +40,7 @@
     # cli
     (import ./cli/bat.nix pkgs)
     (import ./cli/eza.nix)
+    (import ./cli/fastfetch.nix)
     (import ./cli/fzf.nix)
     (import ./cli/mise.nix)
     (import ./cli/thefuck.nix)
