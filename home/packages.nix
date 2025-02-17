@@ -4,7 +4,6 @@ let
   default = with pkgs; [
     # cli
     bottom
-    fastfetch
     fd
     htop
     jq
@@ -51,18 +50,22 @@ let
     # fonts
     inter
 
+    # cli
+    ffmpeg
+    unzip
+
     # wm
     blueberry
     dunst
     eww
-    ffmpeg
+    xdg-utils
     xfce.thunar
 
     # wayland
     hypridle
     rofi-wayland
     swaybg
-    wev
+    # wev
     wf-recorder
     wl-clipboard
     xwayland-satellite
