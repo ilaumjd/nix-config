@@ -32,7 +32,7 @@ let
     # scrcpy
 
     # neovim
-    neovim
+    neovim-unwrapped
     tree-sitter
     kdlfmt
     nixfmt-rfc-style
@@ -64,7 +64,7 @@ let
     wineWow64Packages.wayland
 
     # wm
-    blueberry
+    bluetuith
     dunst
     eww
     xdg-utils
@@ -73,6 +73,7 @@ let
     # wayland
     hypridle
     rofi-wayland
+    slurp
     swaybg
     # wev
     wf-recorder
