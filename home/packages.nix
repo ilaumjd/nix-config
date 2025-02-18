@@ -52,7 +52,16 @@ let
 
     # cli
     ffmpeg
+    p7zip
+    unrar-free
     unzip
+
+    # gui
+    mpv-unwrapped
+
+    # gaming
+    legendary-gl
+    wineWow64Packages.wayland
 
     # wm
     blueberry
