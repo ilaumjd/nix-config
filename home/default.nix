@@ -23,7 +23,7 @@
     # shell
     (import ./shell/atuin.nix)
     (import ./shell/bash.nix)
-    (import ./shell/direnv.nix)
+    # (import ./shell/direnv.nix)
     # (import ./shell/fish.nix)
     (import ./shell/oh-my-posh.nix)
     # (import ./shell/starship.nix)
