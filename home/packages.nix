@@ -65,7 +65,6 @@ let
 
     # wm
     bluetuith
-    dunst
     eww
     xdg-utils
     xfce.thunar

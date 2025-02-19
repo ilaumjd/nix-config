@@ -44,7 +44,8 @@
           # Nix Settings
           (import ../nix-settings.nix pkgs)
 
-          (import ./programs/foot.nix)
+          (import ./modules/dunst.nix)
+          (import ./modules/foot.nix)
 
           {
             programs.ghostty.package = nixGLWrap pkgs.ghostty;
