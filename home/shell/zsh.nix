@@ -1,19 +1,20 @@
 pkgs: {
   programs.zsh = {
     enable = true;
-    autosuggestion.enable = true;
-    autocd = true;
+    autocd = false;
+    autosuggestion.enable = false;
+    enableCompletion = false;
     zsh-abbr = {
       enable = true;
       abbreviations = import ./alias.nix;
     };
-    plugins = with pkgs; [
-      {
-        name = "zsh-fast-syntax-highlighting";
-        src = zsh-fast-syntax-highlighting;
-        file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
-      }
-    ];
+    # plugins = with pkgs; [
+    #   {
+    #     name = "zsh-fast-syntax-highlighting";
+    #     src = zsh-fast-syntax-highlighting;
+    #     file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
+    #   }
+    # ];
     initExtra =
       (
         if pkgs.stdenv.isDarwin then

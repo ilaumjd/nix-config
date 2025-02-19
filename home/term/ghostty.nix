@@ -6,7 +6,7 @@ in
   programs.ghostty = {
     enable = true;
     enableBashIntegration = false;
-    enableZshIntegration = true;
+    enableZshIntegration = false;
     enableFishIntegration = true;
     installBatSyntax = false;
     # installVimSyntax = true;

@@ -7,7 +7,7 @@ in
   programs.wezterm = {
     enable = true;
     enableBashIntegration = false;
-    enableZshIntegration = true;
+    enableZshIntegration = false;
     extraConfig = updatedConfig;
   };
 }
