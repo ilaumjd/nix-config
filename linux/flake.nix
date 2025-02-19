@@ -44,6 +44,8 @@
           # Nix Settings
           (import ../nix-settings.nix pkgs)
 
+          (import ./programs/foot.nix)
+
           {
             programs.ghostty.package = nixGLWrap pkgs.ghostty;
             # programs.kitty.package = nixGLWrap pkgs.kitty;
