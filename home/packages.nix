@@ -42,8 +42,6 @@ let
     # act
     localsend
     # postman
-    slack
-    zoom-us
   ];
 
   linux = with pkgs; [

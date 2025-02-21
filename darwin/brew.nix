@@ -16,6 +16,8 @@
       "fastlane"
       "postgresql@15"
       "watchman"
+      "awscli"
+      "aws-sam-cli"
     ];
     casks = [
       "brave-browser"
@@ -24,9 +26,11 @@
       "iina"
       "linearmouse"
       "raycast"
+      "slack"
       "stolendata-mpv"
       "zed@preview"
       "zen-browser"
+      "zoom"
     ];
     taps = [
       "homebrew/services"
