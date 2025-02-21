@@ -57,10 +57,6 @@ let
     # gui
     mpv-unwrapped
 
-    # gaming
-    legendary-gl
-    wineWow64Packages.wayland
-
     # wm
     bluetuith
     eww
