@@ -57,7 +57,7 @@ pkgs: {
       # WINDOWS
       bind t new-window -c "#{pane_current_path}"
       bind x confirm-before -p "kill-window #W?" kill-window
-      bind s choose-tree -Zw
+      bind s choose-session
 
       # PANES
       bind w confirm-before -p "kill-pane #P?" kill-pane
