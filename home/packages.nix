@@ -39,7 +39,9 @@ let
   ];
 
   darwin = with pkgs; [
+    aria2
     # act
+    ngrok
     localsend
     # postman
   ];
