@@ -28,6 +28,7 @@
       "raycast"
       "slack"
       "stolendata-mpv"
+      "utm"
       "zed@preview"
       "zen-browser"
       "zoom"
