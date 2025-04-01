@@ -41,6 +41,7 @@ let
   darwin = with pkgs; [
     aria2
     # act
+    imagemagick
     ngrok
     localsend
     # postman
