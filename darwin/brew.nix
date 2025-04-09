@@ -21,6 +21,7 @@
     ];
     casks = [
       "brave-browser"
+      "discord"
       "docker"
       "ghostty"
       "iina"
