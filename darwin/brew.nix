@@ -31,7 +31,7 @@
       "stolendata-mpv"
       "utm"
       "zed@preview"
-      "zen-browser"
+      "zen"
       "zoom"
     ];
     taps = [
