@@ -15,7 +15,7 @@ pkgs: {
     #     file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
     #   }
     # ];
-    initExtra =
+    initContent =
       (
         if pkgs.stdenv.isDarwin then
           ''
