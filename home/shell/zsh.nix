@@ -34,7 +34,7 @@ pkgs: {
             export PATH=$PATH:$ANDROID_HOME/build-tools/35.0.0
 
             # brew
-            export PATH=$PATH:/opt/homebrew/opt/postgresql@15/bin
+            export PATH=$PATH:/opt/homebrew/opt/postgresql@14/bin
             export PATH=$PATH:$HOME/.cargo/bin
           ''
         else

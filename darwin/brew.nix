@@ -14,7 +14,7 @@
     brews = [
       "cocoapods"
       "fastlane"
-      "postgresql@15"
+      "postgresql@14"
       "watchman"
       "awscli"
       "aws-sam-cli"
@@ -22,7 +22,7 @@
     casks = [
       "brave-browser"
       "discord"
-      "docker"
+      "docker-desktop"
       "dbeaver-community"
       "ghostty"
       "iina"
