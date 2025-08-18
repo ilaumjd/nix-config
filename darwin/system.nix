@@ -1,5 +1,10 @@
 {
   system = {
+
+    tools = {
+      darwin-rebuild.enable = true;
+    };
+
     defaults = {
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
@@ -24,11 +29,6 @@
         "com.apple.desktopservices" = {
           DSDonntWriteNetworkStores = true;
           DSDonntWriteUSBStores = true;
-        };
-        "com.apple.Safari" = {
-          IncludeInternalDebugMenu = true;
-          IncludeDevelopMenu = true;
-          WebKitDeveloperExtrasEnabledPreferenceKey = true;
         };
         "com.raycast.macos" = {
           NSNavLastRootDirectory = "~/src/scripts/raycast";

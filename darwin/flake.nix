@@ -5,15 +5,12 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     {
       nixpkgs,
       nix-darwin,
-      home-manager,
       ...
     }:
     let
@@ -41,22 +38,6 @@
             # Nixpkgs
             { nixpkgs.pkgs = pkgs; }
 
-            # Home Manager
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                backupFileExtension = "backup";
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.${env.user}.imports = [
-                  ../home
-
-                  {
-                    programs.ghostty.package = pkgs.hello;
-                  }
-                ];
-              };
-            }
           ];
         };
       };

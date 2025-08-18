@@ -21,23 +21,23 @@
     ];
     casks = [
       "brave-browser"
-      "discord"
+      # "discord"
       "docker-desktop"
       "dbeaver-community"
       "ghostty"
       "iina"
       "linearmouse"
-      "raycast"
+      # "raycast"
       "slack"
       "stolendata-mpv"
-      "utm"
+      # "utm"
       "visual-studio-code"
-      "zed@preview"
-      "zen"
+      "wezterm"
+      # "zed"
+      # "zen"
       "zoom"
     ];
     taps = [
-      "homebrew/services"
     ];
   };
 }
