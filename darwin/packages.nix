@@ -1,0 +1,34 @@
+pkgs: with pkgs; [
+  atuin
+  aria2
+  bat
+  bat-extras.core
+  bottom
+  delta
+  eza
+  fastfetch
+  fd
+  fzf
+  granted
+  htop
+  imagemagick
+  lazygit
+  mise
+  neovim-unwrapped
+  ngrok
+  oh-my-posh
+  ripgrep
+  scmpuff
+  stow
+  tealdeer
+  tmux
+  trash-cli
+  tree-sitter
+  vim
+  wget
+  yazi
+  zoxide
+
+  kdlfmt
+  nixfmt-rfc-style
+]

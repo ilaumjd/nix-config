@@ -32,9 +32,6 @@
             # Darwin
             ./configuration.nix
 
-            # Nix Settings
-            (import ../nix-settings.nix pkgs)
-
             # Nixpkgs
             { nixpkgs.pkgs = pkgs; }
 

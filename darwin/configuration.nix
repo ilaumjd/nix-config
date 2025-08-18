@@ -8,11 +8,9 @@
   # Nix Configs
   nix = {
     enable = false;
-       # gc = {
-       #   automatic = true;
-       #   interval.Day = 7;
-       #   options = "--delete-older-than 7d";
-       # };
+    settings = {
+      experimental-features = "nix-command flakes";
+    };
   };
 
   # User Configs
@@ -27,37 +25,7 @@
   environment = {
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
-    defaultPackages = with pkgs; [
-      atuin
-      aria2
-      bat
-      bat-extras.core
-      bottom
-      delta
-      eza
-      fastfetch
-      fd
-      fzf
-      granted
-      htop
-      imagemagick
-      lazygit
-      mise
-      neovim-unwrapped
-      ngrok
-      oh-my-posh
-      ripgrep
-      scmpuff
-      stow
-      tealdeer
-      tmux
-      trash-cli
-      tree-sitter
-      vim
-      wget
-      yazi
-      zoxide
-    ];
+    defaultPackages = import ./packages.nix pkgs;
   };
 
   fonts = {
