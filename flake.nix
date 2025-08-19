@@ -33,7 +33,12 @@
             ./configuration.nix
 
             # Nixpkgs
-            { nixpkgs.pkgs = pkgs; }
+            {
+              nixpkgs = {
+                pkgs = pkgs;
+                hostPlatform = pkgs.stdenv.system;
+              };
+            }
 
           ];
         };

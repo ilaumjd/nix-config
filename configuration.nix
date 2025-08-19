@@ -3,8 +3,6 @@
   # State Version
   system.stateVersion = 5;
 
-  nixpkgs.hostPlatform = pkgs.stdenv.system;
-
   # Nix Configs
   nix = {
     enable = false;
@@ -18,7 +16,6 @@
     name = env.user;
     home = /Users/${env.user};
   };
-
   system.primaryUser = env.user;
 
   # Environment Configs
