@@ -9,6 +9,7 @@ pkgs: with pkgs; [
   fastfetch
   fd
   fzf
+  git-lfs
   granted
   htop
   imagemagick
@@ -16,6 +17,7 @@ pkgs: with pkgs; [
   mise
   neovim-unwrapped
   ngrok
+  nixfmt-rfc-style
   oh-my-posh
   ripgrep
   scmpuff
@@ -28,7 +30,4 @@ pkgs: with pkgs; [
   wget
   yazi
   zoxide
-
-  kdlfmt
-  nixfmt-rfc-style
 ]

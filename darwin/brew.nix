@@ -13,17 +13,17 @@
     };
     brews = [
       "cocoapods"
-      "fastlane"
+      "libpq"
+      "libyaml"
       "postgresql@14"
-      "watchman"
-      "awscli"
-      "aws-sam-cli"
     ];
     casks = [
       "brave-browser"
       # "discord"
       "docker-desktop"
       "dbeaver-community"
+      "ente-auth"
+      "firefox"
       "ghostty"
       "iina"
       "linearmouse"
