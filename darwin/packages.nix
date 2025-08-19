@@ -17,6 +17,7 @@ pkgs: with pkgs; [
   mise
   neovim-unwrapped
   ngrok
+  nil
   nixfmt-rfc-style
   oh-my-posh
   ripgrep
