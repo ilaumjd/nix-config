@@ -1,6 +1,6 @@
 let
   user = "iam";
-  hostname = "macos";
+  hostname = "colearn";
   arch = "aarch64";
 in
 {

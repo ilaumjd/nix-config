@@ -28,14 +28,11 @@
     defaultPackages = import ./packages.nix pkgs;
   };
 
-  fonts = {
-    packages = import ../fonts.nix pkgs;
-  };
-
   imports = [
-    (import ./system.nix)
-    (import ./shell.nix pkgs)
     (import ./brew.nix)
+    (import ./fonts.nix pkgs)
+    (import ./shell.nix pkgs)
+    (import ./system.nix)
   ];
 
 }
