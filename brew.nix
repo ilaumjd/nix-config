@@ -18,7 +18,7 @@
       "postgresql@16"
     ];
     casks = [
-      "brave-browser"
+      # "brave-browser"
       # "discord"
       "docker-desktop"
       "dbeaver-community"
