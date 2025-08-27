@@ -15,7 +15,7 @@
       "cocoapods"
       "libpq"
       "libyaml"
-      "postgresql@14"
+      "postgresql@16"
     ];
     casks = [
       "brave-browser"
@@ -32,8 +32,8 @@
       "stolendata-mpv"
       # "utm"
       "visual-studio-code"
-      "wezterm"
-      # "zed"
+      "wezterm@nightly"
+      "zed"
       # "zen"
       "zoom"
     ];
