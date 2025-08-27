@@ -13,6 +13,7 @@ pkgs: with pkgs; [
   granted
   htop
   imagemagick
+  lazydocker
   lazygit
   mise
   neovim-unwrapped
