@@ -4,6 +4,7 @@ pkgs: with pkgs; [
   bat
   bat-extras.core
   bottom
+  cmd-wrapped
   delta
   eza
   fastfetch
@@ -16,10 +17,7 @@ pkgs: with pkgs; [
   lazydocker
   lazygit
   mise
-  neovim-unwrapped
   ngrok
-  nil
-  nixfmt-rfc-style
   oh-my-posh
   ripgrep
   scmpuff
@@ -27,9 +25,15 @@ pkgs: with pkgs; [
   tealdeer
   tmux
   trash-cli
-  tree-sitter
-  vim
   wget
   yazi
   zoxide
+
+  vim
+  neovim-unwrapped
+  tree-sitter
+  nixfmt-rfc-style
+  nixd
+  deadnix
+  statix
 ]
