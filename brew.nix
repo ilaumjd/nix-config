@@ -19,6 +19,7 @@
     ];
     casks = [
       # "brave-browser"
+      "bruno"
       # "discord"
       "dbeaver-community"
       "ente-auth"
@@ -27,6 +28,7 @@
       "iina"
       "linearmouse"
       "orbstack"
+      "postman"
       # "raycast"
       "slack"
       "stolendata-mpv"
