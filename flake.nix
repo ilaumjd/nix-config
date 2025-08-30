@@ -1,5 +1,5 @@
 {
-  description = "iam's Darwin and Home Manager configs";
+  description = "iam's nix-darwin configs";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
