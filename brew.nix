@@ -32,6 +32,7 @@
       # "raycast"
       "slack"
       "stolendata-mpv"
+      "ungoogled-chromium"
       # "utm"
       "visual-studio-code"
       "wezterm@nightly"
