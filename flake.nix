@@ -30,10 +30,30 @@
           modules = [
 
             # Darwin
-            ./configuration.nix
-
-            # Nixpkgs
             {
+              system.stateVersion = 5;
+              nix = {
+                enable = false;
+                settings = {
+                  experimental-features = "nix-command flakes";
+                };
+              };
+              users.users.${env.user} = {
+                name = env.user;
+                home = /Users/${env.user};
+              };
+              system.primaryUser = env.user;
+              environment = {
+                systemPath = [ "/opt/homebrew/bin" ];
+                pathsToLink = [ "/Applications" ];
+                defaultPackages = import ./packages.nix pkgs;
+              };
+              imports = [
+                (import ./brew.nix)
+                (import ./fonts.nix pkgs)
+                (import ./shell.nix pkgs)
+                (import ./system.nix)
+              ];
               nixpkgs = {
                 pkgs = pkgs;
                 hostPlatform = pkgs.stdenv.system;
