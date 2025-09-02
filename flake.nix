@@ -18,48 +18,49 @@
       pkgs = import nixpkgs {
         system = env.system;
         config.allowUnfree = true;
-        config.allowUnfreePredicate = pkgs: true;
       };
     in
     {
       darwinConfigurations = {
         ${env.hostname} = nix-darwin.lib.darwinSystem {
-          specialArgs = {
-            inherit env;
-          };
           modules = [
 
-            # Darwin
             {
-              system.stateVersion = 5;
+              system = {
+                stateVersion = 5;
+                primaryUser = env.user;
+              };
+
               nix = {
                 enable = false;
                 settings = {
                   experimental-features = "nix-command flakes";
                 };
               };
+
+              nixpkgs = {
+                hostPlatform = env.system;
+              };
+
               users.users.${env.user} = {
                 name = env.user;
                 home = /Users/${env.user};
               };
-              system.primaryUser = env.user;
+
               environment = {
                 systemPath = [ "/opt/homebrew/bin" ];
                 pathsToLink = [ "/Applications" ];
                 defaultPackages = import ./packages.nix pkgs;
               };
+
               imports = [
                 (import ./brew.nix)
                 (import ./fonts.nix pkgs)
                 (import ./shell.nix pkgs)
                 (import ./system.nix)
               ];
-              nixpkgs = {
-                pkgs = pkgs;
-                hostPlatform = pkgs.stdenv.system;
-              };
-            }
 
+            }
           ];
         };
       };
