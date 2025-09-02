@@ -16,10 +16,13 @@
       "libpq"
       "libyaml"
       "postgresql@16"
+      "gemini-cli"
+      "opencode"
     ];
     casks = [
       # "brave-browser"
       "bruno"
+      "claude-code"
       # "discord"
       "dbeaver-community"
       "ente-auth"
@@ -32,7 +35,6 @@
       # "raycast"
       "slack"
       "stolendata-mpv"
-      "ungoogled-chromium"
       # "utm"
       "visual-studio-code"
       "wezterm@nightly"
@@ -41,6 +43,7 @@
       "zoom"
     ];
     taps = [
+      "sst/tap"
     ];
   };
 }
