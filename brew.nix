@@ -21,7 +21,9 @@
       "gemini-cli"
       "opencode"
       # container
-      "podman"
+      "docker"
+      "docker-credential-helper"
+      "colima"
     ];
     casks = [
       "bruno"
