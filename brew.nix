@@ -12,34 +12,31 @@
       no_quarantine = true;
     };
     brews = [
+      # ios
       "cocoapods"
+      # rails
       "libpq"
       "libyaml"
-      "postgresql@16"
+      # ai
       "gemini-cli"
       "opencode"
+      # container
+      "podman"
     ];
     casks = [
-      # "brave-browser"
       "bruno"
       "claude-code"
-      # "discord"
       "dbeaver-community"
       "ente-auth"
       "firefox"
       "ghostty"
       "iina"
       "linearmouse"
-      "orbstack"
       "postman"
-      # "raycast"
       "slack"
-      "stolendata-mpv"
-      # "utm"
       "visual-studio-code"
       "wezterm@nightly"
       "zed"
-      # "zen"
       "zoom"
     ];
     taps = [
