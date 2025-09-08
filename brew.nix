@@ -12,11 +12,6 @@
       no_quarantine = true;
     };
     brews = [
-      # ios
-      "cocoapods"
-      # rails
-      "libpq"
-      "libyaml"
       # ai
       "gemini-cli"
       "opencode"
@@ -24,10 +19,14 @@
       "docker"
       "docker-credential-helper"
       "colima"
+      # ios
+      "cocoapods"
+      # rails
+      "libpq"
+      "libyaml"
     ];
     casks = [
       "bruno"
-      "claude-code"
       "dbeaver-community"
       "ente-auth"
       "firefox"
@@ -40,6 +39,8 @@
       "wezterm@nightly"
       "zed"
       "zoom"
+      # ai
+      "claude-code"
     ];
     taps = [
       "sst/tap"

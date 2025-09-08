@@ -11,7 +11,6 @@ pkgs: with pkgs; [
   fd
   fzf
   git-lfs
-  granted
   htop
   imagemagick
   lazydocker
@@ -36,4 +35,9 @@ pkgs: with pkgs; [
   nixd
   deadnix
   statix
+
+  awscli2
+  aws-sam-cli
+  ssm-session-manager-plugin
+  granted
 ]
