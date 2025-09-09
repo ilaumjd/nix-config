@@ -13,6 +13,7 @@ pkgs: with pkgs; [
   git-lfs
   htop
   imagemagick
+  jwt-cli
   lazydocker
   lazygit
   mise
@@ -28,6 +29,7 @@ pkgs: with pkgs; [
   yazi
   zoxide
 
+  # vim
   vim
   neovim-unwrapped
   tree-sitter
@@ -36,6 +38,7 @@ pkgs: with pkgs; [
   deadnix
   statix
 
+  # aws
   awscli2
   aws-sam-cli
   ssm-session-manager-plugin
