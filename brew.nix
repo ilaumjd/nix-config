@@ -24,6 +24,8 @@
       # rails
       "libpq"
       "libyaml"
+      # postgres
+      "postgresql@16"
     ];
     casks = [
       "bruno"
